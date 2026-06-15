@@ -5,7 +5,7 @@
 
 export const content = {
   // Dipakai di tab & address bar Safari (boleh diganti, mis. "namaanda.dev")
-  domain: "arcadis.dev",
+  domain: "iannstr.com",
 
   hero: {
     monogram: "AR",
@@ -158,12 +158,12 @@ export const content = {
     eyebrow: "Say hello",
     blurb:
       "Punya proyek menarik atau sekadar ingin menyapa? Saya selalu terbuka untuk obrolan baru.",
-    email: "hello@arcadis.dev",
+    email: "hello@iannstr.dev",
     socials: [
-      { label: "LinkedIn", handle: "/in/arcadis", url: "#" },
-      { label: "GitHub", handle: "@arcadis", url: "#" },
-      { label: "Dribbble", handle: "@arcadis", url: "#" },
-      { label: "X", handle: "@arcadis", url: "#" },
+      { label: "LinkedIn", handle: "/in/iannstr", url: "#" },
+      { label: "GitHub", handle: "@iannstr", url: "#" },
+      { label: "Dribbble", handle: "@iannstr", url: "#" },
+      { label: "X", handle: "@iannstr", url: "#" },
     ],
   },
 };

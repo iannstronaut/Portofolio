@@ -692,7 +692,7 @@ function Webpage() {
 						<div className="glass border-b border-white/40">
 							<Container className="flex h-14 items-center justify-between">
 								<button onClick={() => onNav("top")} className="flex items-center gap-2.5">
-									<span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[#13314f] to-action text-[11px] font-semibold text-white">
+									<span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-[#13314f] to-action text-[11px] font-semibold text-white shadow-inner">
 										{hero ? hero.monogram : ""}
 									</span>
 									<span className="text-sm font-semibold tracking-tight text-ink">{hero ? hero.name : ""}</span>
