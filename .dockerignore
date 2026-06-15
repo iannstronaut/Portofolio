@@ -12,3 +12,4 @@ README.md
 preview.html
 build-preview.mjs
 npm-debug.log*
+package-lock.json
