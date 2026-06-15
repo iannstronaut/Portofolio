@@ -1,0 +1,481 @@
+{
+  "meta": {
+    "domain": "iannstr.com",
+    "siteTitle": "Al Byan Agung Shafiqri — Portfolio",
+    "defaultLang": "id"
+  },
+  "languages": [
+    { "code": "id", "label": "Indonesia", "short": "ID" },
+    { "code": "en", "label": "English (US)", "short": "EN" },
+    { "code": "jw", "label": "Jawa", "short": "JW" }
+  ],
+  "ui": {
+    "id": {
+      "viewWork": "Lihat karya",
+      "contactCta": "Hubungi saya",
+      "getInTouch": "Hubungi saya",
+      "localTime": "Waktu lokal",
+      "tz": "Jakarta · GMT+7",
+      "nav": {
+        "summary": "Tentang",
+        "experience": "Pengalaman",
+        "education": "Pendidikan",
+        "skills": "Keahlian",
+        "projects": "Karya",
+        "contact": "Kontak"
+      }
+    },
+    "en": {
+      "viewWork": "View work",
+      "contactCta": "Contact me",
+      "getInTouch": "Get in touch",
+      "localTime": "Local time",
+      "tz": "Jakarta · GMT+7",
+      "nav": {
+        "summary": "About",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "projects": "Work",
+        "contact": "Contact"
+      }
+    },
+    "jw": {
+      "viewWork": "Deleng karya",
+      "contactCta": "Hubungi aku",
+      "getInTouch": "Ayo srawung",
+      "localTime": "Wektu lokal",
+      "tz": "Jakarta · GMT+7",
+      "nav": {
+        "summary": "Babagan",
+        "experience": "Pengalaman",
+        "education": "Pendhidhikan",
+        "skills": "Kaprigelan",
+        "projects": "Karya",
+        "contact": "Kontak"
+      }
+    }
+  },
+  "content": {
+    "id": {
+      "hero": {
+        "monogram": "AS",
+        "name": "Al Byan Agung Shafiqri",
+        "title": "Fullstack Developer & ML/DL Enthusiast",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
+        "headline": "Membangun aplikasi web utuh dan mengeksplorasi kecerdasan buatan.",
+        "subheadline": "Fullstack developer dengan dua tahun pengalaman membangun aplikasi end-to-end — dari API, basis data, hingga antarmuka — sambil aktif mendalami Machine Learning & Deep Learning.",
+        "location": "Jakarta, Indonesia",
+        "availability": "Terbuka untuk peluang baru"
+      },
+      "summary": {
+        "eyebrow": "Tentang",
+        "title": "Ringkasan profesional",
+        "body": "Saya seorang fullstack developer yang senang menghubungkan setiap lapisan aplikasi — backend yang andal, basis data yang rapi, dan frontend yang responsif. Selain ngoding, saya antusias menekuni Machine Learning dan Deep Learning, bereksperimen dengan model dan menyatukannya ke dalam produk nyata.",
+        "stats": [
+          { "value": "2+", "label": "Tahun pengalaman" },
+          { "value": "10+", "label": "Proyek diselesaikan" },
+          { "value": "5+", "label": "Model ML dilatih" },
+          { "value": "∞", "label": "Rasa ingin tahu" }
+        ]
+      },
+      "experience": {
+        "eyebrow": "Karier",
+        "title": "Pengalaman",
+        "items": [
+          {
+            "role": "Fullstack Developer (Intern)",
+            "company": "PT. Amerta Indah Otsuka",
+            "period": "2025 — Sekarang",
+            "location": "Kejayan, Pasuruan",
+            "description": "Mengembangkan aplikasi web end-to-end dengan Angular di sisi frontend dan Node.js/Express + MySQL di sisi backend, termasuk desain API dan deployment.",
+            "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Mentor Web Development",
+            "company": "Workshop Riset Informatika",
+            "period": "2023 — 2024",
+            "location": "Politeknik Negeri Malang",
+            "description": "Membimbing peserta memahami dasar-dasar pengembangan web secara praktis melalui sesi mentoring dan latihan langsung.",
+            "tags": ["HTML", "CSS", "JavaScript"]
+          }
+        ]
+      },
+      "education": {
+        "eyebrow": "Pembelajaran",
+        "title": "Pendidikan",
+        "items": [
+          {
+            "school": "Politeknik Negeri Malang",
+            "degree": "S.Tr Teknik Informatika",
+            "period": "2022 — Sekarang",
+            "detail": "Fokus pada rekayasa perangkat lunak dan kecerdasan buatan."
+          }
+        ]
+      },
+      "skills": {
+        "eyebrow": "Perkakas",
+        "title": "Keahlian",
+        "groups": [
+          {
+            "name": "Frontend",
+            "items": [
+              "Angular",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Vite"
+            ]
+          },
+          {
+            "name": "Backend",
+            "items": [
+              "Node.js",
+              "Express",
+              "Go",
+              "Fiber",
+              "MySQL",
+              "PostgreSQL",
+              "MongoDB",
+              "REST API"
+            ]
+          },
+          {
+            "name": "Machine Learning",
+            "items": [
+              "Python",
+              "TensorFlow",
+              "PyTorch",
+              "scikit-learn",
+              "Pandas"
+            ]
+          },
+          {
+            "name": "Alur kerja",
+            "items": ["Git", "Docker", "Linux", "Agile"]
+          }
+        ]
+      },
+      "projects": {
+        "eyebrow": "Karya terpilih",
+        "title": "Project Terbuka",
+        "items": [
+          {
+            "name": "Box2Box",
+            "category": "Data Annotation · ML/DL",
+            "description": "Aplikasi anotasi data untuk Machine Learning & Deep Learning yang berjalan sepenuhnya offline (local only) — tanpa server eksternal.",
+            "year": "2025",
+            "link": "https://b2box.iannstr.com"
+          },
+          {
+            "name": "Zip Code",
+            "category": "AI Agent · CLI",
+            "description": "Side project agent AI berbasis command line yang simpel dan sederhana untuk membantu tugas harian.",
+            "year": "2025",
+            "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Sapa saya",
+        "title": "Mari berkolaborasi",
+        "blurb": "Punya proyek menarik atau sekadar ingin menyapa? Saya selalu terbuka untuk obrolan baru.",
+        "email": "albyanagungshafiqri@gmail.com",
+        "socials": [
+          {
+            "label": "LinkedIn",
+            "handle": "/in/iannstronaut",
+            "url": "https://www.linkedin.com/in/iannstronaut/"
+          },
+          {
+            "label": "GitHub",
+            "handle": "@iannstronaut",
+            "url": "https://github.com/iannstronaut"
+          },
+          { "label": "X", "handle": "@iannstr", "url": "#" }
+        ]
+      }
+    },
+    "en": {
+      "hero": {
+        "monogram": "AS",
+        "name": "Al Byan Agung Shafiqri",
+        "title": "Fullstack Developer & ML/DL Enthusiast",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
+        "headline": "Building complete web apps and exploring artificial intelligence.",
+        "subheadline": "Fullstack developer with two years of experience building end-to-end applications — from APIs and databases to interfaces — while actively diving into Machine Learning & Deep Learning.",
+        "location": "Jakarta, Indonesia",
+        "availability": "Open to new opportunities"
+      },
+      "summary": {
+        "eyebrow": "About",
+        "title": "Professional summary",
+        "body": "I'm a fullstack developer who enjoys connecting every layer of an application — a reliable backend, a clean database, and a responsive frontend. Beyond coding, I'm enthusiastic about Machine Learning and Deep Learning, experimenting with models and weaving them into real products.",
+        "stats": [
+          { "value": "2+", "label": "Year of experience" },
+          { "value": "10+", "label": "Projects completed" },
+          { "value": "5+", "label": "ML models trained" },
+          { "value": "∞", "label": "Curiosity" }
+        ]
+      },
+      "experience": {
+        "eyebrow": "Career",
+        "title": "Experience",
+        "items": [
+          {
+            "role": "Fullstack Developer (Intern)",
+            "company": "PT. Amerta Indah Otsuka",
+            "period": "2025 — Now",
+            "location": "Kejayan, Pasuruan",
+            "description": "Built end-to-end web applications with Angular on the frontend and Node.js/Express + MySQL on the backend, including API design and deployment.",
+            "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Mentor Web Development",
+            "company": "Workshop Riset Informatika",
+            "period": "2023 — 2024",
+            "location": "Politeknik Negeri Malang",
+            "description": "Guided participants in learning the fundamentals of web development through hands-on mentoring and practical exercises.",
+            "tags": ["HTML", "CSS", "JavaScript"]
+          }
+        ]
+      },
+      "education": {
+        "eyebrow": "Learning",
+        "title": "Education",
+        "items": [
+          {
+            "school": "Politeknik Negeri Malang",
+            "degree": "S.Tr Tekntik Informatika",
+            "period": "2022 — Now",
+            "detail": "Focused on software engineering and artificial intelligence."
+          }
+        ]
+      },
+      "skills": {
+        "eyebrow": "Toolkit",
+        "title": "Skills",
+        "groups": [
+          {
+            "name": "Frontend",
+            "items": [
+              "Angular",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Vite"
+            ]
+          },
+          {
+            "name": "Backend",
+            "items": [
+              "Node.js",
+              "Express",
+              "Go",
+              "Fiber",
+              "MySQL",
+              "PostgreSQL",
+              "MongoDB",
+              "REST API"
+            ]
+          },
+          {
+            "name": "Machine Learning",
+            "items": [
+              "Python",
+              "TensorFlow",
+              "PyTorch",
+              "scikit-learn",
+              "Pandas"
+            ]
+          },
+          {
+            "name": "Workflow",
+            "items": ["Git", "Docker", "Linux", "Agile"]
+          }
+        ]
+      },
+      "projects": {
+        "eyebrow": "Selected work",
+        "title": "Open Project",
+        "items": [
+          {
+            "name": "Box2Box",
+            "category": "Data Annotation · ML/DL",
+            "description": "A data annotation app for Machine Learning & Deep Learning that runs fully offline (local only) — no external server.",
+            "year": "2025",
+            "link": "https://b2box.iannstr.com"
+          },
+          {
+            "name": "Zip Code",
+            "category": "AI Agent · CLI",
+            "description": "A simple, lightweight CLI-based AI agent side project to help with everyday tasks.",
+            "year": "2025",
+            "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Say hello",
+        "title": "Let's collaborate",
+        "blurb": "Have an interesting project or just want to say hi? I'm always open to a new conversation.",
+        "email": "albyanagungshafiqri@gmail.com",
+        "socials": [
+          {
+            "label": "LinkedIn",
+            "handle": "/in/iannstrpnaut",
+            "url": "https://www.linkedin.com/in/iannstronaut/"
+          },
+          {
+            "label": "GitHub",
+            "handle": "@iannstronaut",
+            "url": "https://github.com/iannstronaut"
+          },
+          { "label": "X", "handle": "@iannstr", "url": "#" }
+        ]
+      }
+    },
+    "jw": {
+      "hero": {
+        "monogram": "AS",
+        "name": "Al Byan Agung Shafiqri",
+        "title": "Fullstack Developer & ML/DL Enthusiast",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
+        "headline": "Ngracik aplikasi web jangkep lan nlusuri kacerdasan gawéan.",
+        "subheadline": "Fullstack developer kanthi rong taun pengalaman gawé aplikasi end-to-end — saka API, basis data, teka antarmuka — sinambi nlusuri Machine Learning & Deep Learning.",
+        "location": "Jakarta, Indonésia",
+        "availability": "Mbukak kanggo kalodhangan anyar"
+      },
+      "summary": {
+        "eyebrow": "Babagan",
+        "title": "Ringkesan profesional",
+        "body": "Aku fullstack developer sing seneng nyambungaké saben lapisan aplikasi — backend sing andhal, basis data sing rapi, lan frontend sing responsif. Saliyané nulis kode, aku antusias nlusuri Machine Learning lan Deep Learning, coba-coba model lan nyawisaké menyang produk nyata.",
+        "stats": [
+          { "value": "2+", "label": "Taun pengalaman" },
+          { "value": "10+", "label": "Proyek kelar" },
+          { "value": "5+", "label": "Model ML dilatih" },
+          { "value": "∞", "label": "Pepinginan weruh" }
+        ]
+      },
+      "experience": {
+        "eyebrow": "Karir",
+        "title": "Pengalaman",
+        "items": [
+          {
+            "role": "Fullstack Developer (Intern)",
+            "company": "PT. Amerta Indah Otsuka",
+            "period": "2025 — Saiki",
+            "location": "Kejayan, Pasuruan",
+            "description": "Ngrembug aplikasi web end-to-end kanthi Angular ing frontend lan Node.js/Express + MySQL ing backend, kalebu desain API lan deployment.",
+            "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Mentor Web Development",
+            "company": "Workshop Riset Informatika",
+            "period": "2023 — 2024",
+            "location": "Politeknik Negeri Malang",
+            "description": "Mentoring peserta sinau dasar-dasar pangembangan web kanthi praktis liwat sesi mentoring lan latihan langsung.",
+            "tags": ["HTML", "CSS", "JavaScript"]
+          }
+        ]
+      },
+      "education": {
+        "eyebrow": "Sinau",
+        "title": "Pendhidhikan",
+        "items": [
+          {
+            "school": "Politeknik Negeri Malang",
+            "degree": "S.Tr Tekntik Informatika",
+            "period": "2022 — Sekarang",
+            "detail": "Fokus ing rékayasa piranti alus lan kacerdasan gawéan."
+          }
+        ]
+      },
+      "skills": {
+        "eyebrow": "Piranti",
+        "title": "Kaprigelan",
+        "groups": [
+          {
+            "name": "Frontend",
+            "items": [
+              "Angular",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Vite"
+            ]
+          },
+          {
+            "name": "Backend",
+            "items": [
+              "Node.js",
+              "Express",
+              "Go",
+              "Fiber",
+              "MySQL",
+              "PostgreSQL",
+              "MongoDB",
+              "REST API"
+            ]
+          },
+          {
+            "name": "Machine Learning",
+            "items": [
+              "Python",
+              "TensorFlow",
+              "PyTorch",
+              "scikit-learn",
+              "Pandas"
+            ]
+          },
+          {
+            "name": "Alur Gawéan",
+            "items": ["Git", "Docker", "Linux", "Agile"]
+          }
+        ]
+      },
+      "projects": {
+        "eyebrow": "Karya pilihan",
+        "title": "Proyek Kabuka",
+        "items": [
+          {
+            "name": "Box2Box",
+            "category": "Anotasi Data · ML/DL",
+            "description": "Aplikasi anotasi data kanggo Machine Learning & Deep Learning sing mlaku kanthi lengkap offline (local only) — tanpa server eksternal.",
+            "year": "2025",
+            "link": "https://b2box.iannstr.com"
+          },
+          {
+            "name": "Zip Code",
+            "category": "AI Agent · CLI",
+            "description": "Side project agent AI adhedhasar command line sing prasaja lan sederhana kanggo mbantu tugas sadina-dina.",
+            "year": "2025",
+            "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Aruh-aruh",
+        "title": "Ayo kolaborasi",
+        "blurb": "Duwé proyek menarik utawa mung arep aruh-aruh? Aku tansah mbukak kanggo obrolan anyar.",
+        "email": "albyanagungshafiqri@gmail.com",
+        "socials": [
+          {
+            "label": "LinkedIn",
+            "handle": "/in/iannstrpnaut",
+            "url": "https://www.linkedin.com/in/iannstronaut/"
+          },
+          {
+            "label": "GitHub",
+            "handle": "@iannstronaut",
+            "url": "https://github.com/iannstronaut"
+          },
+          { "label": "X", "handle": "@iannstr", "url": "#" }
+        ]
+      }
+    }
+  }
+}
