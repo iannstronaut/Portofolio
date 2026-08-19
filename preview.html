@@ -1,2105 +1,1882 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Al Byan Agung Shafiqri — Portfolio</title>
-    <meta name="description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-    <link rel="canonical" href="https://iannstr.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://iannstr.com/" />
-    <meta property="og:site_name" content="Al Byan Agung Shafiqri" />
-    <meta property="og:title" content="Al Byan Agung Shafiqri — Portfolio" />
-    <meta property="og:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-    <meta property="og:image" content="https://iannstr.com/og-frame.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Al Byan Agung Shafiqri — Portfolio" />
-    <meta name="twitter:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-    <meta name="twitter:image" content="https://iannstr.com/og-frame.jpg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://unpkg.com/react@18/umd/react.production.min.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-      crossorigin
-    ></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { ink: "#1d1d1f", action: "#0066cc" },
-            fontFamily: {
-              sans: [
-                "Inter",
-                "system-ui",
-                "-apple-system",
-                "BlinkMacSystemFont",
-                "SF Pro Text",
-                "sans-serif",
-              ],
-              mono: [
-                "JetBrains Mono",
-                "ui-monospace",
-                "SFMono-Regular",
-                "Menlo",
-                "monospace",
-              ],
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <style>
-      /* ============================================================
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Al Byan Agung Shafiqri — Portfolio</title>
+<meta name="description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
+<link rel="canonical" href="https://iannstr.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://iannstr.com/" />
+<meta property="og:site_name" content="Al Byan Agung Shafiqri" />
+<meta property="og:title" content="Al Byan Agung Shafiqri — Portfolio" />
+<meta property="og:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
+<meta property="og:image" content="https://iannstr.com/og-frame.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Al Byan Agung Shafiqri — Portfolio" />
+<meta name="twitter:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
+<meta name="twitter:image" content="https://iannstr.com/og-frame.jpg" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { ink: "#1d1d1f", action: "#0066cc" },
+      fontFamily: {
+        sans: ["Inter","system-ui","-apple-system","BlinkMacSystemFont","SF Pro Text","sans-serif"],
+        mono: ["JetBrains Mono","ui-monospace","SFMono-Regular","Menlo","monospace"],
+      },
+    } },
+  }
+</script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+/* ============================================================
    macOS desktop · liquid glass · boot animation
    Shared by the Vite build (via index.css) and the standalone preview.
    ============================================================ */
 
-      :root {
-        --ink: #1d1d1f;
-        --action: #0066cc;
-      }
+:root {
+	--ink: #1d1d1f;
+	--action: #0066cc;
+}
 
-      html,
-      body,
-      #root {
-        height: 100%;
-      }
+html,
+body,
+#root {
+	height: 100%;
+}
 
-      body {
-        margin: 0;
-        font-family:
-          "Inter",
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        letter-spacing: -0.01em;
-        color: var(--ink);
-        overflow: hidden;
-      }
+body {
+	margin: 0;
+	font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	letter-spacing: -0.01em;
+	color: var(--ink);
+	overflow: hidden;
+}
 
-      /* ---------- macOS desktop wallpaper (deep blue/teal, no purple) ---------- */
-      .desktop {
-        background-color: #0c2236;
-        background-image:
-          radial-gradient(
-            900px 700px at 16% 10%,
-            rgba(78, 150, 210, 0.45),
-            transparent 60%
-          ),
-          radial-gradient(
-            1000px 760px at 88% 20%,
-            rgba(30, 140, 150, 0.42),
-            transparent 58%
-          ),
-          linear-gradient(
-            168deg,
-            #0b2034 0%,
-            #103f55 48%,
-            #0f5862 80%,
-            #0c2c43 100%
-          );
-      }
+/* ---------- macOS desktop wallpaper (deep blue/teal, no purple) ---------- */
+.desktop {
+	background-color: #0c2236;
+	background-image: radial-gradient(
+			900px 700px at 16% 10%,
+			rgba(78, 150, 210, 0.45),
+			transparent 60%
+		),
+		radial-gradient(1000px 760px at 88% 20%, rgba(30, 140, 150, 0.42), transparent 58%),
+		linear-gradient(168deg, #0b2034 0%, #103f55 48%, #0f5862 80%, #0c2c43 100%);
+}
 
-      /* ---------- page canvas inside the browser (restrained, warm-cool light) ---------- */
-      .page-canvas {
-        background-color: #eceff4;
-        background-image:
-          radial-gradient(
-            820px 600px at 100% -6%,
-            rgba(0, 102, 204, 0.12),
-            transparent 58%
-          ),
-          radial-gradient(
-            720px 560px at -8% 4%,
-            rgba(0, 102, 204, 0.08),
-            transparent 56%
-          ),
-          radial-gradient(
-            900px 700px at 50% 116%,
-            rgba(15, 88, 98, 0.08),
-            transparent 60%
-          );
-      }
+/* ---------- page canvas inside the browser (restrained, warm-cool light) ---------- */
+.page-canvas {
+	background-color: #eceff4;
+	background-image: radial-gradient(
+			820px 600px at 100% -6%,
+			rgba(0, 102, 204, 0.12),
+			transparent 58%
+		),
+		radial-gradient(720px 560px at -8% 4%, rgba(0, 102, 204, 0.08), transparent 56%),
+		radial-gradient(900px 700px at 50% 116%, rgba(15, 88, 98, 0.08), transparent 60%);
+}
 
-      /* engineered texture: hairline dot-grid + faint film grain */
-      .texture {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-      }
-      .texture .dots {
-        position: absolute;
-        inset: 0;
-        opacity: 0.5;
-        background-image: radial-gradient(
-          rgba(13, 39, 64, 0.16) 0.6px,
-          transparent 0.6px
-        );
-        background-size: 22px 22px;
-        -webkit-mask-image: radial-gradient(
-          120% 80% at 50% 0%,
-          #000,
-          transparent 75%
-        );
-        mask-image: radial-gradient(120% 80% at 50% 0%, #000, transparent 75%);
-      }
-      .texture .grain {
-        position: absolute;
-        inset: 0;
-        opacity: 0.32;
-        mix-blend-mode: soft-light;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      }
+/* engineered texture: hairline dot-grid + faint film grain */
+.texture {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+.texture .dots {
+	position: absolute;
+	inset: 0;
+	opacity: 0.5;
+	background-image: radial-gradient(rgba(13, 39, 64, 0.16) 0.6px, transparent 0.6px);
+	background-size: 22px 22px;
+	-webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000, transparent 75%);
+	mask-image: radial-gradient(120% 80% at 50% 0%, #000, transparent 75%);
+}
+.texture .grain {
+	position: absolute;
+	inset: 0;
+	opacity: 0.32;
+	mix-blend-mode: soft-light;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
-      /* ---------- liquid glass ---------- */
-      .glass {
-        background: rgba(255, 255, 255, 0.6);
-        -webkit-backdrop-filter: blur(22px) saturate(180%);
-        backdrop-filter: blur(22px) saturate(180%);
-      }
+/* ---------- liquid glass ---------- */
+.glass {
+	background: rgba(255, 255, 255, 0.6);
+	-webkit-backdrop-filter: blur(22px) saturate(180%);
+	backdrop-filter: blur(22px) saturate(180%);
+}
 
-      .glass-card {
-        position: relative;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.78),
-          rgba(255, 255, 255, 0.56)
-        );
-        -webkit-backdrop-filter: blur(20px) saturate(170%);
-        backdrop-filter: blur(20px) saturate(170%);
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.65);
-        box-shadow:
-          0 1px 0 rgba(255, 255, 255, 0.7) inset,
-          0 18px 40px -26px rgba(13, 39, 64, 0.5),
-          0 2px 8px -5px rgba(13, 39, 64, 0.28);
-      }
-      .glass-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.95),
-          rgba(255, 255, 255, 0) 38%
-        );
-        -webkit-mask:
-          linear-gradient(#000 0 0) content-box,
-          linear-gradient(#000 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-      }
-      .glass-hover {
-        transition:
-          transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-          box-shadow 0.4s ease;
-      }
-      .glass-hover:hover {
-        transform: translateY(-3px);
-        box-shadow:
-          0 1px 0 rgba(255, 255, 255, 0.7) inset,
-          0 30px 58px -28px rgba(13, 39, 64, 0.55),
-          0 5px 14px -8px rgba(13, 39, 64, 0.3);
-      }
+.glass-card {
+	position: relative;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.78),
+		rgba(255, 255, 255, 0.56)
+	);
+	-webkit-backdrop-filter: blur(20px) saturate(170%);
+	backdrop-filter: blur(20px) saturate(170%);
+	border-radius: 18px;
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset,
+		0 18px 40px -26px rgba(13, 39, 64, 0.5), 0 2px 8px -5px rgba(13, 39, 64, 0.28);
+}
+.glass-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1px;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 38%);
+	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+}
+.glass-hover {
+	transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+.glass-hover:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset,
+		0 30px 58px -28px rgba(13, 39, 64, 0.55), 0 5px 14px -8px rgba(13, 39, 64, 0.3);
+}
 
-      /* project mini-window thumbnail */
-      .mini-win {
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid rgba(13, 39, 64, 0.08);
-        box-shadow: 0 12px 28px -18px rgba(13, 39, 64, 0.5);
-        background: #fff;
-      }
-      .mini-win .stage {
-        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      .glass-hover:hover .mini-win .stage {
-        transform: scale(1.04);
-      }
+/* project mini-window thumbnail */
+.mini-win {
+	border-radius: 12px;
+	overflow: hidden;
+	border: 1px solid rgba(13, 39, 64, 0.08);
+	box-shadow: 0 12px 28px -18px rgba(13, 39, 64, 0.5);
+	background: #fff;
+}
+.mini-win .stage {
+	transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glass-hover:hover .mini-win .stage {
+	transform: scale(1.04);
+}
 
-      /* big editorial watermark number behind section heads */
-      .watermark {
-        font-variant-numeric: tabular-nums;
-        color: rgba(13, 39, 64, 0.05);
-        letter-spacing: -0.04em;
-        line-height: 0.8;
-      }
+/* big editorial watermark number behind section heads */
+.watermark {
+	font-variant-numeric: tabular-nums;
+	color: rgba(13, 39, 64, 0.05);
+	letter-spacing: -0.04em;
+	line-height: 0.8;
+}
 
-      /* ---------- Safari window ---------- */
-      .safari-window {
-        background: #ffffff;
-        box-shadow:
-          0 44px 120px rgba(0, 0, 0, 0.5),
-          0 8px 28px rgba(0, 0, 0, 0.28);
-        border: 0.5px solid rgba(255, 255, 255, 0.22);
-        transform-origin: 50% calc(100% + 30px);
-      }
-      .window-hidden {
-        opacity: 0;
-        transform: scale(0.26) translateY(42vh);
-        filter: blur(8px);
-        pointer-events: none;
-      }
-      .window-in {
-        animation: genieOpen 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      }
-      @keyframes genieOpen {
-        from {
-          opacity: 0;
-          transform: scale(0.28) translateY(40vh);
-          filter: blur(8px);
-        }
-        55% {
-          opacity: 1;
-        }
-        to {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-          filter: blur(0);
-        }
-      }
+/* ---------- Safari window ---------- */
+.safari-window {
+	background: #ffffff;
+	box-shadow: 0 44px 120px rgba(0, 0, 0, 0.5), 0 8px 28px rgba(0, 0, 0, 0.28);
+	border: 0.5px solid rgba(255, 255, 255, 0.22);
+	transform-origin: 50% calc(100% + 30px);
+}
+.window-hidden {
+	opacity: 0;
+	transform: scale(0.26) translateY(42vh);
+	filter: blur(8px);
+	pointer-events: none;
+}
+.window-in {
+	animation: genieOpen 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes genieOpen {
+	from { opacity: 0; transform: scale(0.28) translateY(40vh); filter: blur(8px); }
+	55% { opacity: 1; }
+	to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
 
-      /* ---------- boot cursor ---------- */
-      .boot-cursor {
-        position: fixed;
-        left: 64%;
-        top: 44%;
-        z-index: 60;
-        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
-        transition:
-          left 1.15s cubic-bezier(0.5, 0, 0.2, 1),
-          top 1.15s cubic-bezier(0.5, 0, 0.2, 1);
-      }
-      .boot-cursor.cursor-move {
-        left: 50%;
-        top: calc(100% - 50px);
-      }
-      .cursor-click svg {
-        animation: clickPulse 0.32s ease;
-      }
-      @keyframes clickPulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(0.78);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
+/* ---------- boot cursor ---------- */
+.boot-cursor {
+	position: fixed;
+	left: 64%;
+	top: 44%;
+	z-index: 60;
+	filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
+	transition: left 1.15s cubic-bezier(0.5, 0, 0.2, 1),
+		top 1.15s cubic-bezier(0.5, 0, 0.2, 1);
+}
+.boot-cursor.cursor-move { left: 50%; top: calc(100% - 50px); }
+.cursor-click svg { animation: clickPulse 0.32s ease; }
+@keyframes clickPulse {
+	0% { transform: scale(1); }
+	50% { transform: scale(0.78); }
+	100% { transform: scale(1); }
+}
 
-      /* ---------- dock (compact) : slides down after boot, auto-hide on hover ---------- */
-      .dock-wrap {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 45;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 9px;
-        transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      .dock-down {
-        transform: translateY(135%);
-      }
-      .dock-reveal-zone {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 6px;
-        z-index: 44;
-      }
-      .dock-icon {
-        transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      .dock-icon:hover {
-        transform: translateY(-5px) scale(1.1);
-      }
-      .dock-bounce {
-        animation: dockBounce 0.6s ease 2;
-      }
-      @keyframes dockBounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        35% {
-          transform: translateY(-16px);
-        }
-        70% {
-          transform: translateY(-4px);
-        }
-      }
+/* ---------- dock (compact) : slides down after boot, auto-hide on hover ---------- */
+.dock-wrap {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 45;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 9px;
+	transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dock-down { transform: translateY(135%); }
+.dock-reveal-zone {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 6px;
+	z-index: 44;
+}
+.dock-icon { transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
+.dock-icon:hover { transform: translateY(-5px) scale(1.1); }
+.dock-bounce { animation: dockBounce 0.6s ease 2; }
+@keyframes dockBounce {
+	0%, 100% { transform: translateY(0); }
+	35% { transform: translateY(-16px); }
+	70% { transform: translateY(-4px); }
+}
 
-      /* ---------- scroll progress bar under the nav ---------- */
-      .scroll-progress {
-        height: 2px;
-        background: var(--action);
-        transform-origin: 0 50%;
-        transition: transform 0.08s linear;
-      }
+/* ---------- scroll progress bar under the nav ---------- */
+.scroll-progress {
+	height: 2px;
+	background: var(--action);
+	transform-origin: 0 50%;
+	transition: transform 0.08s linear;
+}
 
-      /* ---------- scrollbar inside the browser viewport ---------- */
-      .safari-scroll::-webkit-scrollbar {
-        width: 9px;
-      }
-      .safari-scroll::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.16);
-        border-radius: 9999px;
-        border: 3px solid transparent;
-        background-clip: content-box;
-      }
-      .safari-scroll::-webkit-scrollbar-thumb:hover {
-        background: rgba(0, 0, 0, 0.28);
-        background-clip: content-box;
-      }
+/* ---------- scrollbar inside the browser viewport ---------- */
+.safari-scroll::-webkit-scrollbar { width: 9px; }
+.safari-scroll::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.16);
+	border-radius: 9999px;
+	border: 3px solid transparent;
+	background-clip: content-box;
+}
+.safari-scroll::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.28);
+	background-clip: content-box;
+}
 
-      .reveal {
-        animation: reveal 0.7s ease both;
-      }
-      @keyframes reveal {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+.reveal { animation: reveal 0.7s ease both; }
+@keyframes reveal {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
 
-      @media (prefers-reduced-motion: reduce) {
-        .window-in,
-        .boot-cursor,
-        .dock-bounce,
-        .reveal,
-        .dock-wrap,
-        .glass-hover,
-        .mini-win .stage,
-        .dock-icon {
-          animation: none !important;
-          transition: none !important;
-        }
-      }
+@media (prefers-reduced-motion: reduce) {
+	.window-in, .boot-cursor, .dock-bounce, .reveal, .dock-wrap,
+	.glass-hover, .mini-win .stage, .dock-icon {
+		animation: none !important;
+		transition: none !important;
+	}
+}
 
-      /* ---------- dock app-tile backgrounds (no inline styles needed in JSX) ---------- */
-      .tile-safari {
-        background: radial-gradient(
-          circle at 50% 36%,
-          #4aa8ff 0%,
-          #1f7fe0 58%,
-          #1565c0 100%
-        );
+/* ---------- dock app-tile backgrounds (no inline styles needed in JSX) ---------- */
+.tile-browser {
+	background: linear-gradient(160deg, #36a0ff 0%, #1d7fe0 55%, #1565c0 100%);
+}
+.tile-vscode {
+	background: linear-gradient(160deg, #29a9f1 0%, #1f8fe0 45%, #0e6fc0 100%);
+}
+.tile-docker {
+	background: linear-gradient(160deg, #3aa2f2 0%, #2496ed 55%, #1d83d4 100%);
+}
+.tile-zoom {
+	background: linear-gradient(160deg, #4f9dff 0%, #2d8cff 55%, #1f74e6 100%);
+}
+
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>window.__CONTENT__ = {
+  "meta": {
+    "domain": "iannstr.com",
+    "siteTitle": "Al Byan Agung Shafiqri — Portfolio",
+    "defaultLang": "id"
+  },
+  "languages": [
+    { "code": "id", "label": "Indonesia", "short": "ID" },
+    { "code": "en", "label": "English (US)", "short": "EN" },
+    { "code": "jw", "label": "Jawa", "short": "JW" }
+  ],
+  "ui": {
+    "id": {
+      "viewWork": "Lihat karya",
+      "downloadCv": "Download CV",
+      "contactCta": "Hubungi saya",
+      "getInTouch": "Hubungi saya",
+      "localTime": "Waktu lokal",
+      "tz": "Jakarta · GMT+7",
+      "nav": {
+        "summary": "Tentang",
+        "experience": "Pengalaman",
+        "education": "Pendidikan",
+        "skills": "Keahlian",
+        "proProjects": "Proyek",
+        "openProjects": "Terbuka",
+        "certificates": "Sertifikat",
+        "contact": "Kontak"
       }
-      .tile-vscode {
-        background: linear-gradient(
-          160deg,
-          #29a9f1 0%,
-          #1f8fe0 45%,
-          #0e6fc0 100%
-        );
+    },
+    "en": {
+      "viewWork": "View work",
+      "downloadCv": "Download CV",
+      "contactCta": "Contact me",
+      "getInTouch": "Get in touch",
+      "localTime": "Local time",
+      "tz": "Jakarta · GMT+7",
+      "nav": {
+        "summary": "About",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "proProjects": "Projects",
+        "openProjects": "Open Source",
+        "certificates": "Certificates",
+        "contact": "Contact"
       }
-      .tile-docker {
-        background: linear-gradient(
-          160deg,
-          #3aa2f2 0%,
-          #2496ed 55%,
-          #1d83d4 100%
-        );
+    },
+    "jw": {
+      "viewWork": "Deleng karya",
+      "downloadCv": "Download CV",
+      "contactCta": "Hubungi aku",
+      "getInTouch": "Ayo srawung",
+      "localTime": "Wektu lokal",
+      "tz": "Jakarta · GMT+7",
+      "nav": {
+        "summary": "Babagan",
+        "experience": "Pengalaman",
+        "education": "Pendhidhikan",
+        "skills": "Kaprigelan",
+        "proProjects": "Proyek",
+        "openProjects": "Kabuka",
+        "certificates": "Sertifikat",
+        "contact": "Kontak"
       }
-      .tile-zoom {
-        background: linear-gradient(
-          160deg,
-          #4f9dff 0%,
-          #2d8cff 55%,
-          #1f74e6 100%
-        );
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      window.__CONTENT__ = {
-        meta: {
-          domain: "iannstr.dev",
-          siteTitle: "Al Byan Agung Shafiqri — Portfolio",
-          defaultLang: "id",
-        },
-        languages: [
-          { code: "id", label: "Indonesia", short: "ID" },
-          { code: "en", label: "English (US)", short: "EN" },
-          { code: "jw", label: "Jawa", short: "JW" },
-        ],
-        ui: {
-          id: {
-            viewWork: "Lihat karya",
-            contactCta: "Hubungi saya",
-            getInTouch: "Hubungi saya",
-            localTime: "Waktu lokal",
-            tz: "Jakarta · GMT+7",
-            nav: {
-              summary: "Tentang",
-              experience: "Pengalaman",
-              education: "Pendidikan",
-              skills: "Keahlian",
-              projects: "Karya",
-              contact: "Kontak",
-            },
+    }
+  },
+  "content": {
+    "id": {
+      "hero": {
+        "monogram": "AS",
+        "name": "Al Byan Agung Shafiqri",
+        "title": "Fullstack Developer & ML/DL Enthusiast",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
+        "headline": "Membangun aplikasi web utuh dan mengeksplorasi kecerdasan buatan.",
+        "subheadline": "Fullstack developer dengan dua tahun pengalaman membangun aplikasi end-to-end — dari API, basis data, hingga antarmuka — sambil aktif mendalami Machine Learning & Deep Learning.",
+        "location": "Jakarta, Indonesia",
+        "availability": "Terbuka untuk peluang baru"
+      },
+      "summary": {
+        "eyebrow": "Tentang",
+        "title": "Ringkasan profesional",
+        "body": "Saya seorang fullstack developer yang senang menghubungkan setiap lapisan aplikasi — backend yang andal, basis data yang rapi, dan frontend yang responsif. Selain ngoding, saya antusias menekuni Machine Learning dan Deep Learning, bereksperimen dengan model dan menyatukannya ke dalam produk nyata.",
+        "stats": [
+          { "value": "2+", "label": "Tahun pengalaman" },
+          { "value": "10+", "label": "Proyek diselesaikan" },
+          { "value": "5+", "label": "Model ML dilatih" },
+          { "value": "∞", "label": "Rasa ingin tahu" }
+        ]
+      },
+      "experience": {
+        "eyebrow": "Karier",
+        "title": "Pengalaman",
+        "items": [
+          {
+            "role": "Fullstack Developer (Intern)",
+            "company": "PT. Amerta Indah Otsuka",
+            "period": "2025 — Juni 2026",
+            "location": "Kejayan, Pasuruan",
+            "description": "Mengembangkan aplikasi web end-to-end dengan Angular di sisi frontend dan Node.js/Express + MySQL di sisi backend, termasuk desain API dan deployment.",
+            "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
           },
-          en: {
-            viewWork: "View work",
-            contactCta: "Contact me",
-            getInTouch: "Get in touch",
-            localTime: "Local time",
-            tz: "Jakarta · GMT+7",
-            nav: {
-              summary: "About",
-              experience: "Experience",
-              education: "Education",
-              skills: "Skills",
-              projects: "Work",
-              contact: "Contact",
-            },
+          {
+            "role": "Freelance Full Stack Developer (Part-time)",
+            "company": "Freelance",
+            "period": "2023 — Sekarang",
+            "location": "Malang, Indonesia",
+            "description": "Mengotomatisasi siklus pembuatan akta notaris PPAT untuk mempercepat penerbitan dokumen legalitas resmi, serta merefaktor sistem katalog digital UMKM dan mengoptimasi query database demi stabilitas dan kecepatan pencarian.",
+            "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
           },
-          jw: {
-            viewWork: "Deleng karya",
-            contactCta: "Hubungi aku",
-            getInTouch: "Ayo srawung",
-            localTime: "Wektu lokal",
-            tz: "Jakarta · GMT+7",
-            nav: {
-              summary: "Babagan",
-              experience: "Pengalaman",
-              education: "Pendhidhikan",
-              skills: "Kaprigelan",
-              projects: "Karya",
-              contact: "Kontak",
-            },
+          {
+            "role": "Mentor Web Development",
+            "company": "Workshop Riset Informatika",
+            "period": "2023 — 2024",
+            "location": "Politeknik Negeri Malang",
+            "description": "Membimbing peserta memahami dasar-dasar pengembangan web secara praktis melalui sesi mentoring dan latihan langsung.",
+            "tags": ["HTML", "CSS", "JavaScript"]
+          }
+        ]
+      },
+      "education": {
+        "eyebrow": "Pembelajaran",
+        "title": "Pendidikan",
+        "items": [
+          {
+            "school": "Politeknik Negeri Malang",
+            "degree": "S.Tr Teknik Informatika",
+            "period": "2022 — 2026",
+            "detail": "Fokus pada rekayasa perangkat lunak dan kecerdasan buatan."
+          }
+        ]
+      },
+      "skills": {
+        "eyebrow": "Perkakas",
+        "title": "Keahlian",
+        "groups": [
+          {
+            "name": "Frontend",
+            "items": [
+              "Angular",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Vite"
+            ]
           },
-        },
-        content: {
-          id: {
-            hero: {
-              monogram: "AR",
-              name: "Al Byan Agung Shafiqri",
-              title: "Product Designer & Frontend Engineer",
-              roles: ["Design Systems", "Interface Engineering", "Prototyping"],
-              headline:
-                "Desain dan kode untuk produk yang benar-benar dipakai.",
-              subheadline:
-                "Enam tahun di persimpangan desain dan rekayasa — membangun produk yang terasa ringan, cepat, dan dipikirkan sampai ke detail terkecil.",
-              location: "Jakarta, Indonesia",
-              availability: "Tersedia untuk proyek terpilih",
-            },
-            summary: {
-              eyebrow: "Tentang",
-              title: "Ringkasan profesional",
-              body: "Saya bekerja paling baik di antara desain dan kode — menerjemahkan ide kasar menjadi antarmuka yang rapi dan sistem yang bisa dirawat. Fokus pada design systems, performa, dan aksesibilitas, dengan kebiasaan menulis kode yang jelas dan komponen yang reusable.",
-              stats: [
-                { value: "6+", label: "Tahun pengalaman" },
-                { value: "40+", label: "Proyek dirilis" },
-                { value: "5", label: "Tim produk" },
-                { value: "96", label: "Rata-rata Lighthouse" },
-              ],
-            },
-            experience: {
-              eyebrow: "Karier",
-              title: "Pengalaman",
-              items: [
-                {
-                  role: "Senior Product Designer",
-                  company: "Lumina Labs",
-                  period: "2022 — Sekarang",
-                  location: "Remote",
-                  description:
-                    "Memimpin desain platform analitik B2B dan membangun design system yang dipakai 5 tim produk, memangkas waktu rilis fitur ~35%.",
-                  tags: ["Design Systems", "Figma", "React"],
-                },
-                {
-                  role: "Frontend Engineer",
-                  company: "Northwind",
-                  period: "2020 — 2022",
-                  location: "Jakarta",
-                  description:
-                    "Mengembangkan antarmuka web berperforma tinggi dengan React & TypeScript; menaikkan skor Lighthouse rata-rata dari 68 ke 96.",
-                  tags: ["TypeScript", "Next.js", "Performance"],
-                },
-                {
-                  role: "UI/UX Designer",
-                  company: "Studio Kawan",
-                  period: "2018 — 2020",
-                  location: "Bandung",
-                  description:
-                    "Merancang produk mobile & web lintas industri — dari riset dan wireframe hingga prototipe interaktif.",
-                  tags: ["Mobile", "Prototyping", "Research"],
-                },
-              ],
-            },
-            education: {
-              eyebrow: "Pembelajaran",
-              title: "Pendidikan",
-              items: [
-                {
-                  school: "Institut Teknologi Bandung",
-                  degree: "S.Kom. Informatika",
-                  period: "2014 — 2018",
-                  detail:
-                    "Fokus Human-Computer Interaction. Lulus dengan predikat cum laude.",
-                },
-                {
-                  school: "Interaction Design Foundation",
-                  degree: "Sertifikat Profesional UX",
-                  period: "2019",
-                  detail:
-                    "Sertifikasi profesional riset pengguna dan desain interaksi.",
-                },
-              ],
-            },
-            skills: {
-              eyebrow: "Perkakas",
-              title: "Keahlian",
-              groups: [
-                {
-                  name: "Desain",
-                  items: [
-                    "Figma",
-                    "Design Systems",
-                    "Prototyping",
-                    "Motion",
-                    "Riset Pengguna",
-                  ],
-                },
-                {
-                  name: "Rekayasa",
-                  items: [
-                    "React",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "Vite",
-                    "Node.js",
-                  ],
-                },
-                {
-                  name: "Alur kerja",
-                  items: [
-                    "Aksesibilitas",
-                    "Performa",
-                    "Storybook",
-                    "Git",
-                    "Agile",
-                  ],
-                },
-              ],
-            },
-            projects: {
-              eyebrow: "Karya terpilih",
-              title: "Proyek",
-              items: [
-                {
-                  name: "Aurora Dashboard",
-                  category: "Desain Produk · Frontend",
-                  description:
-                    "Dashboard analitik real-time dengan visualisasi data yang jernih dan dark mode native.",
-                  year: "2024",
-                  link: "#",
-                },
-                {
-                  name: "Pulse Mobile",
-                  category: "Desain UI · Prototipe",
-                  description:
-                    "Aplikasi kesehatan dengan onboarding ramah dan micro-interaction yang halus.",
-                  year: "2023",
-                  link: "#",
-                },
-                {
-                  name: "Atlas Design System",
-                  category: "Design Systems",
-                  description:
-                    "Sistem komponen lintas platform dengan token, dokumentasi, dan tema otomatis.",
-                  year: "2023",
-                  link: "#",
-                },
-                {
-                  name: "Drift Commerce",
-                  category: "Frontend · Performa",
-                  description:
-                    "Storefront e-commerce ultra cepat dengan skor Lighthouse 98 dan checkout satu langkah.",
-                  year: "2022",
-                  link: "#",
-                },
-              ],
-            },
-            contact: {
-              eyebrow: "Sapa saya",
-              title: "Mari bikin sesuatu",
-              blurb:
-                "Punya proyek menarik atau sekadar ingin menyapa? Saya selalu terbuka untuk obrolan baru.",
-              email: "hello@iannstr.dev",
-              socials: [
-                { label: "LinkedIn", handle: "/in/iannstr", url: "#" },
-                { label: "GitHub", handle: "@iannstr", url: "#" },
-                { label: "Dribbble", handle: "@iannstr", url: "#" },
-                { label: "X", handle: "@iannstr", url: "#" },
-              ],
-            },
+          {
+            "name": "Backend",
+            "items": [
+              "Node.js",
+              "Express",
+              "Go",
+              "Fiber",
+              "MySQL",
+              "PostgreSQL",
+              "MongoDB",
+              "REST API"
+            ]
           },
-          en: {
-            hero: {
-              monogram: "AR",
-              name: "Al Byan Agung Shafiqri",
-              title: "Product Designer & Frontend Engineer",
-              roles: ["Design Systems", "Interface Engineering", "Prototyping"],
-              headline: "Design and code for products people actually use.",
-              subheadline:
-                "Six years at the intersection of design and engineering — building products that feel light, fast, and considered down to the smallest detail.",
-              location: "Jakarta, Indonesia",
-              availability: "Available for select work",
-            },
-            summary: {
-              eyebrow: "About",
-              title: "Professional summary",
-              body: "I work best between design and code — turning rough ideas into clean interfaces and maintainable systems. Focused on design systems, performance, and accessibility, with a habit of writing clear code and reusable components.",
-              stats: [
-                { value: "6+", label: "Years of experience" },
-                { value: "40+", label: "Projects shipped" },
-                { value: "5", label: "Product teams" },
-                { value: "96", label: "Avg. Lighthouse" },
-              ],
-            },
-            experience: {
-              eyebrow: "Career",
-              title: "Experience",
-              items: [
-                {
-                  role: "Senior Product Designer",
-                  company: "Lumina Labs",
-                  period: "2022 — Now",
-                  location: "Remote",
-                  description:
-                    "Led design for a B2B analytics platform and built a design system used by 5 product teams, cutting feature release time by ~35%.",
-                  tags: ["Design Systems", "Figma", "React"],
-                },
-                {
-                  role: "Frontend Engineer",
-                  company: "Northwind",
-                  period: "2020 — 2022",
-                  location: "Jakarta",
-                  description:
-                    "Built high-performance web interfaces with React & TypeScript; raised the average Lighthouse score from 68 to 96.",
-                  tags: ["TypeScript", "Next.js", "Performance"],
-                },
-                {
-                  role: "UI/UX Designer",
-                  company: "Studio Kawan",
-                  period: "2018 — 2020",
-                  location: "Bandung",
-                  description:
-                    "Designed mobile & web products across industries — from research and wireframes to interactive prototypes.",
-                  tags: ["Mobile", "Prototyping", "Research"],
-                },
-              ],
-            },
-            education: {
-              eyebrow: "Learning",
-              title: "Education",
-              items: [
-                {
-                  school: "Institut Teknologi Bandung",
-                  degree: "B.Sc. Informatics",
-                  period: "2014 — 2018",
-                  detail:
-                    "Focused on Human-Computer Interaction. Graduated cum laude.",
-                },
-                {
-                  school: "Interaction Design Foundation",
-                  degree: "UX Professional Certificate",
-                  period: "2019",
-                  detail:
-                    "Professional certification in user research and interaction design.",
-                },
-              ],
-            },
-            skills: {
-              eyebrow: "Toolkit",
-              title: "Skills",
-              groups: [
-                {
-                  name: "Design",
-                  items: [
-                    "Figma",
-                    "Design Systems",
-                    "Prototyping",
-                    "Motion",
-                    "User Research",
-                  ],
-                },
-                {
-                  name: "Engineering",
-                  items: [
-                    "React",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "Vite",
-                    "Node.js",
-                  ],
-                },
-                {
-                  name: "Workflow",
-                  items: [
-                    "Accessibility",
-                    "Performance",
-                    "Storybook",
-                    "Git",
-                    "Agile",
-                  ],
-                },
-              ],
-            },
-            projects: {
-              eyebrow: "Selected work",
-              title: "Projects",
-              items: [
-                {
-                  name: "Aurora Dashboard",
-                  category: "Product Design · Frontend",
-                  description:
-                    "A real-time analytics dashboard with crisp data visualization and native dark mode.",
-                  year: "2024",
-                  link: "#",
-                },
-                {
-                  name: "Pulse Mobile",
-                  category: "UI Design · Prototyping",
-                  description:
-                    "A health app with friendly onboarding and smooth micro-interactions.",
-                  year: "2023",
-                  link: "#",
-                },
-                {
-                  name: "Atlas Design System",
-                  category: "Design Systems",
-                  description:
-                    "A cross-platform component system with tokens, documentation, and automatic theming.",
-                  year: "2023",
-                  link: "#",
-                },
-                {
-                  name: "Drift Commerce",
-                  category: "Frontend · Performance",
-                  description:
-                    "An ultra-fast e-commerce storefront with a Lighthouse score of 98 and one-step checkout.",
-                  year: "2022",
-                  link: "#",
-                },
-              ],
-            },
-            contact: {
-              eyebrow: "Say hello",
-              title: "Let's build something",
-              blurb:
-                "Have an interesting project or just want to say hi? I'm always open to a new conversation.",
-              email: "hello@iannstr.dev",
-              socials: [
-                { label: "LinkedIn", handle: "/in/iannstr", url: "#" },
-                { label: "GitHub", handle: "@iannstr", url: "#" },
-                { label: "Dribbble", handle: "@iannstr", url: "#" },
-                { label: "X", handle: "@iannstr", url: "#" },
-              ],
-            },
+          {
+            "name": "Machine Learning",
+            "items": [
+              "Python",
+              "TensorFlow",
+              "PyTorch",
+              "scikit-learn",
+              "Pandas"
+            ]
           },
-          jw: {
-            hero: {
-              monogram: "AR",
-              name: "Al Byan Agung Shafiqri",
-              title: "Desainer Produk & Insinyur Frontend",
-              roles: ["Design Systems", "Interface Engineering", "Prototyping"],
-              headline: "Desain lan kode kanggo produk sing tenan dienggo.",
-              subheadline:
-                "Nem taun ing tapel watesé desain lan rékayasa — gawé produk sing krasa énthéng, rikat, lan dipikir tekan détail sing paling cilik.",
-              location: "Jakarta, Indonésia",
-              availability: "Cumawis kanggo proyek pilihan",
-            },
-            summary: {
-              eyebrow: "Babagan",
-              title: "Ringkesan profesional",
-              body: "Aku paling apik nyambut gawé ing antarané desain lan kode — ngowahi idé kasar dadi antarmuka sing rapi lan sistem sing gampang dirumat. Fokus ing design systems, kacepetan, lan aksesibilitas, kanthi pakulinan nulis kode sing cetha lan komponèn sing bisa dienggo manèh.",
-              stats: [
-                { value: "6+", label: "Taun pengalaman" },
-                { value: "40+", label: "Proyek dirilis" },
-                { value: "5", label: "Tim produk" },
-                { value: "96", label: "Rata-rata Lighthouse" },
-              ],
-            },
-            experience: {
-              eyebrow: "Karir",
-              title: "Pengalaman",
-              items: [
-                {
-                  role: "Senior Product Designer",
-                  company: "Lumina Labs",
-                  period: "2022 — Saiki",
-                  location: "Remote",
-                  description:
-                    "Mimpin desain platform analitik B2B lan ngracik design system sing dienggo 5 tim produk, ngurangi wektu rilis fitur ~35%.",
-                  tags: ["Design Systems", "Figma", "React"],
-                },
-                {
-                  role: "Frontend Engineer",
-                  company: "Northwind",
-                  period: "2020 — 2022",
-                  location: "Jakarta",
-                  description:
-                    "Ngracik antarmuka web sing rikat nganggo React & TypeScript; ngunggahaké skor Lighthouse rata-rata saka 68 dadi 96.",
-                  tags: ["TypeScript", "Next.js", "Performance"],
-                },
-                {
-                  role: "UI/UX Designer",
-                  company: "Studio Kawan",
-                  period: "2018 — 2020",
-                  location: "Bandung",
-                  description:
-                    "Ngrancang produk mobile & web lintas industri — saka riset lan wireframe nganti prototipe interaktif.",
-                  tags: ["Mobile", "Prototyping", "Research"],
-                },
-              ],
-            },
-            education: {
-              eyebrow: "Sinau",
-              title: "Pendhidhikan",
-              items: [
-                {
-                  school: "Institut Teknologi Bandung",
-                  degree: "S.Kom. Informatika",
-                  period: "2014 — 2018",
-                  detail:
-                    "Fokus Human-Computer Interaction. Lulus kanthi predikat cum laude.",
-                },
-                {
-                  school: "Interaction Design Foundation",
-                  degree: "Sertifikat Profesional UX",
-                  period: "2019",
-                  detail:
-                    "Sertifikasi profesional riset panganggo lan desain interaksi.",
-                },
-              ],
-            },
-            skills: {
-              eyebrow: "Piranti",
-              title: "Kaprigelan",
-              groups: [
-                {
-                  name: "Desain",
-                  items: [
-                    "Figma",
-                    "Design Systems",
-                    "Prototyping",
-                    "Motion",
-                    "Riset Panganggo",
-                  ],
-                },
-                {
-                  name: "Rékayasa",
-                  items: [
-                    "React",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "Vite",
-                    "Node.js",
-                  ],
-                },
-                {
-                  name: "Alur Gawéan",
-                  items: [
-                    "Aksesibilitas",
-                    "Kacepetan",
-                    "Storybook",
-                    "Git",
-                    "Agile",
-                  ],
-                },
-              ],
-            },
-            projects: {
-              eyebrow: "Karya pilihan",
-              title: "Proyek",
-              items: [
-                {
-                  name: "Aurora Dashboard",
-                  category: "Desain Produk · Frontend",
-                  description:
-                    "Dashboard analitik real-time kanthi visualisasi data sing cetha lan dark mode native.",
-                  year: "2024",
-                  link: "#",
-                },
-                {
-                  name: "Pulse Mobile",
-                  category: "Desain UI · Prototipe",
-                  description:
-                    "Aplikasi kesehatan kanthi onboarding sing ramah lan micro-interaction sing alus.",
-                  year: "2023",
-                  link: "#",
-                },
-                {
-                  name: "Atlas Design System",
-                  category: "Design Systems",
-                  description:
-                    "Sistem komponèn lintas platform kanthi token, dokumentasi, lan tema otomatis.",
-                  year: "2023",
-                  link: "#",
-                },
-                {
-                  name: "Drift Commerce",
-                  category: "Frontend · Kacepetan",
-                  description:
-                    "Storefront e-commerce sing rikat banget kanthi skor Lighthouse 98 lan checkout siji langkah.",
-                  year: "2022",
-                  link: "#",
-                },
-              ],
-            },
-            contact: {
-              eyebrow: "Aruh-aruh",
-              title: "Ayo gawé bareng",
-              blurb:
-                "Duwé proyek menarik utawa mung arep aruh-aruh? Aku tansah mbukak kanggo obrolan anyar.",
-              email: "hello@iannstr.dev",
-              socials: [
-                { label: "LinkedIn", handle: "/in/iannstr", url: "#" },
-                { label: "GitHub", handle: "@iannstr", url: "#" },
-                { label: "Dribbble", handle: "@iannstr", url: "#" },
-                { label: "X", handle: "@iannstr", url: "#" },
-              ],
-            },
+          {
+            "name": "Alur kerja",
+            "items": ["Git", "Docker", "Linux", "Agile"]
+          }
+        ]
+      },
+      "proProjects": {
+        "eyebrow": "Karya Profesional",
+        "title": "Proyek Profesional",
+        "items": [
+          {
+            "name": "AI-Powered Manufacturing Compliance & Inspection Platform",
+            "category": "Computer Vision · Full Stack",
+            "description": "Platform otomasi pemantauan standar GMP, 5S, dan validasi Personal Hygiene (ISO 22001:2018) berbasis Computer Vision & Deep Learning dengan REST API pelaporan real-time yang memangkas waktu inspeksi lini produksi hingga 35%.",
+            "year": "2025 — 2026",
+            "tags": ["Angular", "Express.js", "FastAPI", "PyTorch", "Detectron2"]
           },
-        },
-      };
-    </script>
-    <script type="text/babel" data-presets="react">
-      const { useState, useEffect, useRef, createContext, useContext } = React;
+          {
+            "name": "Digital Quality Control & Equipment Calibration Management System",
+            "category": "Quality Assurance · Full Stack",
+            "description": "Sistem pemantauan kualitas produk (In-Process Control) dan kalibrasi alat ukur terintegrasi dengan mekanisme interlock, kalkulasi pass/fail otomatis, dan early warning yang menurunkan risiko kesalahan entri manual hingga 90%.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "MySQL"]
+          },
+          {
+            "name": "Production Batch Identity & Digital Approval System",
+            "category": "Manufacturing Systems · Full Stack",
+            "description": "Digitalisasi sistem penandaan dan alur pengesahan batch produksi real-time di seluruh area manufaktur untuk menjamin 100% integritas data lapangan serta mempercepat validasi dokumen operasional.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "REST API"]
+          }
+        ]
+      },
+      "openProjects": {
+        "eyebrow": "Karya Terpilih",
+        "title": "Proyek Terbuka",
+        "items": [
+          {
+            "name": "Box2Box",
+            "category": "Data Annotation · ML/DL",
+            "description": "Aplikasi anotasi data untuk Machine Learning & Deep Learning yang berjalan sepenuhnya offline (local only) — tanpa server eksternal.",
+            "year": "2025",
+            "link": "https://b2box.iannstr.com"
+          },
+          {
+            "name": "Zip Code",
+            "category": "AI Agent · CLI",
+            "description": "Side project agent AI berbasis command line yang simpel dan sederhana untuk membantu tugas harian.",
+            "year": "2025",
+            "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "certificates": {
+        "eyebrow": "Lisensi & Prestasi",
+        "title": "Sertifikat",
+        "items": [
+          {
+            "name": "TOEIC",
+            "issuer": "International Test Center",
+            "period": "May 2026 — May 2031",
+            "detail": "Score: 830/990"
+          },
+          {
+            "name": "Juara 3 Hackathon Kategori Best Algorithm",
+            "issuer": "Play IT",
+            "location": "Malang, Indonesia",
+            "period": "Nov 2024",
+            "detail": "Kompetisi hackathon pengembangan solusi dan algoritma terbaik."
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Sapa saya",
+        "title": "Mari berkolaborasi",
+        "blurb": "Punya proyek menarik atau sekadar ingin menyapa? Saya selalu terbuka untuk obrolan baru.",
+        "email": "albyanagungshafiqri@gmail.com",
+        "socials": [
+          {
+            "label": "LinkedIn",
+            "handle": "/in/iannstronaut",
+            "url": "https://www.linkedin.com/in/iannstronaut/"
+          },
+          {
+            "label": "GitHub",
+            "handle": "@iannstronaut",
+            "url": "https://github.com/iannstronaut"
+          },
+          { "label": "X", "handle": "@iannstr", "url": "#" }
+        ]
+      }
+    },
+    "en": {
+      "hero": {
+        "monogram": "AS",
+        "name": "Al Byan Agung Shafiqri",
+        "title": "Fullstack Developer & ML/DL Enthusiast",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
+        "headline": "Building complete web apps and exploring artificial intelligence.",
+        "subheadline": "Fullstack developer with two years of experience building end-to-end applications — from APIs and databases to interfaces — while actively diving into Machine Learning & Deep Learning.",
+        "location": "Jakarta, Indonesia",
+        "availability": "Open to new opportunities"
+      },
+      "summary": {
+        "eyebrow": "About",
+        "title": "Professional summary",
+        "body": "I'm a fullstack developer who enjoys connecting every layer of an application — a reliable backend, a clean database, and a responsive frontend. Beyond coding, I'm enthusiastic about Machine Learning and Deep Learning, experimenting with models and weaving them into real products.",
+        "stats": [
+          { "value": "2+", "label": "Year of experience" },
+          { "value": "10+", "label": "Projects completed" },
+          { "value": "5+", "label": "ML models trained" },
+          { "value": "∞", "label": "Curiosity" }
+        ]
+      },
+      "experience": {
+        "eyebrow": "Career",
+        "title": "Experience",
+        "items": [
+          {
+            "role": "Fullstack Developer (Intern)",
+            "company": "PT. Amerta Indah Otsuka",
+            "period": "2025 — June 2026",
+            "location": "Kejayan, Pasuruan",
+            "description": "Built end-to-end web applications with Angular on the frontend and Node.js/Express + MySQL on the backend, including API design and deployment.",
+            "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Freelance Full Stack Developer (Part-time)",
+            "company": "Freelance",
+            "period": "2023 — Now",
+            "location": "Malang, Indonesia",
+            "description": "Automated the PPAT notary deed lifecycle to expedite legal document processing, while refactoring MSME digital catalog platforms and optimizing database queries for greater speed and stability.",
+            "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
+          },
+          {
+            "role": "Mentor Web Development",
+            "company": "Workshop Riset Informatika",
+            "period": "2023 — 2024",
+            "location": "Politeknik Negeri Malang",
+            "description": "Guided participants in learning the fundamentals of web development through hands-on mentoring and practical exercises.",
+            "tags": ["HTML", "CSS", "JavaScript"]
+          }
+        ]
+      },
+      "education": {
+        "eyebrow": "Learning",
+        "title": "Education",
+        "items": [
+          {
+            "school": "Politeknik Negeri Malang",
+            "degree": "S.Tr Teknik Informatika",
+            "period": "2022 — 2026",
+            "detail": "Focused on software engineering and artificial intelligence."
+          }
+        ]
+      },
+      "skills": {
+        "eyebrow": "Toolkit",
+        "title": "Skills",
+        "groups": [
+          {
+            "name": "Frontend",
+            "items": [
+              "Angular",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Vite"
+            ]
+          },
+          {
+            "name": "Backend",
+            "items": [
+              "Node.js",
+              "Express",
+              "Go",
+              "Fiber",
+              "MySQL",
+              "PostgreSQL",
+              "MongoDB",
+              "REST API"
+            ]
+          },
+          {
+            "name": "Machine Learning",
+            "items": [
+              "Python",
+              "TensorFlow",
+              "PyTorch",
+              "scikit-learn",
+              "Pandas"
+            ]
+          },
+          {
+            "name": "Workflow",
+            "items": ["Git", "Docker", "Linux", "Agile"]
+          }
+        ]
+      },
+      "proProjects": {
+        "eyebrow": "Professional Work",
+        "title": "Professional Projects",
+        "items": [
+          {
+            "name": "AI-Powered Manufacturing Compliance & Inspection Platform",
+            "category": "Computer Vision · Full Stack",
+            "description": "Automated compliance monitoring platform for GMP, 5S, and Personal Hygiene (ISO 22001:2018) using Computer Vision & Deep Learning with real-time reporting APIs, boosting line inspection efficiency by 35%.",
+            "year": "2025 — 2026",
+            "tags": ["Angular", "Express.js", "FastAPI", "PyTorch", "Detectron2"]
+          },
+          {
+            "name": "Digital Quality Control & Equipment Calibration Management System",
+            "category": "Quality Assurance · Full Stack",
+            "description": "Integrated product quality monitoring and instrument calibration system featuring interlock mechanisms, automated pass/fail calculations, and early warnings reducing manual entry risks by 90%.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "MySQL"]
+          },
+          {
+            "name": "Production Batch Identity & Digital Approval System",
+            "category": "Manufacturing Systems · Full Stack",
+            "description": "Digitized production batch identification and real-time approval workflows across manufacturing floors, guaranteeing 100% data integrity and accelerating operational document validation.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "REST API"]
+          }
+        ]
+      },
+      "openProjects": {
+        "eyebrow": "Selected work",
+        "title": "Open Projects",
+        "items": [
+          {
+            "name": "Box2Box",
+            "category": "Data Annotation · ML/DL",
+            "description": "A data annotation app for Machine Learning & Deep Learning that runs fully offline (local only) — no external server.",
+            "year": "2025",
+            "link": "https://b2box.iannstr.com"
+          },
+          {
+            "name": "Zip Code",
+            "category": "AI Agent · CLI",
+            "description": "A simple, lightweight CLI-based AI agent side project to help with everyday tasks.",
+            "year": "2025",
+            "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "certificates": {
+        "eyebrow": "Licenses & Achievements",
+        "title": "Certifications",
+        "items": [
+          {
+            "name": "TOEIC",
+            "issuer": "International Test Center",
+            "period": "May 2026 — May 2031",
+            "detail": "Score: 830/990"
+          },
+          {
+            "name": "3rd Place Hackathon (Best Algorithm Category)",
+            "issuer": "Play IT",
+            "location": "Malang, Indonesia",
+            "period": "Nov 2024",
+            "detail": "Hackathon competition for software solutions and algorithm development."
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Say hello",
+        "title": "Let's collaborate",
+        "blurb": "Have an interesting project or just want to say hi? I'm always open to a new conversation.",
+        "email": "albyanagungshafiqri@gmail.com",
+        "socials": [
+          {
+            "label": "LinkedIn",
+            "handle": "/in/iannstronaut",
+            "url": "https://www.linkedin.com/in/iannstronaut/"
+          },
+          {
+            "label": "GitHub",
+            "handle": "@iannstronaut",
+            "url": "https://github.com/iannstronaut"
+          },
+          { "label": "X", "handle": "@iannstr", "url": "#" }
+        ]
+      }
+    },
+    "jw": {
+      "hero": {
+        "monogram": "AS",
+        "name": "Al Byan Agung Shafiqri",
+        "title": "Fullstack Developer & ML/DL Enthusiast",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
+        "headline": "Ngracik aplikasi web jangkep lan nlusuri kacerdasan gawéan.",
+        "subheadline": "Fullstack developer kanthi rong taun pengalaman gawé aplikasi end-to-end — saka API, basis data, teka antarmuka — sinambi nlusuri Machine Learning & Deep Learning.",
+        "location": "Jakarta, Indonésia",
+        "availability": "Mbukak kanggo kalodhangan anyar"
+      },
+      "summary": {
+        "eyebrow": "Babagan",
+        "title": "Ringkesan profesional",
+        "body": "Aku fullstack developer sing seneng nyambungaké saben lapisan aplikasi — backend sing andhal, basis data sing rapi, lan frontend sing responsif. Saliyané nulis kode, aku antusias nlusuri Machine Learning lan Deep Learning, coba-coba model lan nyawisaké menyang produk nyata.",
+        "stats": [
+          { "value": "2+", "label": "Taun pengalaman" },
+          { "value": "10+", "label": "Proyek kelar" },
+          { "value": "5+", "label": "Model ML dilatih" },
+          { "value": "∞", "label": "Pepinginan weruh" }
+        ]
+      },
+      "experience": {
+        "eyebrow": "Karir",
+        "title": "Pengalaman",
+        "items": [
+          {
+            "role": "Fullstack Developer (Intern)",
+            "company": "PT. Amerta Indah Otsuka",
+            "period": "2025 — Juni 2026",
+            "location": "Kejayan, Pasuruan",
+            "description": "Ngrembug aplikasi web end-to-end kanthi Angular ing frontend lan Node.js/Express + MySQL ing backend, kalebu desain API lan deployment.",
+            "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Freelance Full Stack Developer (Part-time)",
+            "company": "Freelance",
+            "period": "2023 — Saiki",
+            "location": "Malang, Indonésia",
+            "description": "Ngotomatisasi siklus nggawe akta notaris PPAT kanggo nyepetake panerbitan dokumen resmi legalitas, sarta ngrefaktor sistem katalog digital UMKM lan ngoptimalake query basis data kanggo nambah stabilitas lan kacepetan.",
+            "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
+          },
+          {
+            "role": "Mentor Web Development",
+            "company": "Workshop Riset Informatika",
+            "period": "2023 — 2024",
+            "location": "Politeknik Negeri Malang",
+            "description": "Mentoring peserta sinau dasar-dasar pangembangan web kanthi praktis liwat sesi mentoring lan latihan langsung.",
+            "tags": ["HTML", "CSS", "JavaScript"]
+          }
+        ]
+      },
+      "education": {
+        "eyebrow": "Sinau",
+        "title": "Pendhidhikan",
+        "items": [
+          {
+            "school": "Politeknik Negeri Malang",
+            "degree": "S.Tr Teknik Informatika",
+            "period": "2022 — 2026",
+            "detail": "Fokus ing rékayasa piranti alus lan kacerdasan gawéan."
+          }
+        ]
+      },
+      "skills": {
+        "eyebrow": "Piranti",
+        "title": "Kaprigelan",
+        "groups": [
+          {
+            "name": "Frontend",
+            "items": [
+              "Angular",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Vite"
+            ]
+          },
+          {
+            "name": "Backend",
+            "items": [
+              "Node.js",
+              "Express",
+              "Go",
+              "Fiber",
+              "MySQL",
+              "PostgreSQL",
+              "MongoDB",
+              "REST API"
+            ]
+          },
+          {
+            "name": "Machine Learning",
+            "items": [
+              "Python",
+              "TensorFlow",
+              "PyTorch",
+              "scikit-learn",
+              "Pandas"
+            ]
+          },
+          {
+            "name": "Alur Gawéan",
+            "items": ["Git", "Docker", "Linux", "Agile"]
+          }
+        ]
+      },
+      "proProjects": {
+        "eyebrow": "Karya Profesional",
+        "title": "Proyek Profesional",
+        "items": [
+          {
+            "name": "AI-Powered Manufacturing Compliance & Inspection Platform",
+            "category": "Computer Vision · Full Stack",
+            "description": "Platform otomasi pemantauan standar GMP, 5S, lan validasi Personal Hygiene (ISO 22001:2018) kanthi Computer Vision & Deep Learning sarta REST API pelaporan real-time sing nambah efisiensi inspeksi nganti 35%.",
+            "year": "2025 — 2026",
+            "tags": ["Angular", "Express.js", "FastAPI", "PyTorch", "Detectron2"]
+          },
+          {
+            "name": "Digital Quality Control & Equipment Calibration Management System",
+            "category": "Quality Assurance · Full Stack",
+            "description": "Sistem pamantauan kualitas produk (In-Process Control) lan kalibrasi piranti ukur kanthi mekanisme interlock, kalkulasi pass/fail otomatis, lan early warning sing nyuda resiko salah entri manual nganti 90%.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "MySQL"]
+          },
+          {
+            "name": "Production Batch Identity & Digital Approval System",
+            "category": "Manufacturing Systems · Full Stack",
+            "description": "Digitalisasi sistem panandha lan alur pangesahan batch produksi real-time ing kabeh area manufaktur kanggo njamin 100% integritas data lapangan lan nyepetake validasi dokumen operasional.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "REST API"]
+          }
+        ]
+      },
+      "openProjects": {
+        "eyebrow": "Karya pilihan",
+        "title": "Proyek Kabuka",
+        "items": [
+          {
+            "name": "Box2Box",
+            "category": "Anotasi Data · ML/DL",
+            "description": "Aplikasi anotasi data kanggo Machine Learning & Deep Learning sing mlaku kanthi lengkap offline (local only) — tanpa server eksternal.",
+            "year": "2025",
+            "link": "https://b2box.iannstr.com"
+          },
+          {
+            "name": "Zip Code",
+            "category": "AI Agent · CLI",
+            "description": "Side project agent AI adhedhasar command line sing prasaja lan sederhana kanggo mbantu tugas sadina-dina.",
+            "year": "2025",
+            "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "certificates": {
+        "eyebrow": "Lisènsi & Prèstasi",
+        "title": "Sertifikat",
+        "items": [
+          {
+            "name": "TOEIC",
+            "issuer": "International Test Center",
+            "period": "May 2026 — May 2031",
+            "detail": "Score: 830/990"
+          },
+          {
+            "name": "Juara 3 Hackathon Kategori Best Algorithm",
+            "issuer": "Play IT",
+            "location": "Malang, Indonésia",
+            "period": "Nov 2024",
+            "detail": "Kompetisi hackathon pangembangan solusi lan algoritma paling apik."
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Aruh-aruh",
+        "title": "Ayo kolaborasi",
+        "blurb": "Duwé proyek menarik utawa mung arep aruh-aruh? Aku tansah mbukak kanggo obrolan anyar.",
+        "email": "albyanagungshafiqri@gmail.com",
+        "socials": [
+          {
+            "label": "LinkedIn",
+            "handle": "/in/iannstronaut",
+            "url": "https://www.linkedin.com/in/iannstronaut/"
+          },
+          {
+            "label": "GitHub",
+            "handle": "@iannstronaut",
+            "url": "https://github.com/iannstronaut"
+          },
+          { "label": "X", "handle": "@iannstr", "url": "#" }
+        ]
+      }
+    }
+  }
+}
+;</script>
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef, createContext, useContext } = React
 
-      /* ============================================================
+/* ============================================================
    Content loading
    - Vite/production: fetched from /content.json at runtime, so the site
      can be re-edited without rebuilding or redeploying.
    - Standalone preview.html: reads window.__CONTENT__ (inlined), because
      file:// cannot fetch local JSON.
    ============================================================ */
-      const ContentCtx = createContext(null);
-      const useApp = () => useContext(ContentCtx);
-      const useContent = () => useContext(ContentCtx).content;
-      const useUi = () => useContext(ContentCtx).ui;
+const ContentCtx = createContext(null)
+const useApp = () => useContext(ContentCtx)
+const useContent = () => useContext(ContentCtx).content
+const useUi = () => useContext(ContentCtx).ui
 
-      function useLoadedContent() {
-        const [data, setData] = useState(
-          typeof window !== "undefined" && window.__CONTENT__
-            ? window.__CONTENT__
-            : null,
-        );
-        const [error, setError] = useState(false);
-        useEffect(() => {
-          if (data) return;
-          let alive = true;
-          fetch("content.json", { cache: "no-store" })
-            .then((r) => {
-              if (!r.ok) throw new Error("load failed");
-              return r.json();
-            })
-            .then((d) => alive && setData(d))
-            .catch(() => alive && setError(true));
-          return () => {
-            alive = false;
-          };
-        }, []);
-        return { data, error };
-      }
+function useLoadedContent() {
+	const [data, setData] = useState(
+		typeof window !== "undefined" && window.__CONTENT__ ? window.__CONTENT__ : null,
+	)
+	const [error, setError] = useState(false)
+	useEffect(() => {
+		if (data) return
+		let alive = true
+		fetch("content.json", { cache: "no-store" })
+			.then((r) => {
+				if (!r.ok) throw new Error("load failed")
+				return r.json()
+			})
+			.then((d) => alive && setData(d))
+			.catch(() => alive && setError(true))
+		return () => {
+			alive = false
+		}
+	}, [])
+	return { data, error }
+}
 
-      function useClock() {
-        const fmt = () =>
-          new Date().toLocaleTimeString("en-GB", {
-            timeZone: "Asia/Jakarta",
-            hour: "2-digit",
-            minute: "2-digit",
-          });
-        const [t, setT] = useState(fmt());
-        useEffect(() => {
-          const id = setInterval(() => setT(fmt()), 15000);
-          return () => clearInterval(id);
-        }, []);
-        return t;
-      }
+function useClock() {
+	const fmt = () =>
+		new Date().toLocaleTimeString("en-GB", {
+			timeZone: "Asia/Jakarta",
+			hour: "2-digit",
+			minute: "2-digit",
+		})
+	const [t, setT] = useState(fmt())
+	useEffect(() => {
+		const id = setInterval(() => setT(fmt()), 15000)
+		return () => clearInterval(id)
+	}, [])
+	return t
+}
 
-      /* ============================================================
+/* ============================================================
    Inline UI icons (thin stroke)
    ============================================================ */
-      const ICONS = {
-        back: ["M15 18l-6-6 6-6"],
-        forward: ["M9 18l6-6-6-6"],
-        refresh: ["M3 12a9 9 0 1 0 2.6-6.3M3 4.5V9h4.5"],
-        lock: ["M6 11h12v9H6z", "M9 11V8a3 3 0 0 1 6 0v3"],
-        share: [
-          "M12 15V4",
-          "M8 8l4-4 4 4",
-          "M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5",
-        ],
-        plus: ["M12 5v14M5 12h14"],
-        arrow: ["M5 12h14M13 6l6 6-6 6"],
-        mail: ["M3 6h18v12H3z", "M3 7l9 6 9-6"],
-      };
-      function Ico({ name, className = "h-4 w-4" }) {
-        return (
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className={className}
-          >
-            {(ICONS[name] || []).map((d, i) => (
-              <path key={i} d={d} />
-            ))}
-          </svg>
-        );
-      }
+const ICONS = {
+	back: ["M15 18l-6-6 6-6"],
+	forward: ["M9 18l6-6-6-6"],
+	refresh: ["M3 12a9 9 0 1 0 2.6-6.3M3 4.5V9h4.5"],
+	lock: ["M6 11h12v9H6z", "M9 11V8a3 3 0 0 1 6 0v3"],
+	share: ["M12 15V4", "M8 8l4-4 4 4", "M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"],
+	plus: ["M12 5v14M5 12h14"],
+	arrow: ["M5 12h14M13 6l6 6-6 6"],
+	mail: ["M3 6h18v12H3z", "M3 7l9 6 9-6"],
+	download: ["M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", "M7 10l5 5 5-5", "M12 15V3"],
+}
+function Ico({ name, className = "h-4 w-4" }) {
+	return (
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className={className}>
+			{(ICONS[name] || []).map((d, i) => (
+				<path key={i} d={d} />
+			))}
+		</svg>
+	)
+}
 
-      /* ============================================================
+/* ============================================================
    macOS dock app icons (each renders its own rounded tile)
    ============================================================ */
-      const TILE =
-        "grid h-full w-full place-items-center rounded-[12px] shadow-md ring-1 ring-black/10";
+const TILE = "grid h-full w-full place-items-center rounded-[12px] shadow-md ring-1 ring-black/10"
 
-      function SafariIcon() {
-        const ticks = [];
-        for (let i = 0; i < 24; i++) {
-          const a = (i * Math.PI) / 12;
-          const r1 = i % 6 === 0 ? 14 : 15.6;
-          ticks.push(
-            <line
-              key={i}
-              x1={24 + r1 * Math.cos(a)}
-              y1={24 + r1 * Math.sin(a)}
-              x2={24 + 17 * Math.cos(a)}
-              y2={24 + 17 * Math.sin(a)}
-              stroke="rgba(255,255,255,.7)"
-              strokeWidth="0.8"
-            />,
-          );
-        }
-        return (
-          <span className={TILE + " tile-safari"}>
-            <svg viewBox="0 0 48 48" className="h-[80%] w-[80%]">
-              <circle
-                cx="24"
-                cy="24"
-                r="17.5"
-                fill="none"
-                stroke="rgba(255,255,255,.85)"
-                strokeWidth="1.3"
-              />
-              {ticks}
-              <polygon points="24,24 33,15 26,23" fill="#ff4d3d" />
-              <polygon points="24,24 15,33 22,25" fill="#f4f8ff" />
-              <circle cx="24" cy="24" r="1.5" fill="#fff" />
-            </svg>
-          </span>
-        );
-      }
+function BrowserIcon() {
+	return (
+		<span className={TILE + " tile-browser"}>
+			<svg viewBox="0 0 24 24" fill="none" className="h-[74%] w-[74%]">
+				<circle cx="12" cy="12" r="9.2" fill="rgba(255,255,255,.16)" stroke="#fff" strokeWidth="1.4" />
+				<ellipse cx="12" cy="12" rx="3.7" ry="9.2" stroke="#fff" strokeWidth="1.2" />
+				<line x1="2.8" y1="12" x2="21.2" y2="12" stroke="#fff" strokeWidth="1.2" />
+				<path d="M5 7.4c4 1.5 10 1.5 14 0" stroke="#fff" strokeWidth="1.1" strokeLinecap="round" />
+				<path d="M5 16.6c4-1.5 10-1.5 14 0" stroke="#fff" strokeWidth="1.1" strokeLinecap="round" />
+			</svg>
+		</span>
+	)
+}
 
-      function VSCodeIcon() {
-        return (
-          <span className={TILE + " tile-vscode"}>
-            <svg viewBox="0 0 24 24" className="h-[62%] w-[62%]">
-              <path
-                fill="#ffffff"
-                d="M23.15 2.587 18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448z"
-              />
-            </svg>
-          </span>
-        );
-      }
+function VSCodeIcon() {
+	return (
+		<span className={TILE + " tile-vscode"}>
+			<svg viewBox="0 0 24 24" className="h-[62%] w-[62%]">
+				<path fill="#ffffff" d="M23.15 2.587 18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448z" />
+			</svg>
+		</span>
+	)
+}
 
-      function DockerIcon() {
-        return (
-          <span className={TILE + " tile-docker"}>
-            <svg viewBox="0 0 24 24" className="h-[64%] w-[64%]">
-              <path
-                fill="#ffffff"
-                d="M22.36 9.6c-.51-.34-1.67-.46-2.56-.29-.12-.81-.6-1.52-1.45-2.16l-.49-.33-.33.49c-.42.64-.56 1.52-.36 2.32.09.34.27.95.66 1.45-.2.11-.58.26-1.1.26H1.07a.7.7 0 0 0-.7.6c-.13 1.36.1 2.79.71 4.05.7 1.43 1.74 2.48 3.1 3.1 1.55.71 3.45.85 5.6.45a13 13 0 0 0 4.06-1.5 11.3 11.3 0 0 0 2.83-2.43c.78-.96 1.39-2.04 1.84-3.18h.2c.95 0 1.54-.38 1.86-.7.22-.2.38-.45.5-.78l.07-.2zM3.06 10.96h-2v-1.9h2zm2.7 0h-2v-1.9h2zm2.74 0h-2v-1.9h2zm2.71 0h-2v-1.9h2zm-5.45-2.62h-2v-1.9h2zm2.74 0h-2v-1.9h2zm2.71 0h-2v-1.9h2zm0-2.62h-2v-1.9h2z"
-              />
-            </svg>
-          </span>
-        );
-      }
+function DockerIcon() {
+	return (
+		<span className={TILE + " tile-docker"}>
+			<svg viewBox="0 0 24 24" className="h-[68%] w-[68%]">
+				<path
+					fill="#fff"
+					d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"
+				/>
+			</svg>
+		</span>
+	)
+}
 
-      function FigmaIcon() {
-        return (
-          <span className={TILE + " bg-white"}>
-            <svg viewBox="0 0 40 58" className="h-[68%]">
-              <rect x="4" y="3" width="15" height="16" rx="4" fill="#f24e1e" />
-              <path d="M19 3h3.5a7.5 7.5 0 0 1 0 16H19z" fill="#ff7262" />
-              <rect x="4" y="21" width="15" height="16" rx="4" fill="#a259ff" />
-              <circle cx="27" cy="29" r="8" fill="#1abcfe" />
-              <path d="M4 39h15v3.5a7.5 7.5 0 1 1-15 0z" fill="#0acf83" />
-            </svg>
-          </span>
-        );
-      }
+function FigmaIcon() {
+	return (
+		<span className={TILE + " bg-white"}>
+			<svg viewBox="0 0 38 57" className="h-[68%]">
+				<path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1abcfe" />
+				<path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0acf83" />
+				<path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#ff7262" />
+				<path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#f24e1e" />
+				<path d="M0 28.5a9.5 9.5 0 0 0 9.5 9.5H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#a259ff" />
+			</svg>
+		</span>
+	)
+}
 
-      function ZoomIcon() {
-        return (
-          <span className={TILE + " tile-zoom"}>
-            <svg viewBox="0 0 48 48" className="h-[58%] w-[58%]">
-              <rect x="6" y="16" width="22" height="16" rx="4" fill="#fff" />
-              <path d="M30 20.5 41 15.5v17l-11-5z" fill="#fff" />
-            </svg>
-          </span>
-        );
-      }
+function ZoomIcon() {
+	return (
+		<span className={TILE + " tile-zoom"}>
+			<svg viewBox="0 0 24 24" className="h-[52%] w-[62%]">
+				<path
+					fill="#fff"
+					d="M5.033 14.649H.743a.74.74 0 0 1-.686-.458.74.74 0 0 1 .16-.808L3.19 10.41H1.06A1.06 1.06 0 0 1 0 9.35h3.957c.301 0 .57.18.686.458a.74.74 0 0 1-.161.808L1.51 13.59h2.464c.585 0 1.06.475 1.06 1.06zM24 11.338c0-1.14-.927-2.066-2.066-2.066-.61 0-1.158.265-1.537.686a2.061 2.061 0 0 0-1.536-.686c-1.14 0-2.066.926-2.066 2.066v3.311a1.06 1.06 0 0 0 1.06-1.06v-2.251a1.004 1.004 0 0 1 2.013 0v2.251c0 .586.474 1.06 1.06 1.06v-3.311a1.004 1.004 0 0 1 2.012 0v2.251c0 .586.475 1.06 1.06 1.06zM16.265 12a2.728 2.728 0 1 1-5.457 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0zm-4.82 0a2.728 2.728 0 1 1-5.458 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0z"
+				/>
+			</svg>
+		</span>
+	)
+}
 
-      const DOCK_APPS = [
-        { key: "figma", label: "Figma", Icon: FigmaIcon },
-        { key: "vscode", label: "Visual Studio Code", Icon: VSCodeIcon },
-        { key: "safari", label: "Safari", Icon: SafariIcon, launcher: true },
-        { key: "docker", label: "Docker Desktop", Icon: DockerIcon },
-        { key: "zoom", label: "Zoom", Icon: ZoomIcon },
-      ];
+const DOCK_APPS = [
+	{ key: "figma", label: "Figma", Icon: FigmaIcon },
+	{ key: "vscode", label: "Visual Studio Code", Icon: VSCodeIcon },
+	{ key: "browser", label: "Browser", Icon: BrowserIcon, launcher: true },
+	{ key: "docker", label: "Docker Desktop", Icon: DockerIcon },
+	{ key: "zoom", label: "Zoom", Icon: ZoomIcon },
+]
 
-      function Dock({ down, bounceSafari, booted, onLaunch, onHover }) {
-        return (
-          <div
-            className={"dock-wrap " + (down ? "dock-down" : "")}
-            onMouseEnter={() => onHover(true)}
-            onMouseLeave={() => onHover(false)}
-          >
-            <div className="glass flex items-end gap-2 rounded-[20px] border border-white/40 px-2.5 py-1.5 shadow-2xl">
-              {DOCK_APPS.map((app) => {
-                const Icon = app.Icon;
-                const running = booted && app.launcher;
-                return (
-                  <button
-                    key={app.key}
-                    title={app.label}
-                    aria-label={app.label}
-                    onClick={() => app.launcher && onLaunch()}
-                    className="group relative flex flex-col items-center"
-                  >
-                    <span
-                      className={
-                        "dock-icon h-[42px] w-[42px] " +
-                        (bounceSafari && app.launcher ? "dock-bounce" : "")
-                      }
-                    >
-                      <Icon />
-                    </span>
-                    <span
-                      className={
-                        "mt-1 h-1 w-1 rounded-full bg-black/45 transition-opacity " +
-                        (running ? "opacity-100" : "opacity-0")
-                      }
-                    />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        );
-      }
+function Dock({ down, bounceSafari, booted, onLaunch, onHover }) {
+	return (
+		<div
+			className={"dock-wrap " + (down ? "dock-down" : "")}
+			onMouseEnter={() => onHover(true)}
+			onMouseLeave={() => onHover(false)}
+		>
+			<div className="glass flex items-end gap-2 rounded-[20px] border border-white/40 px-2.5 py-1.5 shadow-2xl">
+				{DOCK_APPS.map((app) => {
+					const Icon = app.Icon
+					const running = booted && app.launcher
+					return (
+						<button
+							key={app.key}
+							title={app.label}
+							aria-label={app.label}
+							onClick={() => app.launcher && onLaunch()}
+							className="group relative flex flex-col items-center"
+					>
+							<span
+								className={
+									"dock-icon h-[42px] w-[42px] " +
+									(bounceSafari && app.launcher ? "dock-bounce" : "")
+								}
+							>
+								<Icon />
+							</span>
+							<span
+								className={
+									"mt-1 h-1 w-1 rounded-full bg-black/45 transition-opacity " +
+									(running ? "opacity-100" : "opacity-0")
+								}
+							/>
+						</button>
+					)
+				})}
+			</div>
+		</div>
+	)
+}
 
-      /* ============================================================
+/* ============================================================
    Cursor + menu bar
    ============================================================ */
-      function MacCursor({ phase }) {
-        return (
-          <div
-            className={
-              "boot-cursor " +
-              (phase >= 1 ? "cursor-move " : "") +
-              (phase === 2 ? "cursor-click" : "")
-            }
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24">
-              <path
-                d="M5 3l14 8-6 1.4 3.4 6.2-2.4 1.3-3.4-6.2L5 19z"
-                fill="#fff"
-                stroke="#111"
-                strokeWidth="1.1"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-        );
-      }
+function MacCursor({ phase }) {
+	return (
+		<div className={"boot-cursor " + (phase >= 1 ? "cursor-move " : "") + (phase === 2 ? "cursor-click" : "")}>
+			<svg width="22" height="22" viewBox="0 0 24 24">
+				<path d="M5 3l14 8-6 1.4 3.4 6.2-2.4 1.3-3.4-6.2L5 19z" fill="#fff" stroke="#111" strokeWidth="1.1" strokeLinejoin="round" />
+			</svg>
+		</div>
+	)
+}
 
-      function MenuBar() {
-        const clock = useClock();
-        return (
-          <div className="glass fixed inset-x-0 top-0 z-50 flex h-7 items-center justify-between border-b border-white/20 px-4 text-[12px] text-white/90">
-            <div className="flex items-center gap-4">
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-              </svg>
-              <span className="font-semibold">Safari</span>
-              <span className="hidden opacity-80 sm:inline">File</span>
-              <span className="hidden opacity-80 sm:inline">Edit</span>
-              <span className="hidden opacity-80 sm:inline">View</span>
-              <span className="hidden opacity-80 sm:inline">History</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="hidden opacity-80 sm:inline">100%</span>
-              <span className="opacity-80">Thu</span>
-              <span className="tabular-nums">{clock}</span>
-            </div>
-          </div>
-        );
-      }
+function MenuBar() {
+	const clock = useClock()
+	return (
+		<div className="fixed inset-x-0 top-0 z-50 flex h-7 items-center justify-between border-b border-white/10 bg-[#0d1b2a]/85 px-4 text-[12px] text-white/90 backdrop-blur-md">
+			<div className="flex items-center gap-4">
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+					<circle cx="12" cy="12" r="9" />
+					<ellipse cx="12" cy="12" rx="3.7" ry="9" />
+					<line x1="3" y1="12" x2="21" y2="12" />
+				</svg>
+				<span className="font-semibold">Browser</span>
+				<span className="hidden opacity-80 sm:inline">File</span>
+				<span className="hidden opacity-80 sm:inline">Edit</span>
+				<span className="hidden opacity-80 sm:inline">View</span>
+				<span className="hidden opacity-80 sm:inline">History</span>
+			</div>
+			<div className="flex items-center gap-3">
+				<span className="hidden opacity-80 sm:inline">100%</span>
+				<span className="opacity-80">Thu</span>
+				<span className="tabular-nums">{clock}</span>
+			</div>
+		</div>
+	)
+}
 
-      /* ============================================================
+/* ============================================================
    Reusable bits
    ============================================================ */
-      function Container({ children, className = "" }) {
-        return (
-          <div className={"mx-auto w-full max-w-5xl px-6 sm:px-8 " + className}>
-            {children}
-          </div>
-        );
-      }
+function Container({ children, className = "" }) {
+	return <div className={"mx-auto w-full max-w-5xl px-6 sm:px-8 " + className}>{children}</div>
+}
 
-      function SectionHead({ index, eyebrow, title }) {
-        return (
-          <div className="relative mb-8">
-            <div className="watermark pointer-events-none absolute -left-1 -top-7 select-none text-[84px] font-bold sm:-top-10 sm:text-[120px]">
-              {index}
-            </div>
-            <div className="relative">
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-action">
-                {eyebrow}
-              </div>
-              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-[28px]">
-                {title}
-              </h2>
-            </div>
-          </div>
-        );
-      }
+function SectionHead({ index, eyebrow, title }) {
+	return (
+		<div className="relative mb-8">
+			<div className="watermark pointer-events-none absolute -left-1 -top-7 select-none text-[84px] font-bold sm:-top-10 sm:text-[120px]">
+				{index}
+			</div>
+			<div className="relative">
+				<div className="font-mono text-[11px] uppercase tracking-[0.22em] text-action">{eyebrow}</div>
+				<h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-[28px]">{title}</h2>
+			</div>
+		</div>
+	)
+}
 
-      function Chip({ children }) {
-        return (
-          <span className="rounded-full bg-neutral-900/[0.045] px-2.5 py-1 text-xs font-medium text-neutral-600 ring-1 ring-neutral-900/[0.06]">
-            {children}
-          </span>
-        );
-      }
+function Chip({ children }) {
+	return (
+		<span className="rounded-full bg-neutral-900/[0.045] px-2.5 py-1 text-xs font-medium text-neutral-600 ring-1 ring-neutral-900/[0.06]">
+			{children}
+		</span>
+	)
+}
 
-      /* project thumbnail: four distinct, realistic product mock layouts */
-      function MockChrome({ children }) {
-        return (
-          <div className="mini-win flex h-full flex-col">
-            <div className="flex items-center gap-1.5 border-b border-black/5 bg-neutral-100/90 px-3 py-2">
-              <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-              <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-              <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-              <div className="ml-2 h-3 flex-1 rounded bg-white/80 ring-1 ring-black/5" />
-            </div>
-            <div className="stage relative flex-1 overflow-hidden bg-gradient-to-br from-slate-50 to-white p-3">
-              {children}
-            </div>
-          </div>
-        );
-      }
+/* project thumbnail: four distinct, realistic product mock layouts */
+function MockChrome({ children }) {
+	return (
+		<div className="mini-win flex h-full flex-col">
+			<div className="flex items-center gap-1.5 border-b border-black/5 bg-neutral-100/90 px-3 py-2">
+				<span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+				<span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+				<span className="h-2 w-2 rounded-full bg-[#28c840]" />
+				<div className="ml-2 h-3 flex-1 rounded bg-white/80 ring-1 ring-black/5" />
+			</div>
+			<div className="stage relative flex-1 overflow-hidden bg-gradient-to-br from-slate-50 to-white p-3">
+				{children}
+			</div>
+		</div>
+	)
+}
 
-      function Mock({ variant }) {
-        if (variant === 1) {
-          // mobile app
-          return (
-            <div className="flex h-full items-center justify-center">
-              <div className="flex h-[94%] w-[40%] flex-col gap-1.5 rounded-xl bg-white p-2 shadow ring-1 ring-black/5">
-                <div className="mx-auto h-1 w-6 rounded bg-neutral-200" />
-                <div className="h-9 rounded-md bg-gradient-to-br from-sky-400 to-blue-600" />
-                <div className="h-2 w-3/4 rounded bg-neutral-200" />
-                <div className="h-2 w-1/2 rounded bg-neutral-200" />
-                <div className="mt-auto flex justify-between">
-                  <span className="h-3 w-3 rounded-full bg-blue-500" />
-                  <span className="h-3 w-3 rounded-full bg-neutral-200" />
-                  <span className="h-3 w-3 rounded-full bg-neutral-200" />
-                </div>
-              </div>
-            </div>
-          );
-        }
-        if (variant === 2) {
-          // design-system swatches
-          const cells = [
-            "bg-blue-600",
-            "bg-blue-400",
-            "bg-slate-800",
-            "bg-neutral-200",
-            "bg-sky-300",
-            "bg-neutral-300",
-            "bg-blue-500",
-            "bg-slate-500",
-          ];
-          return (
-            <div className="grid h-full grid-cols-4 grid-rows-2 gap-1.5">
-              {cells.map((c, i) => (
-                <div
-                  key={i}
-                  className={"rounded-md ring-1 ring-black/5 " + c}
-                />
-              ))}
-            </div>
-          );
-        }
-        if (variant === 3) {
-          // code editor (dark)
-          const lines = ["w-1/3", "w-2/3", "w-1/2", "w-3/5", "w-2/5", "w-1/2"];
-          const tones = [
-            "bg-sky-400/80",
-            "bg-emerald-400/70",
-            "bg-neutral-500/70",
-            "bg-blue-400/70",
-            "bg-neutral-500/60",
-            "bg-emerald-400/60",
-          ];
-          return (
-            <div className="flex h-full gap-2 rounded-lg bg-[#0f1b2a] p-2.5">
-              <div className="flex flex-col items-end gap-1.5 pr-1 text-[7px] leading-none text-white/25">
-                {lines.map((_, i) => (
-                  <span key={i}>{i + 1}</span>
-                ))}
-              </div>
-              <div className="flex flex-1 flex-col gap-1.5">
-                {lines.map((w, i) => (
-                  <div
-                    key={i}
-                    className={"h-1.5 rounded " + w + " " + tones[i]}
-                  />
-                ))}
-              </div>
-            </div>
-          );
-        }
-        // variant 0 — dashboard
-        const bars = [
-          "h-1/3",
-          "h-1/2",
-          "h-2/3",
-          "h-2/5",
-          "h-3/4",
-          "h-1/2",
-          "h-5/6",
-        ];
-        return (
-          <div className="flex h-full gap-2">
-            <div className="hidden w-1/5 flex-col gap-1.5 sm:flex">
-              <div className="h-2 rounded bg-neutral-300" />
-              <div className="h-2 w-4/5 rounded bg-neutral-200" />
-              <div className="h-2 w-3/5 rounded bg-neutral-200" />
-              <div className="mt-auto h-2 w-2/3 rounded bg-blue-200" />
-            </div>
-            <div className="flex flex-1 flex-col gap-2">
-              <div className="grid grid-cols-3 gap-2">
-                {[0, 1, 2].map((i) => (
-                  <div
-                    key={i}
-                    className="rounded-md bg-white p-1.5 ring-1 ring-black/5"
-                  >
-                    <div className="h-1.5 w-2/3 rounded bg-neutral-200" />
-                    <div className="mt-1 h-2 w-1/2 rounded bg-blue-500" />
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-1 items-end gap-1.5 rounded-md bg-white p-2 ring-1 ring-black/5">
-                {bars.map((h, i) => (
-                  <div
-                    key={i}
-                    className={
-                      "flex-1 rounded-t bg-gradient-to-t from-blue-600 to-sky-400 " +
-                      h
-                    }
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        );
-      }
+function Mock({ variant }) {
+	if (variant === 1) {
+		// mobile app
+		return (
+			<div className="flex h-full items-center justify-center">
+				<div className="flex h-[94%] w-[40%] flex-col gap-1.5 rounded-xl bg-white p-2 shadow ring-1 ring-black/5">
+					<div className="mx-auto h-1 w-6 rounded bg-neutral-200" />
+					<div className="h-9 rounded-md bg-gradient-to-br from-sky-400 to-blue-600" />
+					<div className="h-2 w-3/4 rounded bg-neutral-200" />
+					<div className="h-2 w-1/2 rounded bg-neutral-200" />
+					<div className="mt-auto flex justify-between">
+						<span className="h-3 w-3 rounded-full bg-blue-500" />
+						<span className="h-3 w-3 rounded-full bg-neutral-200" />
+						<span className="h-3 w-3 rounded-full bg-neutral-200" />
+					</div>
+				</div>
+			</div>
+		)
+	}
+	if (variant === 2) {
+		// design-system swatches
+		const cells = [
+			"bg-blue-600", "bg-blue-400", "bg-slate-800", "bg-neutral-200",
+			"bg-sky-300", "bg-neutral-300", "bg-blue-500", "bg-slate-500",
+		]
+		return (
+			<div className="grid h-full grid-cols-4 grid-rows-2 gap-1.5">
+				{cells.map((c, i) => (
+					<div key={i} className={"rounded-md ring-1 ring-black/5 " + c} />
+				))}
+			</div>
+		)
+	}
+	if (variant === 3) {
+		// code editor (dark)
+		const lines = ["w-1/3", "w-2/3", "w-1/2", "w-3/5", "w-2/5", "w-1/2"]
+		const tones = ["bg-sky-400/80", "bg-emerald-400/70", "bg-neutral-500/70", "bg-blue-400/70", "bg-neutral-500/60", "bg-emerald-400/60"]
+		return (
+			<div className="flex h-full gap-2 rounded-lg bg-[#0f1b2a] p-2.5">
+				<div className="flex flex-col items-end gap-1.5 pr-1 text-[7px] leading-none text-white/25">
+					{lines.map((_, i) => (
+						<span key={i}>{i + 1}</span>
+					))}
+				</div>
+				<div className="flex flex-1 flex-col gap-1.5">
+					{lines.map((w, i) => (
+						<div key={i} className={"h-1.5 rounded " + w + " " + tones[i]} />
+					))}
+				</div>
+			</div>
+		)
+	}
+	// variant 0 — dashboard
+	const bars = ["h-1/3", "h-1/2", "h-2/3", "h-2/5", "h-3/4", "h-1/2", "h-5/6"]
+	return (
+		<div className="flex h-full gap-2">
+			<div className="hidden w-1/5 flex-col gap-1.5 sm:flex">
+				<div className="h-2 rounded bg-neutral-300" />
+				<div className="h-2 w-4/5 rounded bg-neutral-200" />
+				<div className="h-2 w-3/5 rounded bg-neutral-200" />
+				<div className="mt-auto h-2 w-2/3 rounded bg-blue-200" />
+			</div>
+			<div className="flex flex-1 flex-col gap-2">
+				<div className="grid grid-cols-3 gap-2">
+					{[0, 1, 2].map((i) => (
+						<div key={i} className="rounded-md bg-white p-1.5 ring-1 ring-black/5">
+							<div className="h-1.5 w-2/3 rounded bg-neutral-200" />
+							<div className="mt-1 h-2 w-1/2 rounded bg-blue-500" />
+						</div>
+					))}
+				</div>
+				<div className="flex flex-1 items-end gap-1.5 rounded-md bg-white p-2 ring-1 ring-black/5">
+					{bars.map((h, i) => (
+						<div key={i} className={"flex-1 rounded-t bg-gradient-to-t from-blue-600 to-sky-400 " + h} />
+					))}
+				</div>
+			</div>
+		</div>
+	)
+}
 
-      /* ============================================================
+/* ============================================================
    Sections
    ============================================================ */
-      function Hero({ onNav }) {
-        const { hero } = useContent();
-        const ui = useUi();
-        const clock = useClock();
-        if (!hero) return null;
-        return (
-          <section className="pb-10 pt-6 sm:pt-10">
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="glass-card glass-hover flex flex-col p-7 sm:col-span-2 sm:row-span-2 sm:p-9">
-                {hero.availability ? (
-                  <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200/70">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                    {hero.availability}
-                  </div>
-                ) : null}
-                <h1 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-[52px]">
-                  {hero.headline}
-                </h1>
-                <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-neutral-600">
-                  {hero.subheadline}
-                </p>
-                <div className="mt-7 flex flex-wrap items-center gap-3">
-                  <button
-                    onClick={() => onNav("projects")}
-                    className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition active:scale-[0.97]"
-                  >
-                    {ui.viewWork}
-                    <Ico name="arrow" className="h-4 w-4" />
-                  </button>
-                  <button
-                    onClick={() => onNav("contact")}
-                    className="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
-                  >
-                    {ui.contactCta}
-                  </button>
-                </div>
-                {Array.isArray(hero.roles) && hero.roles.length ? (
-                  <div className="mt-auto flex flex-wrap gap-1.5 pt-8">
-                    {hero.roles.map((r) => (
-                      <Chip key={r}>{r}</Chip>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
+function Hero({ onNav }) {
+	const { hero } = useContent()
+	const ui = useUi()
+	const clock = useClock()
+	if (!hero) return null
+	return (
+		<section className="pb-10 pt-6 sm:pt-10">
+			<div className="grid gap-4 sm:grid-cols-3">
+				<div className="glass-card glass-hover flex flex-col p-7 sm:col-span-2 sm:row-span-2 sm:p-9">
+					{hero.availability ? (
+						<div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200/70">
+							<span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+							{hero.availability}
+						</div>
+					) : null}
+					<h1 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-[52px]">
+						{hero.headline}
+					</h1>
+					<p className="mt-5 max-w-lg text-[17px] leading-relaxed text-neutral-600">
+						{hero.subheadline}
+					</p>
+					<div className="mt-7 flex flex-wrap items-center gap-3">
+						<a
+							href="FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
+							download="FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
+							target="_blank"
+							rel="noreferrer"
+							className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-action/90 active:scale-[0.97]"
+						>
+							<Ico name="download" className="h-4 w-4" />
+							{ui.downloadCv || "Download CV"}
+						</a>
+						<button
+							onClick={() => onNav("proProjects")}
+							className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
+						>
+							{ui.viewWork}
+							<Ico name="arrow" className="h-4 w-4" />
+						</button>
+					</div>
+					{Array.isArray(hero.roles) && hero.roles.length ? (
+						<div className="mt-auto flex flex-wrap gap-1.5 pt-8">
+							{hero.roles.map((r) => (
+								<Chip key={r}>{r}</Chip>
+							))}
+						</div>
+					) : null}
+				</div>
 
-              <div className="glass-card glass-hover flex flex-col gap-4 p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#13314f] to-action text-base font-semibold text-white shadow-inner">
-                  {hero.monogram}
-                </div>
-                <div>
-                  <div className="text-lg font-semibold tracking-tight text-ink">
-                    {hero.name}
-                  </div>
-                  <div className="text-sm text-neutral-500">{hero.title}</div>
-                </div>
-                <div className="mt-auto flex items-center gap-2 text-sm text-neutral-500">
-                  <Ico name="arrow" className="h-4 w-4 text-neutral-300" />
-                  {hero.location}
-                </div>
-              </div>
+				<div className="glass-card glass-hover flex flex-col gap-4 p-6">
+					<div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#13314f] to-action text-base font-semibold text-white shadow-inner">
+						{hero.monogram}
+					</div>
+					<div>
+						<div className="text-lg font-semibold tracking-tight text-ink">{hero.name}</div>
+						<div className="text-sm text-neutral-500">{hero.title}</div>
+					</div>
+					<div className="mt-auto flex items-center gap-2 text-sm text-neutral-500">
+						<Ico name="arrow" className="h-4 w-4 text-neutral-300" />
+						{hero.location}
+					</div>
+				</div>
 
-              <div className="glass-card glass-hover flex flex-col justify-between p-6">
-                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-neutral-400">
-                  {ui.localTime}
-                </div>
-                <div className="font-mono text-3xl font-medium tabular-nums tracking-tight text-ink">
-                  {clock}
-                </div>
-                <div className="text-xs text-neutral-500">{ui.tz}</div>
-              </div>
-            </div>
-          </section>
-        );
-      }
+				<div className="glass-card glass-hover flex flex-col justify-between p-6">
+					<div className="font-mono text-[11px] uppercase tracking-[0.22em] text-neutral-400">{ui.localTime}</div>
+					<div className="font-mono text-3xl font-medium tabular-nums tracking-tight text-ink">{clock}</div>
+					<div className="text-xs text-neutral-500">{ui.tz}</div>
+				</div>
+			</div>
+		</section>
+	)
+}
 
-      function Summary() {
-        const { summary } = useContent();
-        if (!summary) return null;
-        return (
-          <section className="py-10">
-            <SectionHead
-              index="01"
-              eyebrow={summary.eyebrow}
-              title={summary.title}
-            />
-            <div className="glass-card p-7 sm:p-9">
-              <p className="max-w-3xl text-lg leading-relaxed text-neutral-700">
-                {summary.body}
-              </p>
-              {Array.isArray(summary.stats) && summary.stats.length ? (
-                <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-neutral-200/60 sm:grid-cols-4">
-                  {summary.stats.map((s, i) => (
-                    <div key={i} className="bg-white/70 p-5">
-                      <div className="font-mono text-2xl font-semibold tabular-nums text-action">
-                        {s.value}
-                      </div>
-                      <div className="mt-1 text-sm text-neutral-500">
-                        {s.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          </section>
-        );
-      }
+function Summary() {
+	const { summary } = useContent()
+	if (!summary) return null
+	return (
+		<section className="py-10">
+			<SectionHead index="01" eyebrow={summary.eyebrow} title={summary.title} />
+			<div className="glass-card p-7 sm:p-9">
+				<p className="max-w-3xl text-lg leading-relaxed text-neutral-700">{summary.body}</p>
+				{Array.isArray(summary.stats) && summary.stats.length ? (
+					<div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-neutral-200/60 sm:grid-cols-4">
+						{summary.stats.map((s, i) => (
+							<div key={i} className="bg-white/70 p-5">
+								<div className="font-mono text-2xl font-semibold tabular-nums text-action">{s.value}</div>
+								<div className="mt-1 text-sm text-neutral-500">{s.label}</div>
+							</div>
+						))}
+					</div>
+				) : null}
+			</div>
+		</section>
+	)
+}
 
-      function Experience() {
-        const { experience } = useContent();
-        if (!experience) return null;
-        return (
-          <section className="py-10">
-            <SectionHead
-              index="02"
-              eyebrow={experience.eyebrow}
-              title={experience.title}
-            />
-            <ol className="relative space-y-4 border-l border-neutral-300/70 pl-7">
-              {(experience.items || []).map((x, i) => (
-                <li key={i} className="relative">
-                  <span className="absolute -left-[33px] top-5 h-2.5 w-2.5 rounded-full bg-action ring-4 ring-[#eceff4]" />
-                  <div className="glass-card glass-hover p-5 sm:p-6">
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                      <h3 className="text-[15px] font-semibold text-ink">
-                        {x.role} <span className="text-neutral-300">·</span>{" "}
-                        <span className="text-action">{x.company}</span>
-                      </h3>
-                      <span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">
-                        {x.period}
-                      </span>
-                    </div>
-                    {x.location ? (
-                      <div className="mt-0.5 text-xs text-neutral-500">
-                        {x.location}
-                      </div>
-                    ) : null}
-                    <p className="mt-2.5 text-sm leading-relaxed text-neutral-600">
-                      {x.description}
-                    </p>
-                    {Array.isArray(x.tags) && x.tags.length ? (
-                      <div className="mt-3.5 flex flex-wrap gap-1.5">
-                        {x.tags.map((t) => (
-                          <Chip key={t}>{t}</Chip>
-                        ))}
-                      </div>
-                    ) : null}
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        );
-      }
+function Experience() {
+	const { experience } = useContent()
+	if (!experience) return null
+	return (
+		<section className="py-10">
+			<SectionHead index="02" eyebrow={experience.eyebrow} title={experience.title} />
+			<ol className="relative space-y-4 border-l border-neutral-300/70 pl-7">
+				{(experience.items || []).map((x, i) => (
+					<li key={i} className="relative">
+						<span className="absolute -left-[33px] top-5 h-2.5 w-2.5 rounded-full bg-action ring-4 ring-[#eceff4]" />
+						<div className="glass-card glass-hover p-5 sm:p-6">
+							<div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+								<h3 className="text-[15px] font-semibold text-ink">
+									{x.role} {x.company ? <><span className="text-neutral-300">·</span> <span className="text-action">{x.company}</span></> : null}
+								</h3>
+								<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{x.period}</span>
+							</div>
+							{x.location ? <div className="mt-0.5 text-xs text-neutral-500">{x.location}</div> : null}
+							<p className="mt-2.5 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{x.description}</p>
+							{Array.isArray(x.tags) && x.tags.length ? (
+								<div className="mt-3.5 flex flex-wrap gap-1.5">
+									{x.tags.map((t) => (
+										<Chip key={t}>{t}</Chip>
+									))}
+								</div>
+							) : null}
+						</div>
+					</li>
+				))}
+			</ol>
+		</section>
+	)
+}
 
-      function Education() {
-        const { education } = useContent();
-        if (!education) return null;
-        return (
-          <section className="py-10">
-            <SectionHead
-              index="03"
-              eyebrow={education.eyebrow}
-              title={education.title}
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {(education.items || []).map((e, i) => (
-                <div key={i} className="glass-card glass-hover p-6">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="text-base font-semibold text-ink">
-                      {e.school}
-                    </h3>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">
-                      {e.period}
-                    </span>
-                  </div>
-                  <div className="mt-1 text-sm text-action">{e.degree}</div>
-                  {e.detail ? (
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                      {e.detail}
-                    </p>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </section>
-        );
-      }
+function Education() {
+	const { education } = useContent()
+	if (!education) return null
+	return (
+		<section className="py-10">
+			<SectionHead index="03" eyebrow={education.eyebrow} title={education.title} />
+			<div className="grid gap-4 sm:grid-cols-2">
+				{(education.items || []).map((e, i) => (
+					<div key={i} className="glass-card glass-hover p-6">
+						<div className="flex items-baseline justify-between gap-3">
+							<h3 className="text-base font-semibold text-ink">{e.school}</h3>
+							<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{e.period}</span>
+						</div>
+						<div className="mt-1 text-sm text-action">{e.degree}</div>
+						{e.detail ? <p className="mt-2 text-sm leading-relaxed text-neutral-600">{e.detail}</p> : null}
+					</div>
+				))}
+			</div>
+		</section>
+	)
+}
 
-      function Skills() {
-        const { skills } = useContent();
-        if (!skills) return null;
-        return (
-          <section className="py-10">
-            <SectionHead
-              index="04"
-              eyebrow={skills.eyebrow}
-              title={skills.title}
-            />
-            <div className="glass-card divide-y divide-neutral-200/70 p-2 sm:p-3">
-              {(skills.groups || []).map((g, i) => (
-                <div
-                  key={i}
-                  className="grid gap-3 px-4 py-5 sm:grid-cols-[180px_1fr] sm:px-5"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-action" />
-                    <span className="text-sm font-semibold text-ink">
-                      {g.name}
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {(g.items || []).map((s) => (
-                      <Chip key={s}>{s}</Chip>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        );
-      }
+function Skills() {
+	const { skills } = useContent()
+	if (!skills) return null
+	return (
+		<section className="py-10">
+			<SectionHead index="04" eyebrow={skills.eyebrow} title={skills.title} />
+			<div className="glass-card divide-y divide-neutral-200/70 p-2 sm:p-3">
+				{(skills.groups || []).map((g, i) => (
+					<div key={i} className="grid gap-3 px-4 py-5 sm:grid-cols-[180px_1fr] sm:px-5">
+						<div className="flex items-center gap-2">
+							<span className="h-1.5 w-1.5 rounded-full bg-action" />
+							<span className="text-sm font-semibold text-ink">{g.name}</span>
+						</div>
+						<div className="flex flex-wrap gap-1.5">
+							{(g.items || []).map((s) => (
+								<Chip key={s}>{s}</Chip>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+	)
+}
 
-      function Projects() {
-        const { projects } = useContent();
-        if (!projects) return null;
-        const items = projects.items || [];
-        return (
-          <section className="py-10">
-            <SectionHead
-              index="05"
-              eyebrow={projects.eyebrow}
-              title={projects.title}
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {items.map((p, i) => {
-                const feature = i === 0;
-                const variant = i % 4;
-                return (
-                  <a
-                    key={i}
-                    href={p.link || "#"}
-                    target={p.link ? "_blank" : undefined}
-                    rel="noreferrer"
-                    className={
-                      "glass-card glass-hover group block p-3 " +
-                      (feature ? "sm:col-span-2" : "")
-                    }
-                  >
-                    <div
-                      className={
-                        feature ? "grid items-stretch gap-4 sm:grid-cols-2" : ""
-                      }
-                    >
-                      <div className={feature ? "min-h-[200px]" : "h-36"}>
-                        <MockChrome>
-                          <Mock variant={feature ? 0 : variant} />
-                        </MockChrome>
-                      </div>
-                      <div
-                        className={
-                          feature
-                            ? "flex flex-col justify-center px-2 sm:px-3"
-                            : "mt-3 px-1"
-                        }
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <h3
-                            className={
-                              "font-semibold tracking-tight text-ink " +
-                              (feature ? "text-xl" : "text-base")
-                            }
-                          >
-                            {p.name}
-                          </h3>
-                          <span className="mt-1 text-neutral-300 transition group-hover:translate-x-0.5 group-hover:text-action">
-                            <Ico name="arrow" className="h-4 w-4" />
-                          </span>
-                        </div>
-                        <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">
-                          {p.description}
-                        </p>
-                        <div className="mt-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-neutral-400">
-                          <span>{p.category}</span>
-                          <span className="text-neutral-300">·</span>
-                          <span>{p.year}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </section>
-        );
-      }
+function ProjectList({ data, index, variantOffset = 0 }) {
+	if (!data) return null
+	const items = data.items || []
+	return (
+		<section className="py-10">
+			<SectionHead index={index} eyebrow={data.eyebrow} title={data.title} />
+			<div className="grid gap-4 sm:grid-cols-2">
+				{items.map((p, i) => {
+					const feature = i === 0 && items.length % 2 === 1
+					const variant = (i + variantOffset) % 4
+					const hasLink = Boolean(p.link && p.link !== "#")
+					const Tag = hasLink ? "a" : "div"
+					return (
+						<Tag
+							key={i}
+							href={hasLink ? p.link : undefined}
+							target={hasLink ? "_blank" : undefined}
+							rel={hasLink ? "noreferrer" : undefined}
+							className={"glass-card glass-hover group block p-3 " + (feature ? "sm:col-span-2" : "")}
+						>
+							<div className={feature ? "grid items-stretch gap-4 sm:grid-cols-2" : ""}>
+								<div className={feature ? "min-h-[200px]" : "h-36"}>
+									<MockChrome>
+										<Mock variant={feature ? 0 : variant} />
+									</MockChrome>
+								</div>
+								<div className={feature ? "flex flex-col justify-center px-2 sm:px-3" : "mt-3 px-1"}>
+									<div className="flex items-start justify-between gap-3">
+										<h3 className={"font-semibold tracking-tight text-ink " + (feature ? "text-xl" : "text-base")}>
+											{p.name}
+										</h3>
+										{hasLink ? (
+											<span className="mt-1 text-neutral-300 transition group-hover:translate-x-0.5 group-hover:text-action">
+												<Ico name="arrow" className="h-4 w-4" />
+											</span>
+										) : null}
+									</div>
+									<p className="mt-1.5 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{p.description}</p>
+									<div className="mt-3 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-neutral-400">
+										<span>{p.category}</span>
+										<span className="text-neutral-300">·</span>
+										<span>{p.year}</span>
+									</div>
+									{Array.isArray(p.tags) && p.tags.length ? (
+										<div className="mt-3 flex flex-wrap gap-1.5">
+											{p.tags.map((t) => (
+												<Chip key={t}>{t}</Chip>
+											))}
+										</div>
+									) : null}
+								</div>
+							</div>
+						</Tag>
+					)
+				})}
+			</div>
+		</section>
+	)
+}
 
-      function Contact() {
-        const { contact } = useContent();
-        if (!contact) return null;
-        return (
-          <section className="py-12">
-            <div className="glass-card overflow-hidden p-8 sm:p-12">
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-action">
-                {contact.eyebrow}
-              </div>
-              <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-                {contact.title}
-              </h2>
-              {contact.blurb ? (
-                <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-neutral-600">
-                  {contact.blurb}
-                </p>
-              ) : null}
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <a
-                  href={"mailto:" + (contact.email || "")}
-                  className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition active:scale-[0.97]"
-                >
-                  <Ico name="mail" className="h-4 w-4" />
-                  {contact.email}
-                </a>
-                {(contact.socials || []).map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.url || "#"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
-                  >
-                    {s.label}
-                    <span className="text-neutral-400">{s.handle}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      }
+function ProProjects() {
+	const { proProjects } = useContent()
+	return <ProjectList data={proProjects} index="05" variantOffset={0} />
+}
 
-      /* ============================================================
+function OpenProjects() {
+	const { openProjects, projects } = useContent()
+	return <ProjectList data={openProjects || projects} index="06" variantOffset={2} />
+}
+
+function Certificates() {
+	const { certificates, certifications } = useContent()
+	const data = certificates || certifications
+	if (!data) return null
+	return (
+		<section className="py-10">
+			<SectionHead index="07" eyebrow={data.eyebrow} title={data.title} />
+			<div className="grid gap-4 sm:grid-cols-2">
+				{(data.items || []).map((c, i) => (
+					<div key={i} className="glass-card glass-hover p-6">
+						<div className="flex items-baseline justify-between gap-3">
+							<h3 className="text-base font-semibold text-ink">{c.name}</h3>
+							<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{c.period}</span>
+						</div>
+						<div className="mt-1 text-sm font-medium text-action">
+							{c.issuer}
+							{c.location ? <span className="font-normal text-neutral-400"> · {c.location}</span> : null}
+						</div>
+						{c.detail ? <p className="mt-2 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{c.detail}</p> : null}
+					</div>
+				))}
+			</div>
+		</section>
+	)
+}
+
+function Contact() {
+	const { contact } = useContent()
+	if (!contact) return null
+	return (
+		<section className="py-12">
+			<div className="glass-card overflow-hidden p-8 sm:p-12">
+				<div className="font-mono text-[11px] uppercase tracking-[0.22em] text-action">{contact.eyebrow}</div>
+				<h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{contact.title}</h2>
+				{contact.blurb ? <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-neutral-600">{contact.blurb}</p> : null}
+				<div className="mt-7 flex flex-wrap items-center gap-3">
+					<a
+						href={"mailto:" + (contact.email || "")}
+						className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition active:scale-[0.97]"
+					>
+						<Ico name="mail" className="h-4 w-4" />
+						{contact.email}
+					</a>
+					{(contact.socials || []).map((s) => (
+						<a
+							key={s.label}
+							href={s.url || "#"}
+							target="_blank"
+							rel="noreferrer"
+							className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
+						>
+							{s.label}
+							<span className="text-neutral-400">{s.handle}</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)
+}
+
+/* ============================================================
    Browser webpage (nav + sections inside the Safari window)
    ============================================================ */
-      const NAV = [
-        "summary",
-        "experience",
-        "education",
-        "skills",
-        "projects",
-        "contact",
-      ];
+const NAV = ["summary", "experience", "education", "skills", "proProjects", "openProjects", "certificates", "contact"]
 
-      function LangSwitcher() {
-        const { languages, lang, setLang } = useApp();
-        if (!languages || !languages.length) return null;
-        return (
-          <div className="flex items-center gap-0.5 rounded-full bg-white/50 p-0.5 ring-1 ring-neutral-300/70">
-            {languages.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => setLang(l.code)}
-                title={l.label}
-                className={
-                  "rounded-full px-2 py-1 text-[11px] font-semibold leading-none transition " +
-                  (lang === l.code
-                    ? "bg-action text-white shadow-sm"
-                    : "text-neutral-500 hover:text-ink")
-                }
-              >
-                {l.short}
-              </button>
-            ))}
-          </div>
-        );
-      }
+function LangSwitcher() {
+	const { languages, lang, setLang } = useApp()
+	if (!languages || !languages.length) return null
+	return (
+		<div className="flex items-center gap-0.5 rounded-full bg-white/50 p-0.5 ring-1 ring-neutral-300/70">
+			{languages.map((l) => (
+				<button
+					key={l.code}
+					onClick={() => setLang(l.code)}
+					title={l.label}
+					className={
+						"rounded-full px-2 py-1 text-[11px] font-semibold leading-none transition " +
+						(lang === l.code ? "bg-action text-white shadow-sm" : "text-neutral-500 hover:text-ink")
+					}
+				>
+					{l.short}
+				</button>
+			))}
+		</div>
+	)
+}
 
-      function Webpage() {
-        const app = useApp();
-        const { hero } = app.content;
-        const meta = app.meta;
-        const ui = app.ui;
-        const scroller = useRef(null);
-        const progress = useRef(null);
-        const [active, setActive] = useState("summary");
+function Webpage() {
+	const app = useApp()
+	const { hero } = app.content
+	const meta = app.meta
+	const ui = app.ui
+	const scroller = useRef(null)
+	const progress = useRef(null)
+	const [active, setActive] = useState("summary")
 
-        const onNav = (id) => {
-          const root = scroller.current;
-          if (!root) return;
-          if (id === "top") {
-            root.scrollTo({ top: 0, behavior: "smooth" });
-            return;
-          }
-          const el = root.querySelector("#sec-" + id);
-          if (el) root.scrollTo({ top: el.offsetTop - 64, behavior: "smooth" });
-        };
+	const onNav = (id) => {
+		const root = scroller.current
+		if (!root) return
+		if (id === "top") {
+			root.scrollTo({ top: 0, behavior: "smooth" })
+			return
+		}
+		const el = root.querySelector("#sec-" + id)
+		if (el) root.scrollTo({ top: el.offsetTop - 64, behavior: "smooth" })
+	}
 
-        const onScroll = () => {
-          const root = scroller.current;
-          if (!root) return;
-          const max = root.scrollHeight - root.clientHeight;
-          const ratio = max > 0 ? root.scrollTop / max : 0;
-          if (progress.current)
-            progress.current.style.transform = "scaleX(" + ratio + ")";
-          const pos = root.scrollTop + 80;
-          let current = NAV[0];
-          for (const n of NAV) {
-            const el = root.querySelector("#sec-" + n);
-            if (el && el.offsetTop <= pos) current = n;
-          }
-          setActive(current);
-        };
+	const onScroll = () => {
+		const root = scroller.current
+		if (!root) return
+		const max = root.scrollHeight - root.clientHeight
+		const ratio = max > 0 ? root.scrollTop / max : 0
+		if (progress.current) progress.current.style.transform = "scaleX(" + ratio + ")"
+		const pos = root.scrollTop + 80
+		let current = NAV[0]
+		for (const n of NAV) {
+			const el = root.querySelector("#sec-" + n)
+			if (el && el.offsetTop <= pos) current = n
+		}
+		setActive(current)
+	}
 
-        return (
-          <div
-            ref={scroller}
-            onScroll={onScroll}
-            className="safari-scroll relative h-full overflow-y-auto page-canvas"
-          >
-            <div className="reveal relative min-h-full">
-              <div className="texture">
-                <div className="dots" />
-                <div className="grain" />
-              </div>
+	return (
+		<div ref={scroller} onScroll={onScroll} className="safari-scroll relative h-full overflow-y-auto page-canvas">
+			<div className="reveal relative min-h-full">
+				<div className="texture">
+					<div className="dots" />
+					<div className="grain" />
+				</div>
 
-              <div className="relative z-10">
-                {/* sticky in-page nav */}
-                <div className="sticky top-0 z-30">
-                  <div className="glass border-b border-white/40">
-                    <Container className="flex h-14 items-center justify-between">
-                      <button
-                        onClick={() => onNav("top")}
-                        className="flex items-center gap-2.5"
-                      >
-                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[#13314f] to-action text-[11px] font-semibold text-white">
-                          {hero ? hero.monogram : ""}
-                        </span>
-                        <span className="text-sm font-semibold tracking-tight text-ink">
-                          {hero ? hero.name : ""}
-                        </span>
-                      </button>
-                      <nav className="hidden items-center gap-1 md:flex">
-                        {NAV.map((n) => (
-                          <button
-                            key={n}
-                            onClick={() => onNav(n)}
-                            className={
-                              "rounded-full px-3 py-1.5 text-[13px] font-medium transition " +
-                              (active === n
-                                ? "bg-white/70 text-action"
-                                : "text-neutral-500 hover:text-ink")
-                            }
-                          >
-                            {ui.nav[n]}
-                          </button>
-                        ))}
-                      </nav>
-                      <div className="flex items-center gap-2">
-                        <LangSwitcher />
-                        <a
-                          href={"mailto:" + (useContentEmail() || "")}
-                          className="hidden rounded-full bg-action px-4 py-1.5 text-[13px] font-medium text-white transition active:scale-95 sm:inline-flex"
-                        >
-                          {ui.getInTouch}
-                        </a>
-                      </div>
-                    </Container>
-                  </div>
-                  <div ref={progress} className="scroll-progress" />
-                </div>
+				<div className="relative z-10">
+					{/* sticky in-page nav */}
+					<div className="sticky top-0 z-30">
+						<div className="glass border-b border-white/40">
+							<Container className="flex h-14 items-center justify-between gap-2">
+								<button onClick={() => onNav("top")} className="flex shrink-0 items-center gap-2 text-left transition hover:opacity-80">
+									<span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-[#13314f] to-action text-[11px] font-semibold text-white shadow-inner">
+										{hero ? hero.monogram : ""}
+									</span>
+									<span className="hidden text-sm font-semibold tracking-tight text-ink xl:inline">{hero ? hero.name : ""}</span>
+								</button>
+								<nav className="hidden items-center gap-0.5 rounded-full bg-white/50 p-1 ring-1 ring-neutral-300/60 md:flex">
+									{NAV.map((n) => (
+										<button
+											key={n}
+											onClick={() => onNav(n)}
+											className={
+												"rounded-full px-2.5 py-1 text-[12px] font-medium whitespace-nowrap transition " +
+												(active === n ? "bg-white text-action shadow-sm" : "text-neutral-500 hover:text-ink")
+											}
+										>
+											{ui.nav[n]}
+										</button>
+									))}
+								</nav>
+								<div className="flex shrink-0 items-center gap-2">
+									<LangSwitcher />
+									<a
+										href={"mailto:" + (useContentEmail() || "")}
+										className="hidden rounded-full bg-action px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition active:scale-95 sm:inline-flex"
+									>
+										{ui.getInTouch}
+									</a>
+								</div>
+							</Container>
+						</div>
+						<div ref={progress} className="scroll-progress" />
+					</div>
 
-                <Container>
-                  <div id="sec-top">
-                    <Hero onNav={onNav} />
-                  </div>
-                  <div id="sec-summary">
-                    <Summary />
-                  </div>
-                  <div id="sec-experience">
-                    <Experience />
-                  </div>
-                  <div id="sec-education">
-                    <Education />
-                  </div>
-                  <div id="sec-skills">
-                    <Skills />
-                  </div>
-                  <div id="sec-projects">
-                    <Projects />
-                  </div>
-                  <div id="sec-contact">
-                    <Contact />
-                  </div>
-                  <footer className="border-t border-neutral-200/70 py-8 text-center text-xs text-neutral-400">
-                    © {new Date().getFullYear()} {hero ? hero.name : ""} ·{" "}
-                    {meta ? meta.domain : ""}
-                  </footer>
-                </Container>
-              </div>
-            </div>
-          </div>
-        );
-      }
+					<Container>
+						<div id="sec-top"><Hero onNav={onNav} /></div>
+						<div id="sec-summary"><Summary /></div>
+						<div id="sec-experience"><Experience /></div>
+						<div id="sec-education"><Education /></div>
+						<div id="sec-skills"><Skills /></div>
+						<div id="sec-proProjects"><ProProjects /></div>
+						<div id="sec-openProjects"><OpenProjects /></div>
+						<div id="sec-certificates"><Certificates /></div>
+						<div id="sec-contact"><Contact /></div>
+						<footer className="border-t border-neutral-200/70 py-8 text-center text-xs text-neutral-400">
+							© {new Date().getFullYear()} {hero ? hero.name : ""} · {meta ? meta.domain : ""}
+						</footer>
+					</Container>
+				</div>
+			</div>
+		</div>
+	)
+}
 
-      function useContentEmail() {
-        const c = useContent();
-        return c && c.contact ? c.contact.email : "";
-      }
+function useContentEmail() {
+	const c = useContent()
+	return c && c.contact ? c.contact.email : ""
+}
 
-      /* ============================================================
+/* ============================================================
    Safari window chrome
    ============================================================ */
-      function SafariWindow({ stateClass }) {
-        const { meta } = useApp();
-        const domain = meta ? meta.domain : "";
-        return (
-          <div
-            className={
-              "safari-window absolute inset-x-2 bottom-2 top-9 overflow-hidden rounded-xl sm:inset-x-8 sm:bottom-7 sm:top-12 " +
-              stateClass
-            }
-          >
-            <div className="flex items-center gap-3 border-b border-black/10 bg-[#f6f6f7] px-4 py-2.5">
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f57] ring-1 ring-black/5" />
-                <span className="h-3 w-3 rounded-full bg-[#febc2e] ring-1 ring-black/5" />
-                <span className="h-3 w-3 rounded-full bg-[#28c840] ring-1 ring-black/5" />
-              </div>
-              <div className="hidden items-center gap-1 text-neutral-400 sm:flex">
-                <Ico name="back" className="h-4 w-4" />
-                <Ico name="forward" className="h-4 w-4" />
-              </div>
-              <div className="mx-auto flex w-full max-w-md items-center justify-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs text-neutral-500 ring-1 ring-black/5">
-                <Ico name="lock" className="h-3 w-3" />
-                <span className="truncate">{domain}</span>
-              </div>
-              <div className="hidden items-center gap-2 text-neutral-400 sm:flex">
-                <Ico name="share" className="h-4 w-4" />
-                <Ico name="plus" className="h-4 w-4" />
-              </div>
-            </div>
-            <div className="h-[calc(100%-49px)]">
-              <Webpage />
-            </div>
-          </div>
-        );
-      }
+function SafariWindow({ stateClass }) {
+	const { meta } = useApp()
+	const domain = meta ? meta.domain : ""
+	return (
+		<div className={"safari-window absolute inset-x-2 bottom-2 top-9 overflow-hidden rounded-xl sm:inset-x-8 sm:bottom-7 sm:top-12 " + stateClass}>
+			<div className="flex items-center gap-3 border-b border-black/10 bg-[#f6f6f7] px-4 py-2.5">
+				<div className="flex items-center gap-2">
+					<span className="h-3 w-3 rounded-full bg-[#ff5f57] ring-1 ring-black/5" />
+					<span className="h-3 w-3 rounded-full bg-[#febc2e] ring-1 ring-black/5" />
+					<span className="h-3 w-3 rounded-full bg-[#28c840] ring-1 ring-black/5" />
+				</div>
+				<div className="hidden items-center gap-1 text-neutral-400 sm:flex">
+					<Ico name="back" className="h-4 w-4" />
+					<Ico name="forward" className="h-4 w-4" />
+				</div>
+				<div className="mx-auto flex w-full max-w-md items-center justify-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs text-neutral-500 ring-1 ring-black/5">
+					<Ico name="lock" className="h-3 w-3" />
+					<span className="truncate">{domain}</span>
+				</div>
+				<div className="hidden items-center gap-2 text-neutral-400 sm:flex">
+					<Ico name="share" className="h-4 w-4" />
+					<Ico name="plus" className="h-4 w-4" />
+				</div>
+			</div>
+			<div className="h-[calc(100%-49px)]">
+				<Webpage />
+			</div>
+		</div>
+	)
+}
 
-      /* ============================================================
+/* ============================================================
    Root
    ============================================================ */
-      function App() {
-        const { data, error } = useLoadedContent();
-        const [phase, setPhase] = useState(0);
-        const [dockHover, setDockHover] = useState(false);
-        const [lang, setLangState] = useState(null);
+function App() {
+	const { data, error } = useLoadedContent()
+	const [phase, setPhase] = useState(0)
+	const [dockHover, setDockHover] = useState(false)
+	const [lang, setLangState] = useState(null)
 
-        useEffect(() => {
-          if (!data) return;
-          let saved = null;
-          try {
-            saved = localStorage.getItem("lang");
-          } catch (e) {}
-          const codes = (data.languages || []).map((l) => l.code);
-          const initial =
-            saved && codes.indexOf(saved) >= 0
-              ? saved
-              : (data.meta && data.meta.defaultLang) || codes[0] || "id";
-          setLangState(initial);
-        }, [data]);
+	useEffect(() => {
+		if (!data) return
+		let saved = null
+		try {
+			saved = localStorage.getItem("lang")
+		} catch (e) {}
+		const codes = (data.languages || []).map((l) => l.code)
+		const initial = saved && codes.indexOf(saved) >= 0 ? saved : (data.meta && data.meta.defaultLang) || codes[0] || "id"
+		setLangState(initial)
+	}, [data])
 
-        const setLang = (code) => {
-          setLangState(code);
-          try {
-            localStorage.setItem("lang", code);
-          } catch (e) {}
-        };
+	const setLang = (code) => {
+		setLangState(code)
+		try {
+			localStorage.setItem("lang", code)
+		} catch (e) {}
+	}
 
-        useEffect(() => {
-          const t = [];
-          t.push(setTimeout(() => setPhase(1), 500));
-          t.push(setTimeout(() => setPhase(2), 1650));
-          t.push(setTimeout(() => setPhase(3), 2000));
-          t.push(setTimeout(() => setPhase(4), 3050));
-          return () => t.forEach(clearTimeout);
-        }, []);
+	useEffect(() => {
+		const t = []
+		t.push(setTimeout(() => setPhase(1), 500))
+		t.push(setTimeout(() => setPhase(2), 1650))
+		t.push(setTimeout(() => setPhase(3), 2000))
+		t.push(setTimeout(() => setPhase(4), 3050))
+		return () => t.forEach(clearTimeout)
+	}, [])
 
-        useEffect(() => {
-          const h = (e) => {
-            if (e.key === "Escape") setPhase(4);
-          };
-          window.addEventListener("keydown", h);
-          return () => window.removeEventListener("keydown", h);
-        }, []);
+	useEffect(() => {
+		const h = (e) => {
+			if (e.key === "Escape") setPhase(4)
+		}
+		window.addEventListener("keydown", h)
+		return () => window.removeEventListener("keydown", h)
+	}, [])
 
-        const booted = phase >= 3;
-        const done = phase >= 4;
-        const stateClass = booted ? (done ? "" : "window-in") : "window-hidden";
+	const booted = phase >= 3
+	const done = phase >= 4
+	const stateClass = booted ? (done ? "" : "window-in") : "window-hidden"
 
-        if (!data) {
-          return (
-            <div className="desktop flex h-full items-center justify-center text-white/80">
-              {error ? "Tidak bisa memuat content.json" : "Memuat…"}
-            </div>
-          );
-        }
+	if (!data) {
+		return (
+			<div className="desktop flex h-full items-center justify-center text-white/80">
+				{error ? "Tidak bisa memuat content.json" : "Memuat…"}
+			</div>
+		)
+	}
 
-        const activeLang =
-          lang ||
-          (data.meta && data.meta.defaultLang) ||
-          (data.languages && data.languages[0] && data.languages[0].code) ||
-          "id";
-        const appValue = {
-          meta: data.meta,
-          languages: data.languages || [],
-          lang: activeLang,
-          setLang: setLang,
-          content: data.content ? data.content[activeLang] : null,
-          ui: data.ui ? data.ui[activeLang] : null,
-        };
+	const activeLang = lang || (data.meta && data.meta.defaultLang) || (data.languages && data.languages[0] && data.languages[0].code) || "id"
+	const appValue = {
+		meta: data.meta,
+		languages: data.languages || [],
+		lang: activeLang,
+		setLang: setLang,
+		content: data.content ? data.content[activeLang] : null,
+		ui: data.ui ? data.ui[activeLang] : null,
+	}
 
-        return (
-          <ContentCtx.Provider value={appValue}>
-            <div className="desktop relative h-full overflow-hidden">
-              <MenuBar />
-              <SafariWindow stateClass={stateClass} />
-              {!booted ? <MacCursor phase={phase} /> : null}
-              <div
-                className="dock-reveal-zone"
-                onMouseEnter={() => setDockHover(true)}
-              />
-              <Dock
-                down={done && !dockHover}
-                bounceSafari={phase === 2}
-                booted={booted}
-                onLaunch={() => setPhase(4)}
-                onHover={setDockHover}
-              />
-            </div>
-          </ContentCtx.Provider>
-        );
-      }
+	return (
+		<ContentCtx.Provider value={appValue}>
+			<div className="desktop relative h-full overflow-hidden">
+				<MenuBar />
+				<SafariWindow stateClass={stateClass} />
+				{!booted ? <MacCursor phase={phase} /> : null}
+				<div className="dock-reveal-zone" onMouseEnter={() => setDockHover(true)} />
+				<Dock
+					down={done && !dockHover}
+					bounceSafari={phase === 2}
+					booted={booted}
+					onLaunch={() => setPhase(4)}
+					onHover={setDockHover}
+				/>
+			</div>
+		</ContentCtx.Provider>
+	)
+}
 
-      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-    </script>
-  </body>
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
 </html>

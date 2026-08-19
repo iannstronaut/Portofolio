@@ -12,6 +12,7 @@
   "ui": {
     "id": {
       "viewWork": "Lihat karya",
+      "downloadCv": "Download CV",
       "contactCta": "Hubungi saya",
       "getInTouch": "Hubungi saya",
       "localTime": "Waktu lokal",
@@ -21,12 +22,15 @@
         "experience": "Pengalaman",
         "education": "Pendidikan",
         "skills": "Keahlian",
-        "projects": "Karya",
+        "proProjects": "Proyek",
+        "openProjects": "Terbuka",
+        "certificates": "Sertifikat",
         "contact": "Kontak"
       }
     },
     "en": {
       "viewWork": "View work",
+      "downloadCv": "Download CV",
       "contactCta": "Contact me",
       "getInTouch": "Get in touch",
       "localTime": "Local time",
@@ -36,12 +40,15 @@
         "experience": "Experience",
         "education": "Education",
         "skills": "Skills",
-        "projects": "Work",
+        "proProjects": "Projects",
+        "openProjects": "Open Source",
+        "certificates": "Certificates",
         "contact": "Contact"
       }
     },
     "jw": {
       "viewWork": "Deleng karya",
+      "downloadCv": "Download CV",
       "contactCta": "Hubungi aku",
       "getInTouch": "Ayo srawung",
       "localTime": "Wektu lokal",
@@ -51,7 +58,9 @@
         "experience": "Pengalaman",
         "education": "Pendhidhikan",
         "skills": "Kaprigelan",
-        "projects": "Karya",
+        "proProjects": "Proyek",
+        "openProjects": "Kabuka",
+        "certificates": "Sertifikat",
         "contact": "Kontak"
       }
     }
@@ -86,10 +95,18 @@
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
-            "period": "2025 — Sekarang",
+            "period": "2025 — Juni 2026",
             "location": "Kejayan, Pasuruan",
             "description": "Mengembangkan aplikasi web end-to-end dengan Angular di sisi frontend dan Node.js/Express + MySQL di sisi backend, termasuk desain API dan deployment.",
             "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Freelance Full Stack Developer (Part-time)",
+            "company": "Freelance",
+            "period": "2023 — Sekarang",
+            "location": "Malang, Indonesia",
+            "description": "Mengotomatisasi siklus pembuatan akta notaris PPAT untuk mempercepat penerbitan dokumen legalitas resmi, serta merefaktor sistem katalog digital UMKM dan mengoptimasi query database demi stabilitas dan kecepatan pencarian.",
+            "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
           },
           {
             "role": "Mentor Web Development",
@@ -108,7 +125,7 @@
           {
             "school": "Politeknik Negeri Malang",
             "degree": "S.Tr Teknik Informatika",
-            "period": "2022 — Sekarang",
+            "period": "2022 — 2026",
             "detail": "Fokus pada rekayasa perangkat lunak dan kecerdasan buatan."
           }
         ]
@@ -157,9 +174,36 @@
           }
         ]
       },
-      "projects": {
-        "eyebrow": "Karya terpilih",
-        "title": "Project Terbuka",
+      "proProjects": {
+        "eyebrow": "Karya Profesional",
+        "title": "Proyek Profesional",
+        "items": [
+          {
+            "name": "AI-Powered Manufacturing Compliance & Inspection Platform",
+            "category": "Computer Vision · Full Stack",
+            "description": "Platform otomasi pemantauan standar GMP, 5S, dan validasi Personal Hygiene (ISO 22001:2018) berbasis Computer Vision & Deep Learning dengan REST API pelaporan real-time yang memangkas waktu inspeksi lini produksi hingga 35%.",
+            "year": "2025 — 2026",
+            "tags": ["Angular", "Express.js", "FastAPI", "PyTorch", "Detectron2"]
+          },
+          {
+            "name": "Digital Quality Control & Equipment Calibration Management System",
+            "category": "Quality Assurance · Full Stack",
+            "description": "Sistem pemantauan kualitas produk (In-Process Control) dan kalibrasi alat ukur terintegrasi dengan mekanisme interlock, kalkulasi pass/fail otomatis, dan early warning yang menurunkan risiko kesalahan entri manual hingga 90%.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "MySQL"]
+          },
+          {
+            "name": "Production Batch Identity & Digital Approval System",
+            "category": "Manufacturing Systems · Full Stack",
+            "description": "Digitalisasi sistem penandaan dan alur pengesahan batch produksi real-time di seluruh area manufaktur untuk menjamin 100% integritas data lapangan serta mempercepat validasi dokumen operasional.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "REST API"]
+          }
+        ]
+      },
+      "openProjects": {
+        "eyebrow": "Karya Terpilih",
+        "title": "Proyek Terbuka",
         "items": [
           {
             "name": "Box2Box",
@@ -174,6 +218,25 @@
             "description": "Side project agent AI berbasis command line yang simpel dan sederhana untuk membantu tugas harian.",
             "year": "2025",
             "link": "https://github.com/iannstronaut/Zip-Code"
+          }
+        ]
+      },
+      "certificates": {
+        "eyebrow": "Lisensi & Prestasi",
+        "title": "Sertifikat",
+        "items": [
+          {
+            "name": "TOEIC",
+            "issuer": "International Test Center",
+            "period": "May 2026 — May 2031",
+            "detail": "Score: 830/990"
+          },
+          {
+            "name": "Juara 3 Hackathon Kategori Best Algorithm",
+            "issuer": "Play IT",
+            "location": "Malang, Indonesia",
+            "period": "Nov 2024",
+            "detail": "Kompetisi hackathon pengembangan solusi dan algoritma terbaik."
           }
         ]
       },
@@ -226,10 +289,18 @@
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
-            "period": "2025 — Now",
+            "period": "2025 — June 2026",
             "location": "Kejayan, Pasuruan",
             "description": "Built end-to-end web applications with Angular on the frontend and Node.js/Express + MySQL on the backend, including API design and deployment.",
             "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Freelance Full Stack Developer (Part-time)",
+            "company": "Freelance",
+            "period": "2023 — Now",
+            "location": "Malang, Indonesia",
+            "description": "Automated the PPAT notary deed lifecycle to expedite legal document processing, while refactoring MSME digital catalog platforms and optimizing database queries for greater speed and stability.",
+            "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
           },
           {
             "role": "Mentor Web Development",
@@ -247,8 +318,8 @@
         "items": [
           {
             "school": "Politeknik Negeri Malang",
-            "degree": "S.Tr Tekntik Informatika",
-            "period": "2022 — Now",
+            "degree": "S.Tr Teknik Informatika",
+            "period": "2022 — 2026",
             "detail": "Focused on software engineering and artificial intelligence."
           }
         ]
@@ -297,9 +368,36 @@
           }
         ]
       },
-      "projects": {
+      "proProjects": {
+        "eyebrow": "Professional Work",
+        "title": "Professional Projects",
+        "items": [
+          {
+            "name": "AI-Powered Manufacturing Compliance & Inspection Platform",
+            "category": "Computer Vision · Full Stack",
+            "description": "Automated compliance monitoring platform for GMP, 5S, and Personal Hygiene (ISO 22001:2018) using Computer Vision & Deep Learning with real-time reporting APIs, boosting line inspection efficiency by 35%.",
+            "year": "2025 — 2026",
+            "tags": ["Angular", "Express.js", "FastAPI", "PyTorch", "Detectron2"]
+          },
+          {
+            "name": "Digital Quality Control & Equipment Calibration Management System",
+            "category": "Quality Assurance · Full Stack",
+            "description": "Integrated product quality monitoring and instrument calibration system featuring interlock mechanisms, automated pass/fail calculations, and early warnings reducing manual entry risks by 90%.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "MySQL"]
+          },
+          {
+            "name": "Production Batch Identity & Digital Approval System",
+            "category": "Manufacturing Systems · Full Stack",
+            "description": "Digitized production batch identification and real-time approval workflows across manufacturing floors, guaranteeing 100% data integrity and accelerating operational document validation.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "REST API"]
+          }
+        ]
+      },
+      "openProjects": {
         "eyebrow": "Selected work",
-        "title": "Open Project",
+        "title": "Open Projects",
         "items": [
           {
             "name": "Box2Box",
@@ -317,6 +415,25 @@
           }
         ]
       },
+      "certificates": {
+        "eyebrow": "Licenses & Achievements",
+        "title": "Certifications",
+        "items": [
+          {
+            "name": "TOEIC",
+            "issuer": "International Test Center",
+            "period": "May 2026 — May 2031",
+            "detail": "Score: 830/990"
+          },
+          {
+            "name": "3rd Place Hackathon (Best Algorithm Category)",
+            "issuer": "Play IT",
+            "location": "Malang, Indonesia",
+            "period": "Nov 2024",
+            "detail": "Hackathon competition for software solutions and algorithm development."
+          }
+        ]
+      },
       "contact": {
         "eyebrow": "Say hello",
         "title": "Let's collaborate",
@@ -325,7 +442,7 @@
         "socials": [
           {
             "label": "LinkedIn",
-            "handle": "/in/iannstrpnaut",
+            "handle": "/in/iannstronaut",
             "url": "https://www.linkedin.com/in/iannstronaut/"
           },
           {
@@ -366,10 +483,18 @@
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
-            "period": "2025 — Saiki",
+            "period": "2025 — Juni 2026",
             "location": "Kejayan, Pasuruan",
             "description": "Ngrembug aplikasi web end-to-end kanthi Angular ing frontend lan Node.js/Express + MySQL ing backend, kalebu desain API lan deployment.",
             "tags": ["Angular", "Node.js", "Express", "MySQL", "REST API"]
+          },
+          {
+            "role": "Freelance Full Stack Developer (Part-time)",
+            "company": "Freelance",
+            "period": "2023 — Saiki",
+            "location": "Malang, Indonésia",
+            "description": "Ngotomatisasi siklus nggawe akta notaris PPAT kanggo nyepetake panerbitan dokumen resmi legalitas, sarta ngrefaktor sistem katalog digital UMKM lan ngoptimalake query basis data kanggo nambah stabilitas lan kacepetan.",
+            "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
           },
           {
             "role": "Mentor Web Development",
@@ -387,8 +512,8 @@
         "items": [
           {
             "school": "Politeknik Negeri Malang",
-            "degree": "S.Tr Tekntik Informatika",
-            "period": "2022 — Sekarang",
+            "degree": "S.Tr Teknik Informatika",
+            "period": "2022 — 2026",
             "detail": "Fokus ing rékayasa piranti alus lan kacerdasan gawéan."
           }
         ]
@@ -437,7 +562,34 @@
           }
         ]
       },
-      "projects": {
+      "proProjects": {
+        "eyebrow": "Karya Profesional",
+        "title": "Proyek Profesional",
+        "items": [
+          {
+            "name": "AI-Powered Manufacturing Compliance & Inspection Platform",
+            "category": "Computer Vision · Full Stack",
+            "description": "Platform otomasi pemantauan standar GMP, 5S, lan validasi Personal Hygiene (ISO 22001:2018) kanthi Computer Vision & Deep Learning sarta REST API pelaporan real-time sing nambah efisiensi inspeksi nganti 35%.",
+            "year": "2025 — 2026",
+            "tags": ["Angular", "Express.js", "FastAPI", "PyTorch", "Detectron2"]
+          },
+          {
+            "name": "Digital Quality Control & Equipment Calibration Management System",
+            "category": "Quality Assurance · Full Stack",
+            "description": "Sistem pamantauan kualitas produk (In-Process Control) lan kalibrasi piranti ukur kanthi mekanisme interlock, kalkulasi pass/fail otomatis, lan early warning sing nyuda resiko salah entri manual nganti 90%.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "MySQL"]
+          },
+          {
+            "name": "Production Batch Identity & Digital Approval System",
+            "category": "Manufacturing Systems · Full Stack",
+            "description": "Digitalisasi sistem panandha lan alur pangesahan batch produksi real-time ing kabeh area manufaktur kanggo njamin 100% integritas data lapangan lan nyepetake validasi dokumen operasional.",
+            "year": "2025",
+            "tags": ["Angular", "Express.js", "Webpack", "REST API"]
+          }
+        ]
+      },
+      "openProjects": {
         "eyebrow": "Karya pilihan",
         "title": "Proyek Kabuka",
         "items": [
@@ -457,6 +609,25 @@
           }
         ]
       },
+      "certificates": {
+        "eyebrow": "Lisènsi & Prèstasi",
+        "title": "Sertifikat",
+        "items": [
+          {
+            "name": "TOEIC",
+            "issuer": "International Test Center",
+            "period": "May 2026 — May 2031",
+            "detail": "Score: 830/990"
+          },
+          {
+            "name": "Juara 3 Hackathon Kategori Best Algorithm",
+            "issuer": "Play IT",
+            "location": "Malang, Indonésia",
+            "period": "Nov 2024",
+            "detail": "Kompetisi hackathon pangembangan solusi lan algoritma paling apik."
+          }
+        ]
+      },
       "contact": {
         "eyebrow": "Aruh-aruh",
         "title": "Ayo kolaborasi",
@@ -465,7 +636,7 @@
         "socials": [
           {
             "label": "LinkedIn",
-            "handle": "/in/iannstrpnaut",
+            "handle": "/in/iannstronaut",
             "url": "https://www.linkedin.com/in/iannstronaut/"
           },
           {

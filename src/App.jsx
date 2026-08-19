@@ -61,6 +61,7 @@ const ICONS = {
 	plus: ["M12 5v14M5 12h14"],
 	arrow: ["M5 12h14M13 6l6 6-6 6"],
 	mail: ["M3 6h18v12H3z", "M3 7l9 6 9-6"],
+	download: ["M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", "M7 10l5 5 5-5", "M12 15V3"],
 }
 function Ico({ name, className = "h-4 w-4" }) {
 	return (
@@ -380,18 +381,22 @@ function Hero({ onNav }) {
 						{hero.subheadline}
 					</p>
 					<div className="mt-7 flex flex-wrap items-center gap-3">
+						<a
+							href="FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
+							download="FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
+							target="_blank"
+							rel="noreferrer"
+							className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-action/90 active:scale-[0.97]"
+						>
+							<Ico name="download" className="h-4 w-4" />
+							{ui.downloadCv || "Download CV"}
+						</a>
 						<button
-							onClick={() => onNav("projects")}
-							className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition active:scale-[0.97]"
+							onClick={() => onNav("proProjects")}
+							className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
 						>
 							{ui.viewWork}
 							<Ico name="arrow" className="h-4 w-4" />
-						</button>
-						<button
-							onClick={() => onNav("contact")}
-							className="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
-						>
-							{ui.contactCta}
 						</button>
 					</div>
 					{Array.isArray(hero.roles) && hero.roles.length ? (
@@ -463,12 +468,12 @@ function Experience() {
 						<div className="glass-card glass-hover p-5 sm:p-6">
 							<div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
 								<h3 className="text-[15px] font-semibold text-ink">
-									{x.role} <span className="text-neutral-300">·</span> <span className="text-action">{x.company}</span>
+									{x.role} {x.company ? <><span className="text-neutral-300">·</span> <span className="text-action">{x.company}</span></> : null}
 								</h3>
 								<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{x.period}</span>
 							</div>
 							{x.location ? <div className="mt-0.5 text-xs text-neutral-500">{x.location}</div> : null}
-							<p className="mt-2.5 text-sm leading-relaxed text-neutral-600">{x.description}</p>
+							<p className="mt-2.5 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{x.description}</p>
 							{Array.isArray(x.tags) && x.tags.length ? (
 								<div className="mt-3.5 flex flex-wrap gap-1.5">
 									{x.tags.map((t) => (
@@ -531,23 +536,24 @@ function Skills() {
 	)
 }
 
-function Projects() {
-	const { projects } = useContent()
-	if (!projects) return null
-	const items = projects.items || []
+function ProjectList({ data, index, variantOffset = 0 }) {
+	if (!data) return null
+	const items = data.items || []
 	return (
 		<section className="py-10">
-			<SectionHead index="05" eyebrow={projects.eyebrow} title={projects.title} />
+			<SectionHead index={index} eyebrow={data.eyebrow} title={data.title} />
 			<div className="grid gap-4 sm:grid-cols-2">
 				{items.map((p, i) => {
-					const feature = i === 0
-					const variant = i % 4
+					const feature = i === 0 && items.length % 2 === 1
+					const variant = (i + variantOffset) % 4
+					const hasLink = Boolean(p.link && p.link !== "#")
+					const Tag = hasLink ? "a" : "div"
 					return (
-						<a
+						<Tag
 							key={i}
-							href={p.link || "#"}
-							target={p.link ? "_blank" : undefined}
-							rel="noreferrer"
+							href={hasLink ? p.link : undefined}
+							target={hasLink ? "_blank" : undefined}
+							rel={hasLink ? "noreferrer" : undefined}
 							className={"glass-card glass-hover group block p-3 " + (feature ? "sm:col-span-2" : "")}
 						>
 							<div className={feature ? "grid items-stretch gap-4 sm:grid-cols-2" : ""}>
@@ -561,21 +567,66 @@ function Projects() {
 										<h3 className={"font-semibold tracking-tight text-ink " + (feature ? "text-xl" : "text-base")}>
 											{p.name}
 										</h3>
-										<span className="mt-1 text-neutral-300 transition group-hover:translate-x-0.5 group-hover:text-action">
-											<Ico name="arrow" className="h-4 w-4" />
-										</span>
+										{hasLink ? (
+											<span className="mt-1 text-neutral-300 transition group-hover:translate-x-0.5 group-hover:text-action">
+												<Ico name="arrow" className="h-4 w-4" />
+											</span>
+										) : null}
 									</div>
-									<p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{p.description}</p>
-									<div className="mt-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-neutral-400">
+									<p className="mt-1.5 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{p.description}</p>
+									<div className="mt-3 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-neutral-400">
 										<span>{p.category}</span>
 										<span className="text-neutral-300">·</span>
 										<span>{p.year}</span>
 									</div>
+									{Array.isArray(p.tags) && p.tags.length ? (
+										<div className="mt-3 flex flex-wrap gap-1.5">
+											{p.tags.map((t) => (
+												<Chip key={t}>{t}</Chip>
+											))}
+										</div>
+									) : null}
 								</div>
 							</div>
-						</a>
+						</Tag>
 					)
 				})}
+			</div>
+		</section>
+	)
+}
+
+function ProProjects() {
+	const { proProjects } = useContent()
+	return <ProjectList data={proProjects} index="05" variantOffset={0} />
+}
+
+function OpenProjects() {
+	const { openProjects, projects } = useContent()
+	return <ProjectList data={openProjects || projects} index="06" variantOffset={2} />
+}
+
+function Certificates() {
+	const { certificates, certifications } = useContent()
+	const data = certificates || certifications
+	if (!data) return null
+	return (
+		<section className="py-10">
+			<SectionHead index="07" eyebrow={data.eyebrow} title={data.title} />
+			<div className="grid gap-4 sm:grid-cols-2">
+				{(data.items || []).map((c, i) => (
+					<div key={i} className="glass-card glass-hover p-6">
+						<div className="flex items-baseline justify-between gap-3">
+							<h3 className="text-base font-semibold text-ink">{c.name}</h3>
+							<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{c.period}</span>
+						</div>
+						<div className="mt-1 text-sm font-medium text-action">
+							{c.issuer}
+							{c.location ? <span className="font-normal text-neutral-400"> · {c.location}</span> : null}
+						</div>
+						{c.detail ? <p className="mt-2 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{c.detail}</p> : null}
+					</div>
+				))}
 			</div>
 		</section>
 	)
@@ -619,7 +670,7 @@ function Contact() {
 /* ============================================================
    Browser webpage (nav + sections inside the Safari window)
    ============================================================ */
-const NAV = ["summary", "experience", "education", "skills", "projects", "contact"]
+const NAV = ["summary", "experience", "education", "skills", "proProjects", "openProjects", "certificates", "contact"]
 
 function LangSwitcher() {
 	const { languages, lang, setLang } = useApp()
@@ -690,32 +741,32 @@ function Webpage() {
 					{/* sticky in-page nav */}
 					<div className="sticky top-0 z-30">
 						<div className="glass border-b border-white/40">
-							<Container className="flex h-14 items-center justify-between">
-								<button onClick={() => onNav("top")} className="flex items-center gap-2.5">
+							<Container className="flex h-14 items-center justify-between gap-2">
+								<button onClick={() => onNav("top")} className="flex shrink-0 items-center gap-2 text-left transition hover:opacity-80">
 									<span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-[#13314f] to-action text-[11px] font-semibold text-white shadow-inner">
 										{hero ? hero.monogram : ""}
 									</span>
-									<span className="text-sm font-semibold tracking-tight text-ink">{hero ? hero.name : ""}</span>
+									<span className="hidden text-sm font-semibold tracking-tight text-ink xl:inline">{hero ? hero.name : ""}</span>
 								</button>
-								<nav className="hidden items-center gap-1 md:flex">
+								<nav className="hidden items-center gap-0.5 rounded-full bg-white/50 p-1 ring-1 ring-neutral-300/60 md:flex">
 									{NAV.map((n) => (
 										<button
 											key={n}
 											onClick={() => onNav(n)}
 											className={
-												"rounded-full px-3 py-1.5 text-[13px] font-medium transition " +
-												(active === n ? "bg-white/70 text-action" : "text-neutral-500 hover:text-ink")
+												"rounded-full px-2.5 py-1 text-[12px] font-medium whitespace-nowrap transition " +
+												(active === n ? "bg-white text-action shadow-sm" : "text-neutral-500 hover:text-ink")
 											}
 										>
 											{ui.nav[n]}
 										</button>
 									))}
 								</nav>
-								<div className="flex items-center gap-2">
+								<div className="flex shrink-0 items-center gap-2">
 									<LangSwitcher />
 									<a
 										href={"mailto:" + (useContentEmail() || "")}
-										className="hidden rounded-full bg-action px-4 py-1.5 text-[13px] font-medium text-white transition active:scale-95 sm:inline-flex"
+										className="hidden rounded-full bg-action px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition active:scale-95 sm:inline-flex"
 									>
 										{ui.getInTouch}
 									</a>
@@ -731,7 +782,9 @@ function Webpage() {
 						<div id="sec-experience"><Experience /></div>
 						<div id="sec-education"><Education /></div>
 						<div id="sec-skills"><Skills /></div>
-						<div id="sec-projects"><Projects /></div>
+						<div id="sec-proProjects"><ProProjects /></div>
+						<div id="sec-openProjects"><OpenProjects /></div>
+						<div id="sec-certificates"><Certificates /></div>
 						<div id="sec-contact"><Contact /></div>
 						<footer className="border-t border-neutral-200/70 py-8 text-center text-xs text-neutral-400">
 							© {new Date().getFullYear()} {hero ? hero.name : ""} · {meta ? meta.domain : ""}
