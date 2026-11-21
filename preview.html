@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
 <title>Al Byan Agung Shafiqri — Portfolio</title>
 <meta name="description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
 <link rel="canonical" href="https://iannstr.com/" />
@@ -11,289 +12,623 @@
 <meta property="og:site_name" content="Al Byan Agung Shafiqri" />
 <meta property="og:title" content="Al Byan Agung Shafiqri — Portfolio" />
 <meta property="og:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-<meta property="og:image" content="https://iannstr.com/og-frame.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Al Byan Agung Shafiqri — Portfolio" />
 <meta name="twitter:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-<meta name="twitter:image" content="https://iannstr.com/og-frame.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: { extend: {
-      colors: { ink: "#1d1d1f", action: "#0066cc" },
-      fontFamily: {
-        sans: ["Inter","system-ui","-apple-system","BlinkMacSystemFont","SF Pro Text","sans-serif"],
-        mono: ["JetBrains Mono","ui-monospace","SFMono-Regular","Menlo","monospace"],
-      },
-    } },
-  }
-</script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.28.5/babel.min.js"></script>
 <style>
-/* ============================================================
-   macOS desktop · liquid glass · boot animation
-   Shared by the Vite build (via index.css) and the standalone preview.
-   ============================================================ */
-
 :root {
-	--ink: #1d1d1f;
-	--action: #0066cc;
+	color-scheme: light;
+	--paper: #fbfcfd;
+	--ink: #202b38;
+	--muted: #4d5c6e;
+	--line: #dce3ea;
+	--accent: #174b82;
+	--tint: #edf3f9;
+	--gutter: clamp(1.125rem, 4vw, 3rem);
 }
 
-html,
-body,
-#root {
-	height: 100%;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
 	margin: 0;
-	font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	letter-spacing: -0.01em;
+	background: var(--paper);
 	color: var(--ink);
+	font-family: Inter, system-ui, sans-serif;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ol, ul, dl, dd { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
+button { font: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.mac-desktop {
+	display: grid;
+	grid-template-rows: 2rem minmax(0, 1fr) auto;
+	height: 100vh;
+	height: 100dvh;
 	overflow: hidden;
+	background:
+		linear-gradient(156deg, transparent 46%, #88bed62e 46.2%, transparent 70%),
+		linear-gradient(156deg, #102131 0%, #173a55 45%, #27617c 73%, #142c45 100%);
 }
 
-/* ---------- macOS desktop wallpaper (deep blue/teal, no purple) ---------- */
-.desktop {
-	background-color: #0c2236;
-	background-image: radial-gradient(
-			900px 700px at 16% 10%,
-			rgba(78, 150, 210, 0.45),
-			transparent 60%
-		),
-		radial-gradient(1000px 760px at 88% 20%, rgba(30, 140, 150, 0.42), transparent 58%),
-		linear-gradient(168deg, #0b2034 0%, #103f55 48%, #0f5862 80%, #0c2c43 100%);
+.mac-menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding-inline: clamp(0.75rem, 2vw, 1.5rem);
+	border-block-end: 1px solid #ffffff24;
+	background: #0c182abe;
+	color: #f1f5fa;
+	font-size: 0.75rem;
+	line-height: 1.2;
 }
 
-/* ---------- page canvas inside the browser (restrained, warm-cool light) ---------- */
-.page-canvas {
-	background-color: #eceff4;
-	background-image: radial-gradient(
-			820px 600px at 100% -6%,
-			rgba(0, 102, 204, 0.12),
-			transparent 58%
-		),
-		radial-gradient(720px 560px at -8% 4%, rgba(0, 102, 204, 0.08), transparent 56%),
-		radial-gradient(900px 700px at 50% 116%, rgba(15, 88, 98, 0.08), transparent 60%);
+.mac-menu-app, .mac-menu time { display: flex; align-items: center; gap: clamp(0.5rem, 2vw, 1rem); }
+.mac-menu-app span { color: #d4e0ec; }
+.mac-menu time { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.mac-workspace {
+	display: grid;
+	grid-template-rows: minmax(0, 1fr);
+	padding: clamp(0.5rem, 1.8vw, 1.75rem) clamp(0.5rem, 3.25vw, 3.5rem) 0;
 }
 
-/* engineered texture: hairline dot-grid + faint film grain */
-.texture {
+.mac-workspace.mac-expanded { padding: 0; }
+.mac-expanded .safari-window { border-radius: 0; }
+
+.safari-window {
+	display: grid;
+	grid-template-rows: auto minmax(0, 1fr);
+	width: 100%;
+	max-width: 88rem;
+	margin-inline: auto;
+	overflow: hidden;
+	border: 1px solid #ffffff92;
+	border-radius: 12px;
+	background: var(--paper);
+	box-shadow: 0 22px 58px #06152675, 0 2px 8px #0615265e;
+	transform-origin: 50% 110%;
+	animation: safari-open 680ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mac-expanded .safari-window { max-width: none; }
+.safari-window[hidden] { display: none; }
+
+@keyframes safari-open {
+	from { opacity: 0; transform: translate(-4.65rem, 45%) scale(0.25, 0.12); }
+	55% { opacity: 1; }
+	to { opacity: 1; transform: none; }
+}
+
+.safari-toolbar {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(max-content, 1fr) minmax(0, 20rem) 1fr;
+	align-items: center;
+	gap: 0.5rem;
+	min-height: 2.25rem;
+	padding: 0.25rem 0.75rem;
+	border-block-end: 1px solid #d0d8e1;
+	background: #edf1f5;
+}
+
+.safari-toolbar::after {
 	position: absolute;
-	inset: 0;
-	z-index: 0;
+	inset: auto 0 -1px;
+	height: 2px;
+	background: #3977ac;
+	content: "";
 	pointer-events: none;
-}
-.texture .dots {
-	position: absolute;
-	inset: 0;
-	opacity: 0.5;
-	background-image: radial-gradient(rgba(13, 39, 64, 0.16) 0.6px, transparent 0.6px);
-	background-size: 22px 22px;
-	-webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000, transparent 75%);
-	mask-image: radial-gradient(120% 80% at 50% 0%, #000, transparent 75%);
-}
-.texture .grain {
-	position: absolute;
-	inset: 0;
-	opacity: 0.32;
-	mix-blend-mode: soft-light;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	transform: scaleX(var(--scroll-progress, 0));
+	transform-origin: left;
 }
 
-/* ---------- liquid glass ---------- */
-.glass {
-	background: rgba(255, 255, 255, 0.6);
-	-webkit-backdrop-filter: blur(22px) saturate(180%);
-	backdrop-filter: blur(22px) saturate(180%);
+.window-controls { display: flex; align-items: center; gap: 0.0625rem; }
+
+.window-controls button {
+	display: grid;
+	width: 1.5rem;
+	height: 1.5rem;
+	place-items: center;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: radial-gradient(circle, var(--control-color) 0 6px, #162b4440 6px 7px, transparent 7px);
+	color: transparent;
+	font-size: 0.75rem;
+	font-weight: 700;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.window-controls:hover button, .window-controls button:focus-visible { color: #202934; }
+.window-close { --control-color: #ff625b; }
+.window-minimize { --control-color: #f8be4f; }
+.window-expand { --control-color: #53c86e; }
+
+.safari-address {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
+	min-height: 1.375rem;
+	border: 1px solid #d8dfe6;
+	border-radius: 6px;
+	background: #fafbfd;
+	color: var(--muted);
+	font-size: 0.75rem;
+	line-height: 1.15;
+}
+
+.safari-address svg { width: 0.75rem; height: 0.75rem; }
+.browser-viewport {
+	--topbar-height: 3.375rem;
+	overflow: auto;
+	overflow-anchor: none;
+	overscroll-behavior: contain;
+	scroll-padding-top: calc(var(--topbar-height) + 0.875rem);
+}
+.browser-viewport:focus-visible { outline-offset: -2px; }
+
+.mac-dock {
+	display: flex;
+	justify-self: center;
+	gap: 0.625rem;
+	margin: 0.625rem 0 0.625rem;
+	padding: 0.4rem 0.625rem;
+	border: 1px solid #ffffff61;
+	border-radius: 1rem;
+	background: #b8d4ea41;
+	box-shadow: 0 6px 16px #0615265e;
+}
+
+.dock-item {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.75rem;
+	padding: 0 0 0.25rem;
+	border: 0;
+	border-radius: 0.625rem;
+	background: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.dock-item[aria-expanded="true"]::after {
+	position: absolute;
+	inset: auto auto 0;
+	width: 0.25rem;
+	height: 0.25rem;
+	border-radius: 50%;
+	background: #f8fbff;
+	content: "";
+}
+
+.dock-item:focus-visible { outline-color: #fff; }
+
+.dock-tile {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	place-items: center;
+	border: 1px solid #ffffff54;
+	border-radius: 0.625rem;
+	color: white;
+	box-shadow: 0 2px 5px #091e3780;
+	transition: transform 150ms ease;
+}
+
+.dock-item:hover .dock-tile, .dock-item:focus-visible .dock-tile { transform: translateY(-0.2rem); }
+.dock-tile svg { width: 1.375rem; height: 1.375rem; }
+.dock-safari { background: #1966a9; }
+.dock-cv { background: #f6f7fb; color: #283f59; }
+.dock-github { background: #242d3a; }
+.dock-mail { background: #347faa; }
+
+.mac-dock { --boot-duration: 1.65s; }
+
+.boot-cursor {
+	position: absolute;
+	z-index: 3;
+	top: 35%;
+	left: 45%;
+	overflow: visible;
+	transform-origin: 5px 3px;
+	filter: drop-shadow(0 2px 3px #0008);
+	pointer-events: none;
+	animation: safari-click var(--boot-duration) both;
+}
+
+.dock-item:has(.boot-cursor) .dock-safari { animation: safari-bounce var(--boot-duration) both; }
+
+@keyframes safari-click {
+	0%, 15% { transform: translate(19vw, -47vh); animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
+	68% { transform: none; animation-timing-function: ease-out; }
+	74% { transform: scale(0.76); }
+	83%, 94% { opacity: 1; transform: none; }
+	to { opacity: 0; }
+}
+
+@keyframes safari-bounce {
+	0%, 74%, 95%, 100% { transform: none; }
+	85% { transform: translateY(-0.65rem); }
+}
+
+.dock-label {
+	position: absolute;
+	z-index: 2;
+	bottom: calc(100% + 0.5rem);
+	left: 50%;
+	padding: 0.25rem 0.5rem;
+	border-radius: 5px;
+	background: #152638;
+	color: #fff;
+	font-size: 0.75rem;
+	white-space: nowrap;
+	pointer-events: none;
+	opacity: 0;
+	transform: translateX(-50%);
+}
+
+.dock-item:hover .dock-label, .dock-item:focus-visible .dock-label { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+	.safari-window, .boot-cursor, .dock-item:has(.boot-cursor) .dock-safari { animation: none; }
+	.dock-tile { transition: none; }
+}
+
+.site-main, .topbar-inner {
+	max-width: 74rem;
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.skip-link {
+	position: fixed;
+	z-index: 3;
+	top: 3rem;
+	left: var(--gutter);
+	padding: 0.5rem 1rem;
+	background: var(--paper);
+	clip-path: inset(50%);
+}
+
+.skip-link:focus { clip-path: none; }
+
+.site-topbar {
+	position: sticky;
+	z-index: 2;
+	top: 0;
+	background: #f8fbfef0;
+	box-shadow: inset 0 -1px 0 #d0dce8;
+	backdrop-filter: blur(16px);
+}
+
+.topbar-inner {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	grid-template-rows: var(--topbar-height);
+	align-items: center;
+	column-gap: clamp(0.625rem, 2vw, 1.5rem);
+}
+
+.brand {
+	display: inline-flex;
+	min-width: 0;
+	align-items: center;
+	gap: 0.625rem;
+	font-size: 0.875rem;
+	font-weight: 650;
+	line-height: 1.3;
+	text-decoration: none;
+}
+
+.brand-name { display: none; }
+
+.monogram {
+	display: grid;
+	flex: 0 0 2rem;
+	height: 2rem;
+	place-items: center;
+	border-radius: 0.625rem;
+	background: linear-gradient(145deg, #153453, #246bb0);
+	color: white;
+	font-size: 0.75rem;
+	letter-spacing: 0.055em;
+}
+
+.languages {
+	display: flex;
+	gap: 0.125rem;
+	padding: 0.125rem;
+	border: 1px solid #d9e3ee;
+	border-radius: 0.75rem;
+	background: #e9f0f7;
+}
+
+.languages button {
+	min-width: 2rem;
+	min-height: 1.75rem;
+	padding: 0 0.25rem;
+	border: 1px solid transparent;
+	border-radius: 0.5rem;
+	background: transparent;
+	color: var(--muted);
+	font-size: 0.75rem;
+	font-weight: 650;
+	cursor: pointer;
+}
+
+.languages button:hover, .languages button[aria-pressed="true"] {
+	border-color: var(--line);
+	background: #fff;
+	color: var(--accent);
+}
+
+.site-nav {
+	display: flex;
+	min-width: 0;
+	justify-content: safe center;
+	align-items: center;
+	gap: 0.125rem;
+	overflow-x: auto;
+	padding: 0.1875rem;
+	border: 1px solid #d9e3ee;
+	border-radius: 0.75rem;
+	background: #ffffffa6;
+	scrollbar-width: thin;
+}
+
+.site-nav a {
+	flex: none;
+	padding: 0.375rem 0.625rem;
+	border-radius: 0.5rem;
+	color: var(--muted);
+	font-size: 0.8125rem;
+	font-weight: 550;
+	line-height: 1.35;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.site-nav a:hover { color: var(--accent); background: var(--tint); }
+.site-nav a[aria-current] { background: #e1edf9; }
+.site-nav a:focus-visible { outline-offset: -2px; }
+
+.browser-viewport {
+	background: #eceff4;
+	background-image:
+		radial-gradient(820px 600px at 100% 0%, #0066cc1f, transparent 58%),
+		radial-gradient(720px 560px at 0% 4%, #0066cc14, transparent 56%),
+		radial-gradient(900px 700px at 50% 100%, #0f586214, transparent 60%),
+		radial-gradient(#0d27401c 0.6px, transparent 0.6px);
+	background-size: auto, auto, auto, 22px 22px;
+	background-attachment: local;
+}
+
+.site-main {
+	--content-ink: #1d1d1f;
+	--content-muted: #52525b;
+	--content-accent: #0066cc;
+	--mono: "JetBrains Mono", ui-monospace, monospace;
+	container-type: inline-size;
+	min-width: 0;
+	color: var(--content-ink);
 }
 
 .glass-card {
 	position: relative;
-	background: linear-gradient(
-		180deg,
-		rgba(255, 255, 255, 0.78),
-		rgba(255, 255, 255, 0.56)
-	);
-	-webkit-backdrop-filter: blur(20px) saturate(170%);
-	backdrop-filter: blur(20px) saturate(170%);
+	min-width: 0;
+	border: 1px solid #ffffffa6;
 	border-radius: 18px;
-	border: 1px solid rgba(255, 255, 255, 0.65);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset,
-		0 18px 40px -26px rgba(13, 39, 64, 0.5), 0 2px 8px -5px rgba(13, 39, 64, 0.28);
-}
-.glass-card::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	border-radius: inherit;
-	padding: 1px;
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 38%);
-	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-	-webkit-mask-composite: xor;
-	mask-composite: exclude;
-	pointer-events: none;
-}
-.glass-hover {
-	transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-}
-.glass-hover:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset,
-		0 30px 58px -28px rgba(13, 39, 64, 0.55), 0 5px 14px -8px rgba(13, 39, 64, 0.3);
+	background: linear-gradient(180deg, #ffffffc7, #ffffff8f);
+	box-shadow: 0 1px 0 #ffffffb3 inset, 0 18px 40px -26px #0d274080, 0 2px 8px -5px #0d274047;
 }
 
-/* project mini-window thumbnail */
-.mini-win {
-	border-radius: 12px;
-	overflow: hidden;
-	border: 1px solid rgba(13, 39, 64, 0.08);
-	box-shadow: 0 12px 28px -18px rgba(13, 39, 64, 0.5);
-	background: #fff;
-}
-.mini-win .stage {
-	transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.glass-hover:hover .mini-win .stage {
-	transform: scale(1.04);
-}
+.glass-hover { transition: transform 250ms ease, box-shadow 250ms ease; }
 
-/* big editorial watermark number behind section heads */
-.watermark {
-	font-variant-numeric: tabular-nums;
-	color: rgba(13, 39, 64, 0.05);
-	letter-spacing: -0.04em;
-	line-height: 0.8;
-}
-
-/* ---------- Safari window ---------- */
-.safari-window {
-	background: #ffffff;
-	box-shadow: 0 44px 120px rgba(0, 0, 0, 0.5), 0 8px 28px rgba(0, 0, 0, 0.28);
-	border: 0.5px solid rgba(255, 255, 255, 0.22);
-	transform-origin: 50% calc(100% + 30px);
-}
-.window-hidden {
-	opacity: 0;
-	transform: scale(0.26) translateY(42vh);
-	filter: blur(8px);
-	pointer-events: none;
-}
-.window-in {
-	animation: genieOpen 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-@keyframes genieOpen {
-	from { opacity: 0; transform: scale(0.28) translateY(40vh); filter: blur(8px); }
-	55% { opacity: 1; }
-	to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
-}
-
-/* ---------- boot cursor ---------- */
-.boot-cursor {
-	position: fixed;
-	left: 64%;
-	top: 44%;
-	z-index: 60;
-	filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
-	transition: left 1.15s cubic-bezier(0.5, 0, 0.2, 1),
-		top 1.15s cubic-bezier(0.5, 0, 0.2, 1);
-}
-.boot-cursor.cursor-move { left: 50%; top: calc(100% - 50px); }
-.cursor-click svg { animation: clickPulse 0.32s ease; }
-@keyframes clickPulse {
-	0% { transform: scale(1); }
-	50% { transform: scale(0.78); }
-	100% { transform: scale(1); }
-}
-
-/* ---------- dock (compact) : slides down after boot, auto-hide on hover ---------- */
-.dock-wrap {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 45;
-	display: flex;
-	justify-content: center;
-	padding-bottom: 9px;
-	transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.dock-down { transform: translateY(135%); }
-.dock-reveal-zone {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 6px;
-	z-index: 44;
-}
-.dock-icon { transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.dock-icon:hover { transform: translateY(-5px) scale(1.1); }
-.dock-bounce { animation: dockBounce 0.6s ease 2; }
-@keyframes dockBounce {
-	0%, 100% { transform: translateY(0); }
-	35% { transform: translateY(-16px); }
-	70% { transform: translateY(-4px); }
-}
-
-/* ---------- scroll progress bar under the nav ---------- */
-.scroll-progress {
-	height: 2px;
-	background: var(--action);
-	transform-origin: 0 50%;
-	transition: transform 0.08s linear;
-}
-
-/* ---------- scrollbar inside the browser viewport ---------- */
-.safari-scroll::-webkit-scrollbar { width: 9px; }
-.safari-scroll::-webkit-scrollbar-thumb {
-	background: rgba(0, 0, 0, 0.16);
-	border-radius: 9999px;
-	border: 3px solid transparent;
-	background-clip: content-box;
-}
-.safari-scroll::-webkit-scrollbar-thumb:hover {
-	background: rgba(0, 0, 0, 0.28);
-	background-clip: content-box;
-}
-
-.reveal { animation: reveal 0.7s ease both; }
-@keyframes reveal {
-	from { opacity: 0; transform: translateY(10px); }
-	to { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.window-in, .boot-cursor, .dock-bounce, .reveal, .dock-wrap,
-	.glass-hover, .mini-win .stage, .dock-icon {
-		animation: none !important;
-		transition: none !important;
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+	.glass-hover:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 1px 0 #ffffffb3 inset, 0 30px 58px -28px #0d27408c, 0 5px 14px -8px #0d27404d;
 	}
 }
 
-/* ---------- dock app-tile backgrounds (no inline styles needed in JSX) ---------- */
-.tile-browser {
-	background: linear-gradient(160deg, #36a0ff 0%, #1d7fe0 55%, #1565c0 100%);
+.hero {
+	display: grid;
+	gap: 1rem;
+	padding-block: clamp(1.5rem, 3vw, 2.5rem) 2.5rem;
 }
-.tile-vscode {
-	background: linear-gradient(160deg, #29a9f1 0%, #1f8fe0 45%, #0e6fc0 100%);
+
+.hero-lead, .summary-card { padding: clamp(1.25rem, 3vw, 2.25rem); }
+.hero-profile, .hero-clock, .content-card { padding: clamp(1rem, 2vw, 1.5rem); }
+.hero-lead, .hero-profile, .hero-clock { display: flex; flex-direction: column; }
+.hero-profile, .hero-clock { justify-content: space-between; gap: 0.5rem; }
+.hero-profile p { font-size: 1.125rem; font-weight: 650; letter-spacing: -0.02em; }
+.hero-profile div span, .hero-profile > span:last-child, .hero-clock > span:last-child { color: var(--content-muted); font-size: 0.8125rem; }
+.hero-clock time { font: 500 1.875rem/1.2 var(--mono); letter-spacing: -0.04em; }
+
+.profile-monogram {
+	display: grid;
+	width: 3rem;
+	height: 3rem;
+	place-items: center;
+	border-radius: 1rem;
+	background: linear-gradient(135deg, #13314f, var(--content-accent));
+	color: white;
+	font-weight: 650;
 }
-.tile-docker {
-	background: linear-gradient(160deg, #3aa2f2 0%, #2496ed 55%, #1d83d4 100%);
+
+.availability {
+	display: inline-flex;
+	align-items: center;
+	align-self: start;
+	gap: 0.5rem;
+	margin-block-end: 1.25rem;
+	padding: 0.2rem 0.68rem;
+	border: 1px solid #bce6d0;
+	border-radius: 999px;
+	background: #ecfdf5;
+	color: #047857;
+	font-size: 0.75rem;
+	font-weight: 550;
 }
-.tile-zoom {
-	background: linear-gradient(160deg, #4f9dff 0%, #2d8cff 55%, #1f74e6 100%);
+
+.availability::before { content: ""; flex: 0 0 0.375rem; height: 0.375rem; border-radius: 50%; background: #059669; }
+.hero h1 { max-width: 24ch; font-size: clamp(1.875rem, 3.7vw, 3.25rem); font-weight: 650; line-height: 1.05; letter-spacing: -0.045em; text-wrap: balance; }
+.hero-intro, .summary-copy { max-width: 68ch; color: var(--content-muted); font-size: 1.0625rem; }
+.hero-intro { margin-block-start: 1rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-block-start: 1.5rem; }
+.hero-lead > .chip-list { margin-block-start: auto; padding-block-start: 1.5rem; }
+
+.button {
+	display: inline-flex;
+	min-height: 2.625rem;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	border: 1px solid #c8cdd6;
+	border-radius: 999px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.button-primary { border-color: transparent; background: var(--content-accent); color: white; }
+.button-primary:hover { background: #0052a3; }
+.button-secondary:hover { background: #ffffffb3; }
+
+.portfolio-section { margin-block-end: clamp(2.75rem, 6vw, 5rem); }
+.section-heading { margin-block-end: 1.25rem; }
+.section-heading h2 { font-size: clamp(1.5rem, 2.6vw, 1.875rem); font-weight: 650; line-height: 1.2; letter-spacing: -0.035em; }
+.eyebrow { margin-block-end: 0.3rem; color: var(--content-accent); font: 500 0.6875rem/1.5 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; }
+
+.stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr));
+	gap: 1px;
+	margin-block-start: 1.5rem;
+	overflow: hidden;
+	border: 1px solid #dae0e7;
+	border-radius: 0.75rem;
+	background: #dae0e7;
+}
+.stats > div { display: flex; flex-direction: column-reverse; padding: 0.875rem 1rem; background: #ffffffc4; }
+.stats dt { color: var(--content-muted); font-size: 0.8125rem; }
+.stats dd { color: var(--content-accent); font: 600 1.5rem/1.25 var(--mono); }
+
+.timeline { display: grid; gap: 1rem; margin-inline-start: 0.35rem; padding-inline-start: 1.35rem; border-inline-start: 1px solid #c5cdd8; }
+.timeline > li::before {
+	position: absolute;
+	top: 1.3rem;
+	left: -1.72rem;
+	width: 0.625rem;
+	height: 0.625rem;
+	border-radius: 50%;
+	background: var(--content-accent);
+	box-shadow: 0 0 0 4px #eceff4;
+	content: "";
+}
+
+.card-grid { display: grid; gap: 1rem; }
+.card-top { display: flex; align-items: baseline; flex-wrap: wrap; justify-content: space-between; gap: 0.15rem 0.75rem; }
+.site-main h3 { font-size: 1rem; font-weight: 650; line-height: 1.35; }
+.row-meta { color: #535e70; font: 0.6875rem/1.6 var(--mono); letter-spacing: 0.055em; text-transform: uppercase; }
+.attribution { margin-block-start: 0.25rem; color: var(--content-accent); font-size: 0.875rem; }
+.description { margin-block-start: 0.45rem; color: var(--content-muted); font-size: 0.875rem; white-space: pre-line; }
+.chip-list { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; margin-block-start: 0.75rem; }
+.chip-list li { padding: 0.175rem 0.65rem; border: 1px solid #18181b14; border-radius: 999px; background: #18181b0a; color: var(--content-muted); font-size: 0.75rem; }
+.skills-card { padding: 0.5rem 1rem; }
+.skills-card > li { display: grid; align-items: start; gap: 0.5rem; padding: 1rem 0.25rem; }
+.skills-card > li + li { border-block-start: 1px solid #dce3ea; }
+.skills-card .chip-list { margin: 0; }
+
+.project-card { display: grid; align-content: start; height: 100%; gap: 0.75rem; padding: 0.75rem; text-decoration: none; }
+.project-copy { padding: 0 0.25rem 0.25rem; }
+.project-copy .row-meta { margin-block-start: 0.65rem; }
+.project-copy h3 span { color: var(--content-accent); }
+
+.mini-win { min-height: 9rem; overflow: hidden; display: grid; grid-template-rows: auto 1fr; border: 1px solid #ccd8e3; border-radius: 0.75rem; background: #f7fafc; }
+.mini-toolbar { display: flex; align-items: center; gap: 0.25rem; padding: 0.5rem 0.625rem; border-block-end: 1px solid #e2e8f0; background: #f0f4f8; }
+.mini-toolbar i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff625b; }
+.mini-toolbar i:nth-child(2) { background: #f8be4f; }
+.mini-toolbar i:nth-child(3) { background: #53c86e; }
+.mini-toolbar b { flex: 1; height: 0.625rem; margin-inline: 0.2rem; border-radius: 0.2rem; background: #fff; }
+.mini-stage { display: grid; gap: 0.4rem; padding: 0.75rem; }
+.mini-chart .mini-stage { grid-template-columns: repeat(7, 1fr); align-items: end; }
+.mini-chart .mini-stage i { height: 52%; border-radius: 0.25rem 0.25rem 0 0; background: linear-gradient(#6fb5e8, #1d70b4); }
+.mini-chart .mini-stage i:nth-child(even) { height: 68%; }
+.mini-chart .mini-stage i:nth-child(3n) { height: 83%; }
+.mini-tiles .mini-stage { grid-template-columns: repeat(4, 1fr); }
+.mini-tiles .mini-stage i { border-radius: 0.25rem; background: #a7cde9; }
+.mini-tiles .mini-stage i:nth-child(3n + 1) { background: #296fa9; }
+.mini-tiles .mini-stage i:nth-child(3n) { background: #dbe6f1; }
+.mini-editor .mini-stage { grid-template-rows: repeat(7, 1fr); background: #152538; }
+.mini-editor .mini-stage i { width: 62%; border-radius: 0.25rem; background: #367eab; }
+.mini-editor .mini-stage i:nth-child(2n) { width: 38%; background: #4aa592; }
+.mini-editor .mini-stage i:nth-child(3n) { width: 76%; background: #576b82; }
+
+.contact-section { padding: clamp(1.25rem, 4vw, 3rem); margin-block-end: 2rem; }
+.contact-section .section-heading { margin-block-end: 0.75rem; }
+.contact-section .hero-actions li { min-width: 0; }
+.contact-email { display: block; overflow-wrap: anywhere; }
+.contact-handle, .contact-section .button-secondary span { color: var(--content-muted); }
+.site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; padding-block: 1.75rem 2rem; border-block-start: 1px solid var(--line); color: var(--muted); font-size: 0.8125rem; }
+
+@container (min-width: 33rem) {
+	.hero { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.hero-lead { grid-column: span 2; grid-row: span 2; }
+	.card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.project-feature { grid-column: span 2; }
+	.project-feature .project-card { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; }
+	.project-feature .mini-win { min-height: 12rem; }
+	.skills-card > li { grid-template-columns: 9rem minmax(0, 1fr); }
+}
+
+.load-status { margin: 2rem var(--gutter); }
+
+@media (min-width: 72rem) {
+	.brand-name { display: block; }
+}
+
+@media (max-width: 56rem) {
+	.browser-viewport { --topbar-height: 5.375rem; }
+	.topbar-inner {
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-rows: 2.875rem 2.5rem;
+	}
+	.brand-name { display: block; }
+	.languages { grid-column: 2; grid-row: 1; }
+	.site-nav {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		justify-content: start;
+		margin-inline: calc(-1 * var(--gutter));
+		padding-inline: var(--gutter);
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+	}
+}
+
+@media (max-width: 36rem) {
+	.mac-workspace { padding: 0.375rem 0.375rem 0; }
+	.safari-window { border-radius: 9px; }
+	.safari-toolbar { grid-template-columns: auto minmax(0, 1fr); min-height: 2.125rem; padding-inline: 0.5rem; }
+	.mac-dock { margin-block: 0.375rem; padding-block: 0.25rem; }
 }
 
 </style>
@@ -315,17 +650,23 @@ body {
     "id": {
       "viewWork": "Lihat karya",
       "downloadCv": "Download CV",
-      "contactCta": "Hubungi saya",
-      "getInTouch": "Hubungi saya",
       "localTime": "Waktu lokal",
-      "tz": "Jakarta · GMT+7",
+      "language": "Bahasa",
+      "skipToContent": "Lewati ke konten utama",
+      "desktop": {
+        "portfolio": "Portofolio",
+        "open": "Buka Safari",
+        "close": "Tutup jendela",
+        "minimize": "Minimalkan jendela",
+        "expand": "Perbesar jendela"
+      },
       "nav": {
         "summary": "Tentang",
         "experience": "Pengalaman",
         "education": "Pendidikan",
         "skills": "Keahlian",
         "proProjects": "Proyek",
-        "openProjects": "Terbuka",
+        "openProjects": "Proyek Terbuka",
         "certificates": "Sertifikat",
         "contact": "Kontak"
       }
@@ -333,10 +674,16 @@ body {
     "en": {
       "viewWork": "View work",
       "downloadCv": "Download CV",
-      "contactCta": "Contact me",
-      "getInTouch": "Get in touch",
       "localTime": "Local time",
-      "tz": "Jakarta · GMT+7",
+      "language": "Language",
+      "skipToContent": "Skip to main content",
+      "desktop": {
+        "portfolio": "Portfolio",
+        "open": "Open Safari",
+        "close": "Close window",
+        "minimize": "Minimize window",
+        "expand": "Expand window"
+      },
       "nav": {
         "summary": "About",
         "experience": "Experience",
@@ -351,17 +698,23 @@ body {
     "jw": {
       "viewWork": "Deleng karya",
       "downloadCv": "Download CV",
-      "contactCta": "Hubungi aku",
-      "getInTouch": "Ayo srawung",
       "localTime": "Wektu lokal",
-      "tz": "Jakarta · GMT+7",
+      "language": "Basa",
+      "skipToContent": "Langsung menyang isi utama",
+      "desktop": {
+        "portfolio": "Portofolio",
+        "open": "Bukak Safari",
+        "close": "Tutup jendhela",
+        "minimize": "Cilikna jendhela",
+        "expand": "Gedhèkna jendhela"
+      },
       "nav": {
         "summary": "Babagan",
         "experience": "Pengalaman",
         "education": "Pendhidhikan",
         "skills": "Kaprigelan",
         "proProjects": "Proyek",
-        "openProjects": "Kabuka",
+        "openProjects": "Proyek Kabuka",
         "certificates": "Sertifikat",
         "contact": "Kontak"
       }
@@ -373,8 +726,8 @@ body {
         "monogram": "AS",
         "name": "Al Byan Agung Shafiqri",
         "title": "Fullstack Developer & ML/DL Enthusiast",
-        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "headline": "Membangun aplikasi web utuh dan mengeksplorasi kecerdasan buatan.",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "subheadline": "Fullstack developer dengan dua tahun pengalaman membangun aplikasi end-to-end — dari API, basis data, hingga antarmuka — sambil aktif mendalami Machine Learning & Deep Learning.",
         "location": "Jakarta, Indonesia",
         "availability": "Terbuka untuk peluang baru"
@@ -386,14 +739,22 @@ body {
         "stats": [
           { "value": "2+", "label": "Tahun pengalaman" },
           { "value": "10+", "label": "Proyek diselesaikan" },
-          { "value": "5+", "label": "Model ML dilatih" },
-          { "value": "∞", "label": "Rasa ingin tahu" }
+          { "value": "5+", "label": "Model ML dilatih" }
         ]
       },
       "experience": {
         "eyebrow": "Karier",
         "title": "Pengalaman",
         "items": [
+          {
+            "role": "Information Technology Business Partner",
+            "company": "PT. Bank Syariah Indonesia",
+            "type": "Magang",
+            "period": "September 2026 — Sekarang",
+            "location": "Jakarta Pusat, Indonesia",
+            "description": "Mendukung penyusunan rencana awal sebelum pelaksanaan inisiatif TI.",
+            "tags": ["Power Automate"]
+          },
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
@@ -405,7 +766,7 @@ body {
           {
             "role": "Freelance Full Stack Developer (Part-time)",
             "company": "Freelance",
-            "period": "2023 — Sekarang",
+            "period": "2023 — September 2026",
             "location": "Malang, Indonesia",
             "description": "Mengotomatisasi siklus pembuatan akta notaris PPAT untuk mempercepat penerbitan dokumen legalitas resmi, serta merefaktor sistem katalog digital UMKM dan mengoptimasi query database demi stabilitas dan kecepatan pencarian.",
             "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
@@ -472,7 +833,15 @@ body {
           },
           {
             "name": "Alur kerja",
-            "items": ["Git", "Docker", "Linux", "Agile"]
+            "items": ["Git", "Docker", "Agile", "Waterfall"]
+          },
+          {
+            "name": "Infrastruktur",
+            "items": ["Linux", "Nginx", "Tailscale", "Cloudflare Tunnels"]
+          },
+          {
+            "name": "Automation",
+            "items": ["Power Automate", "Playwright", "MCP"]
           }
         ]
       },
@@ -528,6 +897,13 @@ body {
         "title": "Sertifikat",
         "items": [
           {
+            "name": "Computer Software Programming",
+            "issuer": "Badan Nasional Sertifikasi Profesi",
+            "location": "Malang, Indonesia",
+            "period": "Jun 2026 — Jun 2029",
+            "detail": "Sertifikasi kompetensi dalam pemrograman perangkat lunak."
+          },
+          {
             "name": "TOEIC",
             "issuer": "International Test Center",
             "period": "May 2026 — May 2031",
@@ -567,8 +943,8 @@ body {
         "monogram": "AS",
         "name": "Al Byan Agung Shafiqri",
         "title": "Fullstack Developer & ML/DL Enthusiast",
-        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "headline": "Building complete web apps and exploring artificial intelligence.",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "subheadline": "Fullstack developer with two years of experience building end-to-end applications — from APIs and databases to interfaces — while actively diving into Machine Learning & Deep Learning.",
         "location": "Jakarta, Indonesia",
         "availability": "Open to new opportunities"
@@ -580,14 +956,22 @@ body {
         "stats": [
           { "value": "2+", "label": "Year of experience" },
           { "value": "10+", "label": "Projects completed" },
-          { "value": "5+", "label": "ML models trained" },
-          { "value": "∞", "label": "Curiosity" }
+          { "value": "5+", "label": "ML models trained" }
         ]
       },
       "experience": {
         "eyebrow": "Career",
         "title": "Experience",
         "items": [
+          {
+            "role": "Information Technology Business Partner",
+            "company": "PT. Bank Syariah Indonesia",
+            "type": "Internship",
+            "period": "September 2026 — Present",
+            "location": "Central Jakarta, Indonesia",
+            "description": "Support initial planning for IT initiatives ahead of implementation.",
+            "tags": ["Power Automate"]
+          },
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
@@ -599,7 +983,7 @@ body {
           {
             "role": "Freelance Full Stack Developer (Part-time)",
             "company": "Freelance",
-            "period": "2023 — Now",
+            "period": "2023 — September 2026",
             "location": "Malang, Indonesia",
             "description": "Automated the PPAT notary deed lifecycle to expedite legal document processing, while refactoring MSME digital catalog platforms and optimizing database queries for greater speed and stability.",
             "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
@@ -666,7 +1050,15 @@ body {
           },
           {
             "name": "Workflow",
-            "items": ["Git", "Docker", "Linux", "Agile"]
+            "items": ["Git", "Docker", "Agile", "Waterfall"]
+          },
+          {
+            "name": "Infrastructure",
+            "items": ["Linux", "Nginx", "Tailscale", "Cloudflare Tunnels"]
+          },
+          {
+            "name": "Automation",
+            "items": ["Power Automate", "Playwright", "MCP"]
           }
         ]
       },
@@ -722,6 +1114,13 @@ body {
         "title": "Certifications",
         "items": [
           {
+            "name": "Computer Software Programming",
+            "issuer": "Badan Nasional Sertifikasi Profesi",
+            "location": "Malang, Indonesia",
+            "period": "Jun 2026 — Jun 2029",
+            "detail": "Professional competency certification in software programming."
+          },
+          {
             "name": "TOEIC",
             "issuer": "International Test Center",
             "period": "May 2026 — May 2031",
@@ -761,8 +1160,8 @@ body {
         "monogram": "AS",
         "name": "Al Byan Agung Shafiqri",
         "title": "Fullstack Developer & ML/DL Enthusiast",
-        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "headline": "Ngracik aplikasi web jangkep lan nlusuri kacerdasan gawéan.",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "subheadline": "Fullstack developer kanthi rong taun pengalaman gawé aplikasi end-to-end — saka API, basis data, teka antarmuka — sinambi nlusuri Machine Learning & Deep Learning.",
         "location": "Jakarta, Indonésia",
         "availability": "Mbukak kanggo kalodhangan anyar"
@@ -774,14 +1173,22 @@ body {
         "stats": [
           { "value": "2+", "label": "Taun pengalaman" },
           { "value": "10+", "label": "Proyek kelar" },
-          { "value": "5+", "label": "Model ML dilatih" },
-          { "value": "∞", "label": "Pepinginan weruh" }
+          { "value": "5+", "label": "Model ML dilatih" }
         ]
       },
       "experience": {
         "eyebrow": "Karir",
         "title": "Pengalaman",
         "items": [
+          {
+            "role": "Information Technology Business Partner",
+            "company": "PT. Bank Syariah Indonesia",
+            "type": "Magang",
+            "period": "September 2026 — Saiki",
+            "location": "Jakarta Pusat, Indonésia",
+            "description": "Mbantu nyusun rencana wiwitan sadurungé inisiatif TI ditindakake.",
+            "tags": ["Power Automate"]
+          },
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
@@ -793,7 +1200,7 @@ body {
           {
             "role": "Freelance Full Stack Developer (Part-time)",
             "company": "Freelance",
-            "period": "2023 — Saiki",
+            "period": "2023 — September 2026",
             "location": "Malang, Indonésia",
             "description": "Ngotomatisasi siklus nggawe akta notaris PPAT kanggo nyepetake panerbitan dokumen resmi legalitas, sarta ngrefaktor sistem katalog digital UMKM lan ngoptimalake query basis data kanggo nambah stabilitas lan kacepetan.",
             "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
@@ -860,7 +1267,15 @@ body {
           },
           {
             "name": "Alur Gawéan",
-            "items": ["Git", "Docker", "Linux", "Agile"]
+            "items": ["Git", "Docker", "Agile", "Waterfall"]
+          },
+          {
+            "name": "Infrastruktur",
+            "items": ["Linux", "Nginx", "Tailscale", "Cloudflare Tunnels"]
+          },
+          {
+            "name": "Automation",
+            "items": ["Power Automate", "Playwright", "MCP"]
           }
         ]
       },
@@ -916,6 +1331,13 @@ body {
         "title": "Sertifikat",
         "items": [
           {
+            "name": "Computer Software Programming",
+            "issuer": "Badan Nasional Sertifikasi Profesi",
+            "location": "Malang, Indonésia",
+            "period": "Jun 2026 — Jun 2029",
+            "detail": "Sertifikasi kompetènsi ing pamrograman piranti lunak."
+          },
+          {
             "name": "TOEIC",
             "issuer": "International Test Center",
             "period": "May 2026 — May 2031",
@@ -954,7 +1376,7 @@ body {
 }
 ;</script>
 <script type="text/babel" data-presets="react">
-const { useState, useEffect, useRef, createContext, useContext } = React
+const { useState, useEffect, useLayoutEffect, useRef } = React
 
 /* ============================================================
    Content loading
@@ -963,10 +1385,6 @@ const { useState, useEffect, useRef, createContext, useContext } = React
    - Standalone preview.html: reads window.__CONTENT__ (inlined), because
      file:// cannot fetch local JSON.
    ============================================================ */
-const ContentCtx = createContext(null)
-const useApp = () => useContext(ContentCtx)
-const useContent = () => useContext(ContentCtx).content
-const useUi = () => useContext(ContentCtx).ui
 
 function useLoadedContent() {
 	const [data, setData] = useState(
@@ -990,890 +1408,507 @@ function useLoadedContent() {
 	return { data, error }
 }
 
-function useClock() {
-	const fmt = () =>
-		new Date().toLocaleTimeString("en-GB", {
-			timeZone: "Asia/Jakarta",
-			hour: "2-digit",
-			minute: "2-digit",
-		})
-	const [t, setT] = useState(fmt())
-	useEffect(() => {
-		const id = setInterval(() => setT(fmt()), 15000)
-		return () => clearInterval(id)
-	}, [])
-	return t
+const CV_FILE = "FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
+const SECTIONS = ["summary", "experience", "proProjects", "openProjects", "education", "skills", "certificates", "contact"]
+const sectionId = (name) => `sec-${name}`
+const sectionHref = (name) => `#${sectionId(name)}`
+
+const DOCK_ICONS = {
+	safari: <><circle cx="12" cy="12" r="8.5" /><path d="M15.8 8.2 13.6 13.6 8.2 15.8l2.2-5.4z" fill="currentColor" /><path d="M12 3.5v1.25m0 14.5v1.25M3.5 12h1.25m14.5 0h1.25" /></>,
+	cv: <><path d="M6 3.5h8l4 4v13H6z" /><path d="M14 3.5v4h4M9 12h6m-6 3.5h6" /></>,
+	github: <><path d="M9 19c-3.4.9-3.4-1.6-4.8-2m9.6 4v-2.5a2.3 2.3 0 0 0-.6-1.8c2.2-.25 4.5-1.1 4.5-4.9a3.8 3.8 0 0 0-1-2.7 3.5 3.5 0 0 0-.1-2.7s-.85-.27-2.8 1a10.6 10.6 0 0 0-5.1 0c-1.95-1.27-2.8-1-2.8-1a3.5 3.5 0 0 0-.1 2.7 3.8 3.8 0 0 0-1 2.7c0 3.8 2.3 4.65 4.5 4.9a2.3 2.3 0 0 0-.6 1.8V21" /></>,
+	mail: <><rect x="3.5" y="5.5" width="17" height="13" rx="2" /><path d="m4 7 8 6 8-6" /></>,
 }
 
-/* ============================================================
-   Inline UI icons (thin stroke)
-   ============================================================ */
-const ICONS = {
-	back: ["M15 18l-6-6 6-6"],
-	forward: ["M9 18l6-6-6-6"],
-	refresh: ["M3 12a9 9 0 1 0 2.6-6.3M3 4.5V9h4.5"],
-	lock: ["M6 11h12v9H6z", "M9 11V8a3 3 0 0 1 6 0v3"],
-	share: ["M12 15V4", "M8 8l4-4 4 4", "M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"],
-	plus: ["M12 5v14M5 12h14"],
-	arrow: ["M5 12h14M13 6l6 6-6 6"],
-	mail: ["M3 6h18v12H3z", "M3 7l9 6 9-6"],
-	download: ["M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", "M7 10l5 5 5-5", "M12 15V3"],
+function DockIcon({ name, label }) {
+	return <>
+		<span className={`dock-tile dock-${name}`} aria-hidden="true">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{DOCK_ICONS[name]}</svg>
+		</span>
+		<span className="dock-label" aria-hidden="true">{label}</span>
+	</>
 }
-function Ico({ name, className = "h-4 w-4" }) {
+
+function MenuBar({ locale, label }) {
+	const [now, setNow] = useState(() => new Date())
+	useEffect(() => {
+		const timer = window.setInterval(() => setNow(new Date()), 15000)
+		return () => window.clearInterval(timer)
+	}, [])
+	const timeZone = "Asia/Jakarta"
+	const date = now.toLocaleDateString(locale, { timeZone, weekday: "short", day: "numeric", month: "short" })
+	const time = now.toLocaleTimeString(locale, { timeZone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className={className}>
-			{(ICONS[name] || []).map((d, i) => (
-				<path key={i} d={d} />
-			))}
+		<div className="mac-menu">
+			<span className="mac-menu-app"><strong>Safari</strong><span>{label}</span></span>
+			<time dateTime={now.toISOString()} title="Asia/Jakarta">{date}<span>{time} WIB</span></time>
+		</div>
+	)
+}
+
+const reducedMotion = "(prefers-reduced-motion: reduce)"
+
+function BootCursor({ onFinish }) {
+	return (
+		<svg className="boot-cursor" width="23" height="23" viewBox="0 0 24 24" aria-hidden="true" onAnimationEnd={onFinish}>
+			<path d="M5 3l14 8-6 1.4 3.4 6.2-2.4 1.3-3.4-6.2L5 19z" fill="#fff" stroke="#111" strokeWidth="1.1" strokeLinejoin="round" />
 		</svg>
 	)
 }
 
-/* ============================================================
-   macOS dock app icons (each renders its own rounded tile)
-   ============================================================ */
-const TILE = "grid h-full w-full place-items-center rounded-[12px] shadow-md ring-1 ring-black/10"
+function SafariDesktop({ data, lang, setLang, assetPath }) {
+	const [status, setStatus] = useState(() => window.matchMedia(reducedMotion).matches ? "open" : "booting")
+	const [expanded, setExpanded] = useState(false)
+	const launcher = useRef(null)
+	const viewport = useRef(null)
+	const userContent = data.content[lang]
+	const ui = data.ui[lang]
+	const contact = userContent.contact
+	const github = contact?.socials?.find(({ label }) => label === "GitHub")
+	const visible = status === "open"
+	const booting = status === "booting"
 
-function BrowserIcon() {
+	function hideWindow(nextStatus) {
+		if (nextStatus === "closed") setExpanded(false)
+		setStatus(nextStatus)
+		launcher.current.focus({ preventScroll: true })
+	}
+
+	function openWindow() {
+		setStatus("open")
+		if (visible) viewport.current?.focus({ preventScroll: true })
+	}
+
+	useEffect(() => {
+		if (visible && document.activeElement === launcher.current) viewport.current?.focus({ preventScroll: true })
+	}, [visible])
+
+	useEffect(() => {
+		if (!booting) return
+		const onKeyDown = (event) => {
+			if (event.key === "Escape") setStatus("open")
+		}
+		const motion = window.matchMedia(reducedMotion)
+		const onMotionChange = (event) => {
+			if (event.matches) setStatus("open")
+		}
+		window.addEventListener("keydown", onKeyDown)
+		motion.addEventListener("change", onMotionChange)
+		return () => {
+			window.removeEventListener("keydown", onKeyDown)
+			motion.removeEventListener("change", onMotionChange)
+		}
+	}, [booting])
+
 	return (
-		<span className={TILE + " tile-browser"}>
-			<svg viewBox="0 0 24 24" fill="none" className="h-[74%] w-[74%]">
-				<circle cx="12" cy="12" r="9.2" fill="rgba(255,255,255,.16)" stroke="#fff" strokeWidth="1.4" />
-				<ellipse cx="12" cy="12" rx="3.7" ry="9.2" stroke="#fff" strokeWidth="1.2" />
-				<line x1="2.8" y1="12" x2="21.2" y2="12" stroke="#fff" strokeWidth="1.2" />
-				<path d="M5 7.4c4 1.5 10 1.5 14 0" stroke="#fff" strokeWidth="1.1" strokeLinecap="round" />
-				<path d="M5 16.6c4-1.5 10-1.5 14 0" stroke="#fff" strokeWidth="1.1" strokeLinecap="round" />
-			</svg>
-		</span>
-	)
-}
-
-function VSCodeIcon() {
-	return (
-		<span className={TILE + " tile-vscode"}>
-			<svg viewBox="0 0 24 24" className="h-[62%] w-[62%]">
-				<path fill="#ffffff" d="M23.15 2.587 18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448z" />
-			</svg>
-		</span>
-	)
-}
-
-function DockerIcon() {
-	return (
-		<span className={TILE + " tile-docker"}>
-			<svg viewBox="0 0 24 24" className="h-[68%] w-[68%]">
-				<path
-					fill="#fff"
-					d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"
-				/>
-			</svg>
-		</span>
-	)
-}
-
-function FigmaIcon() {
-	return (
-		<span className={TILE + " bg-white"}>
-			<svg viewBox="0 0 38 57" className="h-[68%]">
-				<path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1abcfe" />
-				<path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0acf83" />
-				<path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#ff7262" />
-				<path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#f24e1e" />
-				<path d="M0 28.5a9.5 9.5 0 0 0 9.5 9.5H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#a259ff" />
-			</svg>
-		</span>
-	)
-}
-
-function ZoomIcon() {
-	return (
-		<span className={TILE + " tile-zoom"}>
-			<svg viewBox="0 0 24 24" className="h-[52%] w-[62%]">
-				<path
-					fill="#fff"
-					d="M5.033 14.649H.743a.74.74 0 0 1-.686-.458.74.74 0 0 1 .16-.808L3.19 10.41H1.06A1.06 1.06 0 0 1 0 9.35h3.957c.301 0 .57.18.686.458a.74.74 0 0 1-.161.808L1.51 13.59h2.464c.585 0 1.06.475 1.06 1.06zM24 11.338c0-1.14-.927-2.066-2.066-2.066-.61 0-1.158.265-1.537.686a2.061 2.061 0 0 0-1.536-.686c-1.14 0-2.066.926-2.066 2.066v3.311a1.06 1.06 0 0 0 1.06-1.06v-2.251a1.004 1.004 0 0 1 2.013 0v2.251c0 .586.474 1.06 1.06 1.06v-3.311a1.004 1.004 0 0 1 2.012 0v2.251c0 .586.475 1.06 1.06 1.06zM16.265 12a2.728 2.728 0 1 1-5.457 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0zm-4.82 0a2.728 2.728 0 1 1-5.458 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0z"
-				/>
-			</svg>
-		</span>
-	)
-}
-
-const DOCK_APPS = [
-	{ key: "figma", label: "Figma", Icon: FigmaIcon },
-	{ key: "vscode", label: "Visual Studio Code", Icon: VSCodeIcon },
-	{ key: "browser", label: "Browser", Icon: BrowserIcon, launcher: true },
-	{ key: "docker", label: "Docker Desktop", Icon: DockerIcon },
-	{ key: "zoom", label: "Zoom", Icon: ZoomIcon },
-]
-
-function Dock({ down, bounceSafari, booted, onLaunch, onHover }) {
-	return (
-		<div
-			className={"dock-wrap " + (down ? "dock-down" : "")}
-			onMouseEnter={() => onHover(true)}
-			onMouseLeave={() => onHover(false)}
-		>
-			<div className="glass flex items-end gap-2 rounded-[20px] border border-white/40 px-2.5 py-1.5 shadow-2xl">
-				{DOCK_APPS.map((app) => {
-					const Icon = app.Icon
-					const running = booted && app.launcher
-					return (
-						<button
-							key={app.key}
-							title={app.label}
-							aria-label={app.label}
-							onClick={() => app.launcher && onLaunch()}
-							className="group relative flex flex-col items-center"
-					>
-							<span
-								className={
-									"dock-icon h-[42px] w-[42px] " +
-									(bounceSafari && app.launcher ? "dock-bounce" : "")
-								}
-							>
-								<Icon />
-							</span>
-							<span
-								className={
-									"mt-1 h-1 w-1 rounded-full bg-black/45 transition-opacity " +
-									(running ? "opacity-100" : "opacity-0")
-								}
-							/>
-						</button>
-					)
-				})}
-			</div>
-		</div>
-	)
-}
-
-/* ============================================================
-   Cursor + menu bar
-   ============================================================ */
-function MacCursor({ phase }) {
-	return (
-		<div className={"boot-cursor " + (phase >= 1 ? "cursor-move " : "") + (phase === 2 ? "cursor-click" : "")}>
-			<svg width="22" height="22" viewBox="0 0 24 24">
-				<path d="M5 3l14 8-6 1.4 3.4 6.2-2.4 1.3-3.4-6.2L5 19z" fill="#fff" stroke="#111" strokeWidth="1.1" strokeLinejoin="round" />
-			</svg>
-		</div>
-	)
-}
-
-function MenuBar() {
-	const clock = useClock()
-	return (
-		<div className="fixed inset-x-0 top-0 z-50 flex h-7 items-center justify-between border-b border-white/10 bg-[#0d1b2a]/85 px-4 text-[12px] text-white/90 backdrop-blur-md">
-			<div className="flex items-center gap-4">
-				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-					<circle cx="12" cy="12" r="9" />
-					<ellipse cx="12" cy="12" rx="3.7" ry="9" />
-					<line x1="3" y1="12" x2="21" y2="12" />
-				</svg>
-				<span className="font-semibold">Browser</span>
-				<span className="hidden opacity-80 sm:inline">File</span>
-				<span className="hidden opacity-80 sm:inline">Edit</span>
-				<span className="hidden opacity-80 sm:inline">View</span>
-				<span className="hidden opacity-80 sm:inline">History</span>
-			</div>
-			<div className="flex items-center gap-3">
-				<span className="hidden opacity-80 sm:inline">100%</span>
-				<span className="opacity-80">Thu</span>
-				<span className="tabular-nums">{clock}</span>
-			</div>
-		</div>
-	)
-}
-
-/* ============================================================
-   Reusable bits
-   ============================================================ */
-function Container({ children, className = "" }) {
-	return <div className={"mx-auto w-full max-w-5xl px-6 sm:px-8 " + className}>{children}</div>
-}
-
-function SectionHead({ index, eyebrow, title }) {
-	return (
-		<div className="relative mb-8">
-			<div className="watermark pointer-events-none absolute -left-1 -top-7 select-none text-[84px] font-bold sm:-top-10 sm:text-[120px]">
-				{index}
-			</div>
-			<div className="relative">
-				<div className="font-mono text-[11px] uppercase tracking-[0.22em] text-action">{eyebrow}</div>
-				<h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-[28px]">{title}</h2>
-			</div>
-		</div>
-	)
-}
-
-function Chip({ children }) {
-	return (
-		<span className="rounded-full bg-neutral-900/[0.045] px-2.5 py-1 text-xs font-medium text-neutral-600 ring-1 ring-neutral-900/[0.06]">
-			{children}
-		</span>
-	)
-}
-
-/* project thumbnail: four distinct, realistic product mock layouts */
-function MockChrome({ children }) {
-	return (
-		<div className="mini-win flex h-full flex-col">
-			<div className="flex items-center gap-1.5 border-b border-black/5 bg-neutral-100/90 px-3 py-2">
-				<span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-				<span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-				<span className="h-2 w-2 rounded-full bg-[#28c840]" />
-				<div className="ml-2 h-3 flex-1 rounded bg-white/80 ring-1 ring-black/5" />
-			</div>
-			<div className="stage relative flex-1 overflow-hidden bg-gradient-to-br from-slate-50 to-white p-3">
-				{children}
-			</div>
-		</div>
-	)
-}
-
-function Mock({ variant }) {
-	if (variant === 1) {
-		// mobile app
-		return (
-			<div className="flex h-full items-center justify-center">
-				<div className="flex h-[94%] w-[40%] flex-col gap-1.5 rounded-xl bg-white p-2 shadow ring-1 ring-black/5">
-					<div className="mx-auto h-1 w-6 rounded bg-neutral-200" />
-					<div className="h-9 rounded-md bg-gradient-to-br from-sky-400 to-blue-600" />
-					<div className="h-2 w-3/4 rounded bg-neutral-200" />
-					<div className="h-2 w-1/2 rounded bg-neutral-200" />
-					<div className="mt-auto flex justify-between">
-						<span className="h-3 w-3 rounded-full bg-blue-500" />
-						<span className="h-3 w-3 rounded-full bg-neutral-200" />
-						<span className="h-3 w-3 rounded-full bg-neutral-200" />
+		<div className="mac-desktop">
+			<MenuBar locale={lang === "jw" ? "jv" : lang} label={ui.desktop.portfolio} />
+			<div className={`mac-workspace${expanded ? " mac-expanded" : ""}`}>
+				<div className="safari-window" hidden={!visible}>
+					<header className="safari-toolbar">
+						<div className="window-controls">
+							<button type="button" className="window-close" title={ui.desktop.close} aria-label={ui.desktop.close} onClick={() => hideWindow("closed")}>×</button>
+							<button type="button" className="window-minimize" title={ui.desktop.minimize} aria-label={ui.desktop.minimize} onClick={() => hideWindow("minimized")}>−</button>
+							<button type="button" className="window-expand" title={ui.desktop.expand} aria-label={ui.desktop.expand} aria-pressed={expanded} onClick={() => setExpanded(!expanded)}>↗</button>
+						</div>
+						<div className="safari-address">
+							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><rect x="4" y="7" width="8" height="6" rx="1" /><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" /></svg>
+							{data.meta.domain}
+						</div>
+					</header>
+					<div className="browser-viewport" id="safari-portfolio" ref={viewport} tabIndex={-1}>
+						{!booting && status !== "closed" && <Portfolio data={data} lang={lang} setLang={setLang} assetPath={assetPath} viewport={viewport} />}
 					</div>
 				</div>
 			</div>
-		)
-	}
-	if (variant === 2) {
-		// design-system swatches
-		const cells = [
-			"bg-blue-600", "bg-blue-400", "bg-slate-800", "bg-neutral-200",
-			"bg-sky-300", "bg-neutral-300", "bg-blue-500", "bg-slate-500",
-		]
-		return (
-			<div className="grid h-full grid-cols-4 grid-rows-2 gap-1.5">
-				{cells.map((c, i) => (
-					<div key={i} className={"rounded-md ring-1 ring-black/5 " + c} />
-				))}
-			</div>
-		)
-	}
-	if (variant === 3) {
-		// code editor (dark)
-		const lines = ["w-1/3", "w-2/3", "w-1/2", "w-3/5", "w-2/5", "w-1/2"]
-		const tones = ["bg-sky-400/80", "bg-emerald-400/70", "bg-neutral-500/70", "bg-blue-400/70", "bg-neutral-500/60", "bg-emerald-400/60"]
-		return (
-			<div className="flex h-full gap-2 rounded-lg bg-[#0f1b2a] p-2.5">
-				<div className="flex flex-col items-end gap-1.5 pr-1 text-[7px] leading-none text-white/25">
-					{lines.map((_, i) => (
-						<span key={i}>{i + 1}</span>
-					))}
-				</div>
-				<div className="flex flex-1 flex-col gap-1.5">
-					{lines.map((w, i) => (
-						<div key={i} className={"h-1.5 rounded " + w + " " + tones[i]} />
-					))}
-				</div>
-			</div>
-		)
-	}
-	// variant 0 — dashboard
-	const bars = ["h-1/3", "h-1/2", "h-2/3", "h-2/5", "h-3/4", "h-1/2", "h-5/6"]
-	return (
-		<div className="flex h-full gap-2">
-			<div className="hidden w-1/5 flex-col gap-1.5 sm:flex">
-				<div className="h-2 rounded bg-neutral-300" />
-				<div className="h-2 w-4/5 rounded bg-neutral-200" />
-				<div className="h-2 w-3/5 rounded bg-neutral-200" />
-				<div className="mt-auto h-2 w-2/3 rounded bg-blue-200" />
-			</div>
-			<div className="flex flex-1 flex-col gap-2">
-				<div className="grid grid-cols-3 gap-2">
-					{[0, 1, 2].map((i) => (
-						<div key={i} className="rounded-md bg-white p-1.5 ring-1 ring-black/5">
-							<div className="h-1.5 w-2/3 rounded bg-neutral-200" />
-							<div className="mt-1 h-2 w-1/2 rounded bg-blue-500" />
-						</div>
-					))}
-				</div>
-				<div className="flex flex-1 items-end gap-1.5 rounded-md bg-white p-2 ring-1 ring-black/5">
-					{bars.map((h, i) => (
-						<div key={i} className={"flex-1 rounded-t bg-gradient-to-t from-blue-600 to-sky-400 " + h} />
-					))}
-				</div>
+			<div className="mac-dock">
+				<button ref={launcher} type="button" className="dock-item" aria-label={ui.desktop.open} aria-controls="safari-portfolio" aria-expanded={visible} onClick={openWindow}>
+					<DockIcon name="safari" label="Safari" />
+					{booting && <BootCursor onFinish={openWindow} />}
+				</button>
+				<a className="dock-item" href={assetPath + CV_FILE} download={CV_FILE} aria-label={ui.downloadCv}><DockIcon name="cv" label={ui.downloadCv} /></a>
+				{github?.url && <a className="dock-item" href={github.url} target="_blank" rel="noreferrer" aria-label="GitHub"><DockIcon name="github" label="GitHub" /></a>}
+				{contact?.email && <a className="dock-item" href={`mailto:${contact.email}`} aria-label={ui.nav.contact}><DockIcon name="mail" label={ui.nav.contact} /></a>}
 			</div>
 		</div>
 	)
 }
 
-/* ============================================================
-   Sections
-   ============================================================ */
-function Hero({ onNav }) {
-	const { hero } = useContent()
-	const ui = useUi()
-	const clock = useClock()
-	if (!hero) return null
+function Topbar({ hero, ui, languages, lang, setLang, active }) {
+	const navigation = useRef(null)
+
+	useEffect(() => {
+		const nav = navigation.current
+		const link = nav.querySelector('[aria-current="location"]')
+		if (!link || nav.scrollWidth <= nav.clientWidth) return
+		const navBounds = nav.getBoundingClientRect()
+		const linkBounds = link.getBoundingClientRect()
+		if (linkBounds.left < navBounds.left || linkBounds.right > navBounds.right) {
+			nav.scrollLeft += (linkBounds.left + linkBounds.right - navBounds.left - navBounds.right) / 2
+		}
+	}, [active, lang])
+
 	return (
-		<section className="pb-10 pt-6 sm:pt-10">
-			<div className="grid gap-4 sm:grid-cols-3">
-				<div className="glass-card glass-hover flex flex-col p-7 sm:col-span-2 sm:row-span-2 sm:p-9">
-					{hero.availability ? (
-						<div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200/70">
-							<span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-							{hero.availability}
-						</div>
-					) : null}
-					<h1 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-[52px]">
-						{hero.headline}
-					</h1>
-					<p className="mt-5 max-w-lg text-[17px] leading-relaxed text-neutral-600">
-						{hero.subheadline}
-					</p>
-					<div className="mt-7 flex flex-wrap items-center gap-3">
-						<a
-							href="FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
-							download="FullStack Developer_Al Byan Agung Shafiqri_Eng.pdf"
-							target="_blank"
-							rel="noreferrer"
-							className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-action/90 active:scale-[0.97]"
-						>
-							<Ico name="download" className="h-4 w-4" />
-							{ui.downloadCv || "Download CV"}
+		<header className="site-topbar">
+			<div className="topbar-inner">
+				<a href={sectionHref("top")} className="brand" aria-label={hero.name}>
+					<span className="monogram" aria-hidden="true">{hero.monogram}</span>
+					<span className="brand-name">{hero.name}</span>
+				</a>
+				<nav className="site-nav" aria-label={ui.desktop.portfolio} ref={navigation}>
+					{SECTIONS.map((name) => (
+						<a href={sectionHref(name)} key={name} aria-current={active === name ? "location" : undefined}>
+							{ui.nav[name]}
 						</a>
-						<button
-							onClick={() => onNav("proProjects")}
-							className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
-						>
-							{ui.viewWork}
-							<Ico name="arrow" className="h-4 w-4" />
+					))}
+				</nav>
+				<div className="languages" role="group" aria-label={ui.language}>
+					{languages.map((language) => (
+						<button key={language.code} type="button" lang={language.code === "jw" ? "jv" : language.code}
+							aria-label={language.label} aria-pressed={lang === language.code} onClick={() => setLang(language.code)}>
+							{language.short}
 						</button>
-					</div>
-					{Array.isArray(hero.roles) && hero.roles.length ? (
-						<div className="mt-auto flex flex-wrap gap-1.5 pt-8">
-							{hero.roles.map((r) => (
-								<Chip key={r}>{r}</Chip>
-							))}
-						</div>
-					) : null}
-				</div>
-
-				<div className="glass-card glass-hover flex flex-col gap-4 p-6">
-					<div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#13314f] to-action text-base font-semibold text-white shadow-inner">
-						{hero.monogram}
-					</div>
-					<div>
-						<div className="text-lg font-semibold tracking-tight text-ink">{hero.name}</div>
-						<div className="text-sm text-neutral-500">{hero.title}</div>
-					</div>
-					<div className="mt-auto flex items-center gap-2 text-sm text-neutral-500">
-						<Ico name="arrow" className="h-4 w-4 text-neutral-300" />
-						{hero.location}
-					</div>
-				</div>
-
-				<div className="glass-card glass-hover flex flex-col justify-between p-6">
-					<div className="font-mono text-[11px] uppercase tracking-[0.22em] text-neutral-400">{ui.localTime}</div>
-					<div className="font-mono text-3xl font-medium tabular-nums tracking-tight text-ink">{clock}</div>
-					<div className="text-xs text-neutral-500">{ui.tz}</div>
+					))}
 				</div>
 			</div>
+		</header>
+	)
+}
+
+function ChipList({ items }) {
+	if (!items?.length) return null
+	return (
+		<ul className="chip-list">
+			{items.map((item) => <li key={item}>{item}</li>)}
+		</ul>
+	)
+}
+
+function LocalClock({ label }) {
+	const formatTime = () => new Date().toLocaleTimeString("en-GB", {
+		timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit",
+	})
+	const [time, setTime] = useState(formatTime)
+	useEffect(() => {
+		const timer = window.setInterval(() => setTime(formatTime()), 15000)
+		return () => window.clearInterval(timer)
+	}, [])
+	return (
+		<div className="glass-card glass-hover hero-clock">
+			<span className="eyebrow">{label}</span>
+			<time>{time}</time>
+			<span>Jakarta · GMT+7</span>
+		</div>
+	)
+}
+
+function Hero({ hero, ui, assetPath }) {
+	return (
+		<header id={sectionId("top")} className="hero">
+			<div className="glass-card glass-hover hero-lead">
+				{hero.availability && <p className="availability">{hero.availability}</p>}
+				<h1>{hero.headline || hero.name}</h1>
+				<p className="hero-intro">{hero.subheadline}</p>
+				<div className="hero-actions">
+					<a className="button button-primary" href={assetPath + CV_FILE} download={CV_FILE}>{ui.downloadCv}</a>
+					<a className="button button-secondary" href={sectionHref("proProjects")}>{ui.viewWork}<span aria-hidden="true">→</span></a>
+				</div>
+				<ChipList items={hero.roles} />
+			</div>
+			<div className="glass-card glass-hover hero-profile">
+				<span className="profile-monogram" aria-hidden="true">{hero.monogram}</span>
+				<div><p>{hero.name}</p><span>{hero.title}</span></div>
+				<span>{hero.location}</span>
+			</div>
+			<LocalClock label={ui.localTime} />
+		</header>
+	)
+}
+
+function Section({ name, data, children, className = "" }) {
+	const id = sectionId(name)
+	return (
+		<section id={id} aria-labelledby={`${id}-title`} className={`portfolio-section ${className}`}>
+			<div className="section-heading">
+				{data.eyebrow && <p className="eyebrow">{data.eyebrow}</p>}
+				<h2 id={`${id}-title`}>{data.title}</h2>
+			</div>
+			{children}
 		</section>
 	)
 }
 
-function Summary() {
-	const { summary } = useContent()
-	if (!summary) return null
+function Summary({ data }) {
 	return (
-		<section className="py-10">
-			<SectionHead index="01" eyebrow={summary.eyebrow} title={summary.title} />
-			<div className="glass-card p-7 sm:p-9">
-				<p className="max-w-3xl text-lg leading-relaxed text-neutral-700">{summary.body}</p>
-				{Array.isArray(summary.stats) && summary.stats.length ? (
-					<div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-neutral-200/60 sm:grid-cols-4">
-						{summary.stats.map((s, i) => (
-							<div key={i} className="bg-white/70 p-5">
-								<div className="font-mono text-2xl font-semibold tabular-nums text-action">{s.value}</div>
-								<div className="mt-1 text-sm text-neutral-500">{s.label}</div>
-							</div>
+		<Section name="summary" data={data}>
+			<div className="glass-card summary-card">
+				<p className="summary-copy">{data.body}</p>
+				{data.stats?.length > 0 && (
+					<dl className="stats">
+						{data.stats.map(({ value, label }) => (
+							<div key={label}><dt>{label}</dt><dd>{value}</dd></div>
 						))}
-					</div>
-				) : null}
+					</dl>
+				)}
 			</div>
-		</section>
+		</Section>
 	)
 }
 
-function Experience() {
-	const { experience } = useContent()
-	if (!experience) return null
+function Experience({ data }) {
 	return (
-		<section className="py-10">
-			<SectionHead index="02" eyebrow={experience.eyebrow} title={experience.title} />
-			<ol className="relative space-y-4 border-l border-neutral-300/70 pl-7">
-				{(experience.items || []).map((x, i) => (
-					<li key={i} className="relative">
-						<span className="absolute -left-[33px] top-5 h-2.5 w-2.5 rounded-full bg-action ring-4 ring-[#eceff4]" />
-						<div className="glass-card glass-hover p-5 sm:p-6">
-							<div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-								<h3 className="text-[15px] font-semibold text-ink">
-									{x.role} {x.company ? <><span className="text-neutral-300">·</span> <span className="text-action">{x.company}</span></> : null}
-								</h3>
-								<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{x.period}</span>
-							</div>
-							{x.location ? <div className="mt-0.5 text-xs text-neutral-500">{x.location}</div> : null}
-							<p className="mt-2.5 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{x.description}</p>
-							{Array.isArray(x.tags) && x.tags.length ? (
-								<div className="mt-3.5 flex flex-wrap gap-1.5">
-									{x.tags.map((t) => (
-										<Chip key={t}>{t}</Chip>
-									))}
-								</div>
-							) : null}
-						</div>
+		<Section name="experience" data={data}>
+			<ol className="timeline">
+				{data.items.map((item) => (
+					<li className="glass-card glass-hover content-card" key={`${item.company}-${item.role}`}>
+						<div className="card-top"><h3>{item.role}</h3><p className="row-meta">{item.period}</p></div>
+						<p className="attribution">{[item.company, item.type, item.location].filter(Boolean).join(" · ")}</p>
+						{item.description && <p className="description">{item.description}</p>}
+						<ChipList items={item.tags} />
 					</li>
 				))}
 			</ol>
-		</section>
+		</Section>
 	)
 }
 
-function Education() {
-	const { education } = useContent()
-	if (!education) return null
+function ProjectThumbnail({ variant }) {
 	return (
-		<section className="py-10">
-			<SectionHead index="03" eyebrow={education.eyebrow} title={education.title} />
-			<div className="grid gap-4 sm:grid-cols-2">
-				{(education.items || []).map((e, i) => (
-					<div key={i} className="glass-card glass-hover p-6">
-						<div className="flex items-baseline justify-between gap-3">
-							<h3 className="text-base font-semibold text-ink">{e.school}</h3>
-							<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{e.period}</span>
-						</div>
-						<div className="mt-1 text-sm text-action">{e.degree}</div>
-						{e.detail ? <p className="mt-2 text-sm leading-relaxed text-neutral-600">{e.detail}</p> : null}
-					</div>
-				))}
+		<div className={`mini-win mini-${variant}`} aria-hidden="true">
+			<div className="mini-toolbar"><i /><i /><i /><b /></div>
+			<div className="mini-stage">
+				<i /><i /><i /><i /><i /><i /><i />
 			</div>
-		</section>
+		</div>
 	)
 }
 
-function Skills() {
-	const { skills } = useContent()
-	if (!skills) return null
+function ProjectList({ name, data }) {
+	const variants = name === "proProjects" ? ["chart", "tiles", "chart"] : ["tiles", "editor"]
 	return (
-		<section className="py-10">
-			<SectionHead index="04" eyebrow={skills.eyebrow} title={skills.title} />
-			<div className="glass-card divide-y divide-neutral-200/70 p-2 sm:p-3">
-				{(skills.groups || []).map((g, i) => (
-					<div key={i} className="grid gap-3 px-4 py-5 sm:grid-cols-[180px_1fr] sm:px-5">
-						<div className="flex items-center gap-2">
-							<span className="h-1.5 w-1.5 rounded-full bg-action" />
-							<span className="text-sm font-semibold text-ink">{g.name}</span>
-						</div>
-						<div className="flex flex-wrap gap-1.5">
-							{(g.items || []).map((s) => (
-								<Chip key={s}>{s}</Chip>
-							))}
-						</div>
-					</div>
-				))}
-			</div>
-		</section>
-	)
-}
-
-function ProjectList({ data, index, variantOffset = 0 }) {
-	if (!data) return null
-	const items = data.items || []
-	return (
-		<section className="py-10">
-			<SectionHead index={index} eyebrow={data.eyebrow} title={data.title} />
-			<div className="grid gap-4 sm:grid-cols-2">
-				{items.map((p, i) => {
-					const feature = i === 0 && items.length % 2 === 1
-					const variant = (i + variantOffset) % 4
-					const hasLink = Boolean(p.link && p.link !== "#")
-					const Tag = hasLink ? "a" : "div"
+		<Section name={name} data={data}>
+			<ul className="card-grid">
+				{data.items.map((project, i) => {
+					const featured = i === 0 && data.items.length % 2 === 1
+					const linked = project.link && project.link !== "#"
+					const Tag = linked ? "a" : "div"
 					return (
-						<Tag
-							key={i}
-							href={hasLink ? p.link : undefined}
-							target={hasLink ? "_blank" : undefined}
-							rel={hasLink ? "noreferrer" : undefined}
-							className={"glass-card glass-hover group block p-3 " + (feature ? "sm:col-span-2" : "")}
-						>
-							<div className={feature ? "grid items-stretch gap-4 sm:grid-cols-2" : ""}>
-								<div className={feature ? "min-h-[200px]" : "h-36"}>
-									<MockChrome>
-										<Mock variant={feature ? 0 : variant} />
-									</MockChrome>
+						<li className={featured ? "project-feature" : undefined} key={project.name}>
+							<Tag className="glass-card glass-hover project-card" href={linked ? project.link : undefined} target={linked ? "_blank" : undefined} rel={linked ? "noreferrer" : undefined}>
+								<ProjectThumbnail variant={variants[i % variants.length]} />
+								<div className="project-copy">
+									<h3>{project.name}{linked && <span aria-hidden="true"> ↗</span>}</h3>
+									<p className="description">{project.description}</p>
+									<p className="row-meta">{project.category} · {project.year}</p>
+									<ChipList items={project.tags} />
 								</div>
-								<div className={feature ? "flex flex-col justify-center px-2 sm:px-3" : "mt-3 px-1"}>
-									<div className="flex items-start justify-between gap-3">
-										<h3 className={"font-semibold tracking-tight text-ink " + (feature ? "text-xl" : "text-base")}>
-											{p.name}
-										</h3>
-										{hasLink ? (
-											<span className="mt-1 text-neutral-300 transition group-hover:translate-x-0.5 group-hover:text-action">
-												<Ico name="arrow" className="h-4 w-4" />
-											</span>
-										) : null}
-									</div>
-									<p className="mt-1.5 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{p.description}</p>
-									<div className="mt-3 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-neutral-400">
-										<span>{p.category}</span>
-										<span className="text-neutral-300">·</span>
-										<span>{p.year}</span>
-									</div>
-									{Array.isArray(p.tags) && p.tags.length ? (
-										<div className="mt-3 flex flex-wrap gap-1.5">
-											{p.tags.map((t) => (
-												<Chip key={t}>{t}</Chip>
-											))}
-										</div>
-									) : null}
-								</div>
-							</div>
-						</Tag>
+							</Tag>
+						</li>
 					)
 				})}
-			</div>
-		</section>
+			</ul>
+		</Section>
 	)
 }
 
-function ProProjects() {
-	const { proProjects } = useContent()
-	return <ProjectList data={proProjects} index="05" variantOffset={0} />
-}
-
-function OpenProjects() {
-	const { openProjects, projects } = useContent()
-	return <ProjectList data={openProjects || projects} index="06" variantOffset={2} />
-}
-
-function Certificates() {
-	const { certificates, certifications } = useContent()
-	const data = certificates || certifications
-	if (!data) return null
+function Education({ data }) {
 	return (
-		<section className="py-10">
-			<SectionHead index="07" eyebrow={data.eyebrow} title={data.title} />
-			<div className="grid gap-4 sm:grid-cols-2">
-				{(data.items || []).map((c, i) => (
-					<div key={i} className="glass-card glass-hover p-6">
-						<div className="flex items-baseline justify-between gap-3">
-							<h3 className="text-base font-semibold text-ink">{c.name}</h3>
-							<span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400">{c.period}</span>
-						</div>
-						<div className="mt-1 text-sm font-medium text-action">
-							{c.issuer}
-							{c.location ? <span className="font-normal text-neutral-400"> · {c.location}</span> : null}
-						</div>
-						{c.detail ? <p className="mt-2 text-sm leading-relaxed text-neutral-600 whitespace-pre-line">{c.detail}</p> : null}
-					</div>
+		<Section name="education" data={data}>
+			<ul className="card-grid">
+				{data.items.map((item) => (
+					<li className="glass-card glass-hover content-card" key={`${item.school}-${item.degree}`}>
+						<div className="card-top"><h3>{item.school}</h3><p className="row-meta">{item.period}</p></div>
+						<p className="attribution">{item.degree}</p>
+						{item.detail && <p className="description">{item.detail}</p>}
+					</li>
 				))}
-			</div>
-		</section>
+			</ul>
+		</Section>
 	)
 }
 
-function Contact() {
-	const { contact } = useContent()
-	if (!contact) return null
+function Skills({ data }) {
 	return (
-		<section className="py-12">
-			<div className="glass-card overflow-hidden p-8 sm:p-12">
-				<div className="font-mono text-[11px] uppercase tracking-[0.22em] text-action">{contact.eyebrow}</div>
-				<h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{contact.title}</h2>
-				{contact.blurb ? <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-neutral-600">{contact.blurb}</p> : null}
-				<div className="mt-7 flex flex-wrap items-center gap-3">
-					<a
-						href={"mailto:" + (contact.email || "")}
-						className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white shadow-sm transition active:scale-[0.97]"
-					>
-						<Ico name="mail" className="h-4 w-4" />
-						{contact.email}
-					</a>
-					{(contact.socials || []).map((s) => (
-						<a
-							key={s.label}
-							href={s.url || "#"}
-							target="_blank"
-							rel="noreferrer"
-							className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-neutral-300 transition hover:bg-white/60 active:scale-[0.97]"
-						>
-							{s.label}
-							<span className="text-neutral-400">{s.handle}</span>
-						</a>
-					))}
-				</div>
-			</div>
-		</section>
+		<Section name="skills" data={data}>
+			<ul className="glass-card skills-card">
+				{data.groups.map((group) => (
+					<li key={group.name}><h3>{group.name}</h3><ChipList items={group.items} /></li>
+				))}
+			</ul>
+		</Section>
 	)
 }
 
-/* ============================================================
-   Browser webpage (nav + sections inside the Safari window)
-   ============================================================ */
-const NAV = ["summary", "experience", "education", "skills", "proProjects", "openProjects", "certificates", "contact"]
-
-function LangSwitcher() {
-	const { languages, lang, setLang } = useApp()
-	if (!languages || !languages.length) return null
+function Certificates({ data }) {
 	return (
-		<div className="flex items-center gap-0.5 rounded-full bg-white/50 p-0.5 ring-1 ring-neutral-300/70">
-			{languages.map((l) => (
-				<button
-					key={l.code}
-					onClick={() => setLang(l.code)}
-					title={l.label}
-					className={
-						"rounded-full px-2 py-1 text-[11px] font-semibold leading-none transition " +
-						(lang === l.code ? "bg-action text-white shadow-sm" : "text-neutral-500 hover:text-ink")
-					}
-				>
-					{l.short}
-				</button>
-			))}
-		</div>
+		<Section name="certificates" data={data}>
+			<ul className="card-grid">
+				{data.items.map((item) => (
+					<li className="glass-card glass-hover content-card" key={`${item.name}-${item.issuer}`}>
+						<div className="card-top"><h3>{item.name}</h3><p className="row-meta">{item.period}</p></div>
+						<p className="attribution">{[item.issuer, item.location].filter(Boolean).join(" · ")}</p>
+						{item.detail && <p className="description">{item.detail}</p>}
+					</li>
+				))}
+			</ul>
+		</Section>
 	)
 }
 
-function Webpage() {
-	const app = useApp()
-	const { hero } = app.content
-	const meta = app.meta
-	const ui = app.ui
-	const scroller = useRef(null)
-	const progress = useRef(null)
-	const [active, setActive] = useState("summary")
+function Contact({ data }) {
+	return (
+		<Section name="contact" data={data} className="contact-section glass-card">
+			{data.blurb && <p className="summary-copy">{data.blurb}</p>}
+			<ul className="hero-actions">
+				<li><a className="button button-primary contact-email" href={`mailto:${data.email}`}>{data.email}</a></li>
+				{data.socials?.map(({ label, handle, url }) => (
+					<li key={label}>
+						{url && url !== "#" ? (
+							<a className="button button-secondary" href={url} target="_blank" rel="noreferrer">{label} <span>{handle}</span></a>
+						) : <span className="button contact-handle">{label} {handle}</span>}
+					</li>
+				))}
+			</ul>
+		</Section>
+	)
+}
 
-	const onNav = (id) => {
-		const root = scroller.current
-		if (!root) return
-		if (id === "top") {
-			root.scrollTo({ top: 0, behavior: "smooth" })
-			return
+function useActiveSection(viewport) {
+	const [active, setActive] = useState(null)
+	useEffect(() => {
+		const root = viewport.current
+		const sections = Array.from(root.querySelectorAll(".portfolio-section"))
+		const target = document.getElementById(window.location.hash.slice(1))
+		if (root.contains(target)) target.scrollIntoView()
+
+		let frame = 0
+		let offset = 0
+		const update = () => {
+			frame = 0
+			if (!root.clientHeight) return
+			const end = root.scrollHeight - root.clientHeight
+			root.parentElement.style.setProperty("--scroll-progress", end > 0 ? Math.min(1, root.scrollTop / end) : 0)
+			if (root.scrollTop <= 1) {
+				setActive(null)
+				return
+			}
+			const atBottom = end > 0 && Math.ceil(root.scrollTop) >= end
+			const start = root.getBoundingClientRect().top + offset
+			// A section near the end may not reach the top of the scroll area.
+			if (atBottom) {
+				const fragment = sections.find(({ id }) => `#${id}` === window.location.hash)
+				if (fragment && fragment.getBoundingClientRect().top >= start) {
+					setActive(fragment.id.slice(4))
+					return
+				}
+			}
+			for (let i = sections.length - 1; i >= 0; --i) {
+				const section = sections[i]
+				if (atBottom || section.getBoundingClientRect().top <= start) {
+					setActive(section.id.slice(4))
+					return
+				}
+			}
+			setActive(null)
 		}
-		const el = root.querySelector("#sec-" + id)
-		if (el) root.scrollTo({ top: el.offsetTop - 64, behavior: "smooth" })
+		const onScroll = () => {
+			if (!frame) frame = window.requestAnimationFrame(update)
+		}
+		const onResize = () => {
+			offset = Number.parseFloat(getComputedStyle(root).scrollPaddingTop) + 20
+			onScroll()
+		}
+		onResize()
+		const resizeObserver = new ResizeObserver(onResize)
+		resizeObserver.observe(root)
+		resizeObserver.observe(root.querySelector(".site-shell"))
+		root.addEventListener("scroll", onScroll, { passive: true })
+		window.addEventListener("hashchange", onScroll)
+		return () => {
+			resizeObserver.disconnect()
+			root.removeEventListener("scroll", onScroll)
+			window.removeEventListener("hashchange", onScroll)
+			window.cancelAnimationFrame(frame)
+		}
+	}, [viewport])
+	return active
+}
+
+function Portfolio({ data, lang, setLang, assetPath, viewport }) {
+	const { hero, summary, experience, proProjects, openProjects, projects, education, skills, certificates, certifications, contact } = data.content[lang]
+	const ui = data.ui[lang]
+	const active = useActiveSection(viewport)
+	const languageAnchor = useRef(null)
+
+	const selectLanguage = (nextLang) => {
+		if (nextLang === lang) return
+		const root = viewport.current
+		const section = document.getElementById(sectionId(active || "top"))
+		if (section) {
+			languageAnchor.current = { id: section.id, top: section.getBoundingClientRect().top - root.getBoundingClientRect().top }
+		}
+		setLang(nextLang)
 	}
 
-	const onScroll = () => {
-		const root = scroller.current
-		if (!root) return
-		const max = root.scrollHeight - root.clientHeight
-		const ratio = max > 0 ? root.scrollTop / max : 0
-		if (progress.current) progress.current.style.transform = "scaleX(" + ratio + ")"
-		const pos = root.scrollTop + 80
-		let current = NAV[0]
-		for (const n of NAV) {
-			const el = root.querySelector("#sec-" + n)
-			if (el && el.offsetTop <= pos) current = n
-		}
-		setActive(current)
-	}
+	useLayoutEffect(() => {
+		const anchor = languageAnchor.current
+		if (!anchor) return
+		languageAnchor.current = null
+		const section = document.getElementById(anchor.id)
+		if (!section) return
+		const root = viewport.current
+		root.scrollTop += section.getBoundingClientRect().top - root.getBoundingClientRect().top - anchor.top
+	}, [lang, viewport])
 
 	return (
-		<div ref={scroller} onScroll={onScroll} className="safari-scroll relative h-full overflow-y-auto page-canvas">
-			<div className="reveal relative min-h-full">
-				<div className="texture">
-					<div className="dots" />
-					<div className="grain" />
-				</div>
-
-				<div className="relative z-10">
-					{/* sticky in-page nav */}
-					<div className="sticky top-0 z-30">
-						<div className="glass border-b border-white/40">
-							<Container className="flex h-14 items-center justify-between gap-2">
-								<button onClick={() => onNav("top")} className="flex shrink-0 items-center gap-2 text-left transition hover:opacity-80">
-									<span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-[#13314f] to-action text-[11px] font-semibold text-white shadow-inner">
-										{hero ? hero.monogram : ""}
-									</span>
-									<span className="hidden text-sm font-semibold tracking-tight text-ink xl:inline">{hero ? hero.name : ""}</span>
-								</button>
-								<nav className="hidden items-center gap-0.5 rounded-full bg-white/50 p-1 ring-1 ring-neutral-300/60 md:flex">
-									{NAV.map((n) => (
-										<button
-											key={n}
-											onClick={() => onNav(n)}
-											className={
-												"rounded-full px-2.5 py-1 text-[12px] font-medium whitespace-nowrap transition " +
-												(active === n ? "bg-white text-action shadow-sm" : "text-neutral-500 hover:text-ink")
-											}
-										>
-											{ui.nav[n]}
-										</button>
-									))}
-								</nav>
-								<div className="flex shrink-0 items-center gap-2">
-									<LangSwitcher />
-									<a
-										href={"mailto:" + (useContentEmail() || "")}
-										className="hidden rounded-full bg-action px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition active:scale-95 sm:inline-flex"
-									>
-										{ui.getInTouch}
-									</a>
-								</div>
-							</Container>
-						</div>
-						<div ref={progress} className="scroll-progress" />
-					</div>
-
-					<Container>
-						<div id="sec-top"><Hero onNav={onNav} /></div>
-						<div id="sec-summary"><Summary /></div>
-						<div id="sec-experience"><Experience /></div>
-						<div id="sec-education"><Education /></div>
-						<div id="sec-skills"><Skills /></div>
-						<div id="sec-proProjects"><ProProjects /></div>
-						<div id="sec-openProjects"><OpenProjects /></div>
-						<div id="sec-certificates"><Certificates /></div>
-						<div id="sec-contact"><Contact /></div>
-						<footer className="border-t border-neutral-200/70 py-8 text-center text-xs text-neutral-400">
-							© {new Date().getFullYear()} {hero ? hero.name : ""} · {meta ? meta.domain : ""}
-						</footer>
-					</Container>
-				</div>
-			</div>
+		<div className="site-shell">
+			<a className="skip-link" href="#main-content">{ui.skipToContent}</a>
+			<Topbar hero={hero} ui={ui} languages={data.languages} lang={lang} setLang={selectLanguage} active={active} />
+			<main id="main-content" className="site-main" tabIndex={-1}>
+				<Hero hero={hero} ui={ui} assetPath={assetPath} />
+				{summary && <Summary data={summary} />}
+				{experience && <Experience data={experience} />}
+				{proProjects && <ProjectList name="proProjects" data={proProjects} />}
+				{(openProjects || projects) && <ProjectList name="openProjects" data={openProjects || projects} />}
+				{education && <Education data={education} />}
+				{skills && <Skills data={skills} />}
+				{(certificates || certifications) && <Certificates data={certificates || certifications} />}
+				{contact && <Contact data={contact} />}
+				<footer className="site-footer">© {new Date().getFullYear()} {hero.name} <a href={sectionHref("top")}>{data.meta.domain} ↑</a></footer>
+			</main>
 		</div>
 	)
 }
 
-function useContentEmail() {
-	const c = useContent()
-	return c && c.contact ? c.contact.email : ""
-}
-
-/* ============================================================
-   Safari window chrome
-   ============================================================ */
-function SafariWindow({ stateClass }) {
-	const { meta } = useApp()
-	const domain = meta ? meta.domain : ""
-	return (
-		<div className={"safari-window absolute inset-x-2 bottom-2 top-9 overflow-hidden rounded-xl sm:inset-x-8 sm:bottom-7 sm:top-12 " + stateClass}>
-			<div className="flex items-center gap-3 border-b border-black/10 bg-[#f6f6f7] px-4 py-2.5">
-				<div className="flex items-center gap-2">
-					<span className="h-3 w-3 rounded-full bg-[#ff5f57] ring-1 ring-black/5" />
-					<span className="h-3 w-3 rounded-full bg-[#febc2e] ring-1 ring-black/5" />
-					<span className="h-3 w-3 rounded-full bg-[#28c840] ring-1 ring-black/5" />
-				</div>
-				<div className="hidden items-center gap-1 text-neutral-400 sm:flex">
-					<Ico name="back" className="h-4 w-4" />
-					<Ico name="forward" className="h-4 w-4" />
-				</div>
-				<div className="mx-auto flex w-full max-w-md items-center justify-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs text-neutral-500 ring-1 ring-black/5">
-					<Ico name="lock" className="h-3 w-3" />
-					<span className="truncate">{domain}</span>
-				</div>
-				<div className="hidden items-center gap-2 text-neutral-400 sm:flex">
-					<Ico name="share" className="h-4 w-4" />
-					<Ico name="plus" className="h-4 w-4" />
-				</div>
-			</div>
-			<div className="h-[calc(100%-49px)]">
-				<Webpage />
-			</div>
-		</div>
-	)
-}
-
-/* ============================================================
-   Root
-   ============================================================ */
 function App() {
 	const { data, error } = useLoadedContent()
-	const [phase, setPhase] = useState(0)
-	const [dockHover, setDockHover] = useState(false)
-	const [lang, setLangState] = useState(null)
+	const [lang, setLang] = useState(() => {
+		try {
+			return localStorage.getItem("lang")
+		} catch {
+			return null
+		}
+	})
+	const activeLang = data?.languages.some(({ code }) => code === lang) ? lang : data?.meta.defaultLang || "id"
 
 	useEffect(() => {
-		if (!data) return
-		let saved = null
-		try {
-			saved = localStorage.getItem("lang")
-		} catch (e) {}
-		const codes = (data.languages || []).map((l) => l.code)
-		const initial = saved && codes.indexOf(saved) >= 0 ? saved : (data.meta && data.meta.defaultLang) || codes[0] || "id"
-		setLangState(initial)
-	}, [data])
+		document.documentElement.lang = activeLang === "jw" ? "jv" : activeLang
+	}, [activeLang])
 
-	const setLang = (code) => {
-		setLangState(code)
+	const selectLanguage = (code) => {
+		setLang(code)
 		try {
 			localStorage.setItem("lang", code)
-		} catch (e) {}
-	}
-
-	useEffect(() => {
-		const t = []
-		t.push(setTimeout(() => setPhase(1), 500))
-		t.push(setTimeout(() => setPhase(2), 1650))
-		t.push(setTimeout(() => setPhase(3), 2000))
-		t.push(setTimeout(() => setPhase(4), 3050))
-		return () => t.forEach(clearTimeout)
-	}, [])
-
-	useEffect(() => {
-		const h = (e) => {
-			if (e.key === "Escape") setPhase(4)
+		} catch {
+			// The selection still works when browser storage is unavailable.
 		}
-		window.addEventListener("keydown", h)
-		return () => window.removeEventListener("keydown", h)
-	}, [])
-
-	const booted = phase >= 3
-	const done = phase >= 4
-	const stateClass = booted ? (done ? "" : "window-in") : "window-hidden"
+	}
 
 	if (!data) {
-		return (
-			<div className="desktop flex h-full items-center justify-center text-white/80">
-				{error ? "Tidak bisa memuat content.json" : "Memuat…"}
-			</div>
-		)
+		return <p className="load-status" role={error ? "alert" : "status"}>{error ? "Tidak bisa memuat content.json" : "Memuat…"}</p>
 	}
-
-	const activeLang = lang || (data.meta && data.meta.defaultLang) || (data.languages && data.languages[0] && data.languages[0].code) || "id"
-	const appValue = {
-		meta: data.meta,
-		languages: data.languages || [],
-		lang: activeLang,
-		setLang: setLang,
-		content: data.content ? data.content[activeLang] : null,
-		ui: data.ui ? data.ui[activeLang] : null,
-	}
-
-	return (
-		<ContentCtx.Provider value={appValue}>
-			<div className="desktop relative h-full overflow-hidden">
-				<MenuBar />
-				<SafariWindow stateClass={stateClass} />
-				{!booted ? <MacCursor phase={phase} /> : null}
-				<div className="dock-reveal-zone" onMouseEnter={() => setDockHover(true)} />
-				<Dock
-					down={done && !dockHover}
-					bounceSafari={phase === 2}
-					booted={booted}
-					onLaunch={() => setPhase(4)}
-					onHover={setDockHover}
-				/>
-			</div>
-		</ContentCtx.Provider>
-	)
+	const assetPath = window.location.protocol === "file:" ? "public/" : ""
+	return <SafariDesktop data={data} lang={activeLang} setLang={selectLanguage} assetPath={assetPath} />
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
