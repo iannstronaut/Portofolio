@@ -20,7 +20,7 @@ let app = readFileSync("./src/App.jsx", "utf8")
 // The import line (which also destructured the hooks) was stripped above, so
 // re-bind the React hooks from the global UMD React for the standalone preview.
 app =
-  "const { useState, useEffect, useRef, createContext, useContext } = React\n" +
+  "const { useState, useEffect, useLayoutEffect, useRef } = React\n" +
   app;
 
 const css = readFileSync("./src/custom.css", "utf8");
@@ -30,6 +30,7 @@ const html = `<!doctype html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
 <title>Al Byan Agung Shafiqri — Portfolio</title>
 <meta name="description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
 <link rel="canonical" href="https://iannstr.com/" />
@@ -38,31 +39,15 @@ const html = `<!doctype html>
 <meta property="og:site_name" content="Al Byan Agung Shafiqri" />
 <meta property="og:title" content="Al Byan Agung Shafiqri — Portfolio" />
 <meta property="og:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-<meta property="og:image" content="https://iannstr.com/og-frame.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Al Byan Agung Shafiqri — Portfolio" />
 <meta name="twitter:description" content="Portfolio Al Byan Agung Shafiqri, Fullstack Developer & ML/DL Enthusiast." />
-<meta name="twitter:image" content="https://iannstr.com/og-frame.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: { extend: {
-      colors: { ink: "#1d1d1f", action: "#0066cc" },
-      fontFamily: {
-        sans: ["Inter","system-ui","-apple-system","BlinkMacSystemFont","SF Pro Text","sans-serif"],
-        mono: ["JetBrains Mono","ui-monospace","SFMono-Regular","Menlo","monospace"],
-      },
-    } },
-  }
-</script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.28.5/babel.min.js"></script>
 <style>
 ${css}
 </style>

@@ -13,17 +13,23 @@
     "id": {
       "viewWork": "Lihat karya",
       "downloadCv": "Download CV",
-      "contactCta": "Hubungi saya",
-      "getInTouch": "Hubungi saya",
       "localTime": "Waktu lokal",
-      "tz": "Jakarta · GMT+7",
+      "language": "Bahasa",
+      "skipToContent": "Lewati ke konten utama",
+      "desktop": {
+        "portfolio": "Portofolio",
+        "open": "Buka Safari",
+        "close": "Tutup jendela",
+        "minimize": "Minimalkan jendela",
+        "expand": "Perbesar jendela"
+      },
       "nav": {
         "summary": "Tentang",
         "experience": "Pengalaman",
         "education": "Pendidikan",
         "skills": "Keahlian",
         "proProjects": "Proyek",
-        "openProjects": "Terbuka",
+        "openProjects": "Proyek Terbuka",
         "certificates": "Sertifikat",
         "contact": "Kontak"
       }
@@ -31,10 +37,16 @@
     "en": {
       "viewWork": "View work",
       "downloadCv": "Download CV",
-      "contactCta": "Contact me",
-      "getInTouch": "Get in touch",
       "localTime": "Local time",
-      "tz": "Jakarta · GMT+7",
+      "language": "Language",
+      "skipToContent": "Skip to main content",
+      "desktop": {
+        "portfolio": "Portfolio",
+        "open": "Open Safari",
+        "close": "Close window",
+        "minimize": "Minimize window",
+        "expand": "Expand window"
+      },
       "nav": {
         "summary": "About",
         "experience": "Experience",
@@ -49,17 +61,23 @@
     "jw": {
       "viewWork": "Deleng karya",
       "downloadCv": "Download CV",
-      "contactCta": "Hubungi aku",
-      "getInTouch": "Ayo srawung",
       "localTime": "Wektu lokal",
-      "tz": "Jakarta · GMT+7",
+      "language": "Basa",
+      "skipToContent": "Langsung menyang isi utama",
+      "desktop": {
+        "portfolio": "Portofolio",
+        "open": "Bukak Safari",
+        "close": "Tutup jendhela",
+        "minimize": "Cilikna jendhela",
+        "expand": "Gedhèkna jendhela"
+      },
       "nav": {
         "summary": "Babagan",
         "experience": "Pengalaman",
         "education": "Pendhidhikan",
         "skills": "Kaprigelan",
         "proProjects": "Proyek",
-        "openProjects": "Kabuka",
+        "openProjects": "Proyek Kabuka",
         "certificates": "Sertifikat",
         "contact": "Kontak"
       }
@@ -71,8 +89,8 @@
         "monogram": "AS",
         "name": "Al Byan Agung Shafiqri",
         "title": "Fullstack Developer & ML/DL Enthusiast",
-        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "headline": "Membangun aplikasi web utuh dan mengeksplorasi kecerdasan buatan.",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "subheadline": "Fullstack developer dengan dua tahun pengalaman membangun aplikasi end-to-end — dari API, basis data, hingga antarmuka — sambil aktif mendalami Machine Learning & Deep Learning.",
         "location": "Jakarta, Indonesia",
         "availability": "Terbuka untuk peluang baru"
@@ -84,14 +102,22 @@
         "stats": [
           { "value": "2+", "label": "Tahun pengalaman" },
           { "value": "10+", "label": "Proyek diselesaikan" },
-          { "value": "5+", "label": "Model ML dilatih" },
-          { "value": "∞", "label": "Rasa ingin tahu" }
+          { "value": "5+", "label": "Model ML dilatih" }
         ]
       },
       "experience": {
         "eyebrow": "Karier",
         "title": "Pengalaman",
         "items": [
+          {
+            "role": "Information Technology Business Partner",
+            "company": "PT. Bank Syariah Indonesia",
+            "type": "Magang",
+            "period": "September 2026 — Sekarang",
+            "location": "Jakarta Pusat, Indonesia",
+            "description": "Mendukung penyusunan rencana awal sebelum pelaksanaan inisiatif TI.",
+            "tags": ["Power Automate"]
+          },
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
@@ -103,7 +129,7 @@
           {
             "role": "Freelance Full Stack Developer (Part-time)",
             "company": "Freelance",
-            "period": "2023 — Sekarang",
+            "period": "2023 — September 2026",
             "location": "Malang, Indonesia",
             "description": "Mengotomatisasi siklus pembuatan akta notaris PPAT untuk mempercepat penerbitan dokumen legalitas resmi, serta merefaktor sistem katalog digital UMKM dan mengoptimasi query database demi stabilitas dan kecepatan pencarian.",
             "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
@@ -170,7 +196,15 @@
           },
           {
             "name": "Alur kerja",
-            "items": ["Git", "Docker", "Linux", "Agile"]
+            "items": ["Git", "Docker", "Agile", "Waterfall"]
+          },
+          {
+            "name": "Infrastruktur",
+            "items": ["Linux", "Nginx", "Tailscale", "Cloudflare Tunnels"]
+          },
+          {
+            "name": "Automation",
+            "items": ["Power Automate", "Playwright", "MCP"]
           }
         ]
       },
@@ -226,6 +260,13 @@
         "title": "Sertifikat",
         "items": [
           {
+            "name": "Computer Software Programming",
+            "issuer": "Badan Nasional Sertifikasi Profesi",
+            "location": "Malang, Indonesia",
+            "period": "Jun 2026 — Jun 2029",
+            "detail": "Sertifikasi kompetensi dalam pemrograman perangkat lunak."
+          },
+          {
             "name": "TOEIC",
             "issuer": "International Test Center",
             "period": "May 2026 — May 2031",
@@ -265,8 +306,8 @@
         "monogram": "AS",
         "name": "Al Byan Agung Shafiqri",
         "title": "Fullstack Developer & ML/DL Enthusiast",
-        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "headline": "Building complete web apps and exploring artificial intelligence.",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "subheadline": "Fullstack developer with two years of experience building end-to-end applications — from APIs and databases to interfaces — while actively diving into Machine Learning & Deep Learning.",
         "location": "Jakarta, Indonesia",
         "availability": "Open to new opportunities"
@@ -278,14 +319,22 @@
         "stats": [
           { "value": "2+", "label": "Year of experience" },
           { "value": "10+", "label": "Projects completed" },
-          { "value": "5+", "label": "ML models trained" },
-          { "value": "∞", "label": "Curiosity" }
+          { "value": "5+", "label": "ML models trained" }
         ]
       },
       "experience": {
         "eyebrow": "Career",
         "title": "Experience",
         "items": [
+          {
+            "role": "Information Technology Business Partner",
+            "company": "PT. Bank Syariah Indonesia",
+            "type": "Internship",
+            "period": "September 2026 — Present",
+            "location": "Central Jakarta, Indonesia",
+            "description": "Support initial planning for IT initiatives ahead of implementation.",
+            "tags": ["Power Automate"]
+          },
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
@@ -297,7 +346,7 @@
           {
             "role": "Freelance Full Stack Developer (Part-time)",
             "company": "Freelance",
-            "period": "2023 — Now",
+            "period": "2023 — September 2026",
             "location": "Malang, Indonesia",
             "description": "Automated the PPAT notary deed lifecycle to expedite legal document processing, while refactoring MSME digital catalog platforms and optimizing database queries for greater speed and stability.",
             "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
@@ -364,7 +413,15 @@
           },
           {
             "name": "Workflow",
-            "items": ["Git", "Docker", "Linux", "Agile"]
+            "items": ["Git", "Docker", "Agile", "Waterfall"]
+          },
+          {
+            "name": "Infrastructure",
+            "items": ["Linux", "Nginx", "Tailscale", "Cloudflare Tunnels"]
+          },
+          {
+            "name": "Automation",
+            "items": ["Power Automate", "Playwright", "MCP"]
           }
         ]
       },
@@ -420,6 +477,13 @@
         "title": "Certifications",
         "items": [
           {
+            "name": "Computer Software Programming",
+            "issuer": "Badan Nasional Sertifikasi Profesi",
+            "location": "Malang, Indonesia",
+            "period": "Jun 2026 — Jun 2029",
+            "detail": "Professional competency certification in software programming."
+          },
+          {
             "name": "TOEIC",
             "issuer": "International Test Center",
             "period": "May 2026 — May 2031",
@@ -459,8 +523,8 @@
         "monogram": "AS",
         "name": "Al Byan Agung Shafiqri",
         "title": "Fullstack Developer & ML/DL Enthusiast",
-        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "headline": "Ngracik aplikasi web jangkep lan nlusuri kacerdasan gawéan.",
+        "roles": ["Web Development", "Machine Learning", "Deep Learning"],
         "subheadline": "Fullstack developer kanthi rong taun pengalaman gawé aplikasi end-to-end — saka API, basis data, teka antarmuka — sinambi nlusuri Machine Learning & Deep Learning.",
         "location": "Jakarta, Indonésia",
         "availability": "Mbukak kanggo kalodhangan anyar"
@@ -472,14 +536,22 @@
         "stats": [
           { "value": "2+", "label": "Taun pengalaman" },
           { "value": "10+", "label": "Proyek kelar" },
-          { "value": "5+", "label": "Model ML dilatih" },
-          { "value": "∞", "label": "Pepinginan weruh" }
+          { "value": "5+", "label": "Model ML dilatih" }
         ]
       },
       "experience": {
         "eyebrow": "Karir",
         "title": "Pengalaman",
         "items": [
+          {
+            "role": "Information Technology Business Partner",
+            "company": "PT. Bank Syariah Indonesia",
+            "type": "Magang",
+            "period": "September 2026 — Saiki",
+            "location": "Jakarta Pusat, Indonésia",
+            "description": "Mbantu nyusun rencana wiwitan sadurungé inisiatif TI ditindakake.",
+            "tags": ["Power Automate"]
+          },
           {
             "role": "Fullstack Developer (Intern)",
             "company": "PT. Amerta Indah Otsuka",
@@ -491,7 +563,7 @@
           {
             "role": "Freelance Full Stack Developer (Part-time)",
             "company": "Freelance",
-            "period": "2023 — Saiki",
+            "period": "2023 — September 2026",
             "location": "Malang, Indonésia",
             "description": "Ngotomatisasi siklus nggawe akta notaris PPAT kanggo nyepetake panerbitan dokumen resmi legalitas, sarta ngrefaktor sistem katalog digital UMKM lan ngoptimalake query basis data kanggo nambah stabilitas lan kacepetan.",
             "tags": ["Full Stack", "MySQL", "Database Optimization", "Automation"]
@@ -558,7 +630,15 @@
           },
           {
             "name": "Alur Gawéan",
-            "items": ["Git", "Docker", "Linux", "Agile"]
+            "items": ["Git", "Docker", "Agile", "Waterfall"]
+          },
+          {
+            "name": "Infrastruktur",
+            "items": ["Linux", "Nginx", "Tailscale", "Cloudflare Tunnels"]
+          },
+          {
+            "name": "Automation",
+            "items": ["Power Automate", "Playwright", "MCP"]
           }
         ]
       },
@@ -613,6 +693,13 @@
         "eyebrow": "Lisènsi & Prèstasi",
         "title": "Sertifikat",
         "items": [
+          {
+            "name": "Computer Software Programming",
+            "issuer": "Badan Nasional Sertifikasi Profesi",
+            "location": "Malang, Indonésia",
+            "period": "Jun 2026 — Jun 2029",
+            "detail": "Sertifikasi kompetènsi ing pamrograman piranti lunak."
+          },
           {
             "name": "TOEIC",
             "issuer": "International Test Center",
